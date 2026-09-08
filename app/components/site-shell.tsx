@@ -17,20 +17,24 @@ export function SiteHeader() {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [open]);
-  const active = (href: string) => pathname === href || (href === '/seogyodak' && pathname === '/seogyodak-2');
+  const active = (href: string) => pathname === href ||
+    (href === '/mcn' && ['/management', '/voice-artist'].includes(pathname)) ||
+    (href === '/commerce' && ['/partners', '/reference', '/voice-brand'].includes(pathname)) ||
+    (href === '/seogyodak' && ['/sushijun-1', '/ekiudon-1'].includes(pathname)) ||
+    (href === '/news' && ['/news-2', '/event-1'].includes(pathname));
   return (
     <header className="site-header">
       <Link className="site-logo" href="/" aria-label="Glow Up Rizz home"><img src="/property/logo.png" alt="Glow Up Rizz" /></Link>
       <nav className="desktop-nav" aria-label="Main navigation">
         {navigation.map(([label, href]) => <Link className={active(href) ? 'active' : ''} href={href} key={href}>{label}</Link>)}
       </nav>
-      <Link className="contact-pill desktop-only" href="/contactus"><span>Contact</span><i>→</i></Link>
+      <Link className="contact-pill desktop-only" href="/contactus"><span>Contact</span><i>↗</i></Link>
       <button className={`menu-button ${open ? 'open' : ''}`} type="button" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /><span /></button>
       <div className={`mobile-menu ${open ? 'open' : ''}`}>
         <nav aria-label="Mobile navigation">
-          {navigation.map(([label, href]) => <Link className={active(href) ? 'active' : ''} href={href} key={href}>{label}</Link>)}
+          {navigation.map(([label, href]) => <Link onClick={() => setOpen(false)} className={active(href) ? 'active' : ''} href={href} key={href}>{label}</Link>)}
         </nav>
-        <Link className="contact-pill" href="/contactus"><span>Contact</span><i>→</i></Link>
+        <Link onClick={() => setOpen(false)} className="contact-pill" href="/contactus"><span>Contact</span><i>↗</i></Link>
       </div>
     </header>
   );
@@ -46,5 +50,5 @@ export function Shell({ children, className = '' }: { children: React.ReactNode;
 
 export function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
-  return <button type="button" className="copy-button" onClick={async () => { await navigator.clipboard.writeText(value); setCopied(true); window.setTimeout(() => setCopied(false), 1200); }}>{copied ? 'Copied' : 'Copy'}</button>;
+  return <button type="button" className="copy-button" onClick={async () => { await navigator.clipboard.writeText(value); setCopied(true); window.setTimeout(() => setCopied(false), 1200); }}><span>▣</span>{copied ? 'Copied' : 'Copy'}</button>;
 }

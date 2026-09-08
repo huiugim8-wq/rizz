@@ -1,62 +1,81 @@
 import Link from 'next/link';
+import { ContactForm, MissionCards, OfficeGallery, Reveal } from './components/interactions';
 import { CopyButton, Shell } from './components/site-shell';
 import { aboutHero, artists, business, commerceHero, foodImages, homeHero, mcnHero, milestones, news, newsImages } from './data';
 
-const SideRail = ({ items }: { items: string[] }) => <aside className="side-rail">{items.map((item, i) => <a className={i === 0 ? 'active' : ''} href={`#${item.toLowerCase()}`} key={item}>{item}</a>)}</aside>;
+type RailItem = readonly [string, string];
+const mcnRail: RailItem[] = [['Artist', '/mcn'], ['Management', '/management'], ['Voice', '/voice-artist']];
+const commerceRail: RailItem[] = [['Commerce', '/commerce'], ['Partners', '/partners'], ['Reference', '/reference'], ['Voice', '/voice-brand']];
+const fnbRail: RailItem[] = [['도그아웃', '/seogyodak'], ['스시준', '/sushijun-1'], ['에끼우동', '/ekiudon-1']];
+const SideRail = ({ items, active }: { items: RailItem[]; active: string }) => <aside className="side-rail">{items.map(([label, href]) => <Link className={label === active ? 'active' : ''} href={href} key={href}>{label}</Link>)}</aside>;
+
+function Location() {
+  return <section className="location-section"><h2>LOCATION</h2><p>서울 성동구 연무장19길 6 RIZZ</p><iframe title="Glow Up Rizz location" loading="lazy" src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%8F%99%EA%B5%AC%20%EC%97%B0%EB%AC%B4%EC%9E%A519%EA%B8%B8%206&output=embed" /></section>;
+}
 
 export function HomePage() {
+  const homeArtists = [
+    { ...artists[0], ko: '권기동', en: 'KIDONG' }, { ...artists[1], ko: '핏블리', en: 'FITVELY' }, { ...artists[2], ko: '스윙스', en: 'SWINGS' },
+    { ...artists[3], ko: '기우쌤', en: 'KIUSSAEM' }, { ...artists[4], ko: '깡스타일리스트', en: 'KKANGSTYLIST' }, { ...artists[5], ko: '준우', en: 'JUNWOO' },
+    { ...artists[6], ko: '독고독', en: 'DOGODOG' }, { ...artists[7], ko: '생각없이사는연', en: 'HEEYEON' }, { ...artists[8], ko: '재넌', en: 'JAENUNE' },
+  ];
   return <Shell className="home-page">
-    <section className="home-hero" style={{ backgroundImage: `url(${homeHero})` }}>
-      <div><h1>GLOW UP</h1><p>매력을 지속 가능한 가치로</p></div>
-    </section>
-    <section className="home-business">
-      <h2>OUR BUSINESS</h2>
-      <div className="business-grid">
-        {business.map(([title, copy, href, image]) => <Link className="business-card" href={href} key={title} style={{ backgroundImage: `url(${image})` }}><div><h3>{title}</h3><p>{copy}</p></div><span>↗</span></Link>)}
-      </div>
-    </section>
-    <section className="home-artists">
-      <div className="section-row"><h2>RIZZ ARTIST</h2><Link href="/mcn">View More</Link></div>
-      <div className="home-artist-grid">
-        {artists.slice(0, 9).map(artist => <article key={artist.en}><img src={artist.image} alt={artist.ko} /><div><b>{artist.ko}</b><span>{artist.en}</span></div></article>)}
-      </div>
-    </section>
+    <section className="home-hero" style={{ backgroundImage: `url(${homeHero})` }}><div><h1>GLOW UP</h1><p>매력을 지속 가능한 가치로</p></div></section>
+    <section className="home-business"><Reveal><h2>OUR BUSINESS</h2><div className="business-grid">{business.map(([title, copy, href, image]) => <Link className="business-card" href={href} key={title}><div className="business-orb"><img src={image} alt="" /><h3>{title}</h3><span>↗</span></div><p>{copy}</p></Link>)}</div></Reveal></section>
+    <section className="home-artists"><Reveal><div className="section-row"><h2>RIZZ ARTIST</h2></div><div className="home-artist-grid">{homeArtists.map(artist => <article key={artist.en}><img src={artist.image} alt={artist.ko} /><div><b>{artist.ko}</b><span>{artist.en}</span></div></article>)}</div><Link className="view-more" href="/mcn">View More</Link></Reveal></section>
     <Location />
   </Shell>;
 }
 
-function Location() {
-  return <section className="location-section"><h2>LOCATION</h2><div className="location-map"><span>GLOW UP RIZZ</span></div><p>서울 성동구 연무장19길 6 RIZZ</p></section>;
-}
-
 export function AboutPage() {
   const directors = [
-    ['권기준 대표','브랜딩 & 콘텐츠 전략 디렉터','https://static.wixstatic.com/media/a3e44e_bad62282522b4da283dcff636b0aff34~mv2.jpg/v1/crop/x_0,y_101,w_841,h_1020/fill/w_648,h_808,al_c,q_85,enc_avif,quality_auto/profile.jpg','· 연 매출 200억 CEO\n· 유튜브 경력 7년차, 100만 유튜버\n· MCN 설립\n· 보유 유튜브 채널 4개\n· 누적 커머스 430건 이상 진행\n· 컨설팅 크리에이터 26명\n· 10만+ 유튜버 3명 배출'],
-    ['윤승준 부사장','경영 혁신과 성장 전략을 선도하는 총괄 리더','https://static.wixstatic.com/media/dc99e3_da13bdabd3b442f283378664d025c6b3~mv2.jpg/v1/fill/w_648,h_808,al_c,q_85,enc_avif,quality_auto/profile.jpg','· 경영·관리 경력 30년\n· 콘텐츠 관련 HR 14년 경력\n· 재무·회계·세무 전문가\n· 스타트업 관리 시스템 및 전략 구축 경험\n· 전략적 비즈니스 플래닝 전문가'],
-    ['문석기 이사','크리에이터 매니지먼트 아티스트 디렉터','https://static.wixstatic.com/media/dc99e3_9b13b6fb687e41d3a5fbb21b44f35ae0~mv2.jpg/v1/fill/w_648,h_808,al_c,q_85,enc_avif,quality_auto/profile.jpg','· 유튜브 채널 운영 6년차, 구독자 143만명\n· 국제트레이너 & 스포츠영양코치\n· 미국공인 국제트레이너\n· 혁신벤처기업 (주)핏블리 대표이사\n· 베스트셀러 저자'],
-    ['정재열 본부장','콘텐츠 전략 총괄 · 채주부 커머스 마케팅 총괄','https://static.wixstatic.com/media/a3e44e_71a4ffdf1a574bfab3b8967edad776e8~mv2.jpg/v1/fill/w_648,h_808,al_c,q_85,enc_avif,quality_auto/profile.jpg','· 콘텐츠 기획 및 총괄 디렉팅 경력 7년차\n· 멀티 플랫폼 콘텐츠 기획 3,300편+\n· 대표 기획 콘텐츠 누적 조회수 17억+\n· e커머스 매출 규모 월 평균 8억원'],
+    ['권기준 대표', '브랜딩 & 콘텐츠 전략 디렉터', 'a3e44e_bad62282522b4da283dcff636b0aff34~mv2.jpg', '· 연 매출 200억 CEO\n· 유튜브 경력 7년차, 100만 유튜버\n· MCN 설립\n· 보유 유튜브 채널 4개\n· 누적 커머스 430건 이상 진행\n· 컨설팅 크리에이터 26명\n· 10만+ 유튜버 3명 배출'],
+    ['윤승준 부사장', '경영 혁신과 성장 전략을 선도하는 총괄 리더', 'dc99e3_da13bdabd3b442f283378664d025c6b3~mv2.jpg', '· 경영·관리 경력 30년\n· 콘텐츠 관련 HR 14년 경력\n· 재무·회계·세무 전문가\n· 스타트업 관리 시스템 및 전략 구축 경험'],
+    ['문석기 이사', '크리에이터 매니지먼트 아티스트 디렉터', 'dc99e3_9b13b6fb687e41d3a5fbb21b44f35ae0~mv2.jpg', '· 유튜브 채널 운영 6년차, 구독자 143만명\n· 국제트레이너 & 스포츠영양코치\n· 혁신벤처기업 (주)핏블리 대표이사'],
+    ['정재열 본부장', '콘텐츠 전략 총괄 · 채주부 커머스 마케팅 총괄', 'a3e44e_71a4ffdf1a574bfab3b8967edad776e8~mv2.jpg', '· 콘텐츠 기획 및 총괄 디렉팅 경력 7년차\n· 멀티 플랫폼 콘텐츠 기획 3,300편+\n· 대표 기획 콘텐츠 누적 조회수 17억+'],
+    ['최예빈 CD', '콘텐츠 크리에이티브 디렉터', 'dc99e3_c0ab015ed211413c84c7d4912bd0a454~mv2.jpg', '· 크리에이터 예보링\n· 브랜드 콘텐츠 기획 및 제작\n· 크리에이터 성장 컨설팅'],
+    ['이재승 CD', '콘텐츠 크리에이티브 디렉터', 'dc99e3_21f282faeba84a20842414c5d7aa65f4~mv2.jpg', '· 콘텐츠 전략 수립\n· 채널 브랜딩 및 운영\n· 숏폼 콘텐츠 제작'],
+    ['정희용 PD', '콘텐츠 프로듀서', 'dc99e3_51bf5e6a13244312bad1a2cfb5efb89e~mv2.jpg', '· 영상 기획 및 연출\n· 채널 콘텐츠 운영'],
+    ['남승완 CD', '콘텐츠 크리에이티브 디렉터', 'dc99e3_4ca8c054718540d0895804d6beb5670f~mv2.jpg', '· 브랜드 캠페인 기획\n· 콘텐츠 제작 총괄'],
+    ['서영석 Lead', '커머스 콘텐츠 리드', 'dc99e3_2131413b9b1043978fe7f081cbe61408~mv2.jpg', '· 커머스 콘텐츠 전략\n· 프로젝트 리딩'],
+    ['박재영 Lead', '비즈니스 리드', 'dc99e3_66a6cfcf04b1473894707a8f26848905~mv2.jpg', '· 브랜드 파트너십\n· 신규 비즈니스 개발'],
   ] as const;
-  const office = ['dc99e3_2ec0f17fd5ae4b3fb0676ab6ea602f94~mv2.jpg','dc99e3_29d959e63c1846f38379387436dd14a0~mv2.jpg','dc99e3_3c859fe4bb4c4647bfce399802d51ca6~mv2.jpg','dc99e3_6cf1f02470a14bb29f5d895a70979c1d~mv2.jpg','dc99e3_354ec8d2961f4dc09f8634108a83200d~mv2.jpg','dc99e3_e2b05e9ad3964fd6a26ac9824b5550bf~mv2.jpg'].map(id => `https://static.wixstatic.com/media/${id}/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/${id}`);
+  const directorData = directors.map(([name, role, id, bio]) => ({ name, role, bio, image: id.includes('4ca8c054') ? 'https://static.wixstatic.com/media/dc99e3_4ca8c054718540d0895804d6beb5670f~mv2.jpg/v1/crop/x_505,y_1346,w_2040,h_2474/fill/w_324,h_404,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5066%E2%98%85%E2%98%86_JPG.jpg' : `https://static.wixstatic.com/media/${id}/v1/fill/w_648,h_808,al_c,q_85,enc_avif,quality_auto/profile.jpg` }));
+  const officeIds = ['dc99e3_2ec0f17fd5ae4b3fb0676ab6ea602f94~mv2.jpg','dc99e3_29d959e63c1846f38379387436dd14a0~mv2.jpg','dc99e3_3c859fe4bb4c4647bfce399802d51ca6~mv2.jpg','dc99e3_6cf1f02470a14bb29f5d895a70979c1d~mv2.jpg','dc99e3_354ec8d2961f4dc09f8634108a83200d~mv2.jpg','dc99e3_e2b05e9ad3964fd6a26ac9824b5550bf~mv2.jpg','dc99e3_cf789287f5474bd88489f76ac6528b6b~mv2.jpg'];
+  const office = officeIds.map(id => `https://static.wixstatic.com/media/${id}/v1/fill/w_1200,h_700,al_c,q_85,enc_avif,quality_auto/${id}`);
+  const missions = [
+    { title: 'OUR MISSION', image: aboutHero, copy: <p>아티스트들의 자유로운 창작활동을<br />지원하지 못한다면 회사는 왜 필요할까요?<br /><br />아티스트를 책임지지 못한다면 MCN이 아닙니다.<br /><br />창작의 자유를 책임지는 MCN<br />그것이 우리의 철학입니다.</p> },
+    { title: 'OUR SLOGAN', image: business[1][3], slogan: true, copy: <p>WE WILL<br /><em>GLOW</em> YOU UP</p> },
+    { title: 'OUR VISION', image: business[3][3], copy: <p>우리는 창의성의 힘을 믿습니다.<br /><br />RIZZ는 모든 아티스트가<br />지속 가능한 가치를 창출하고<br />성공을 새롭게 정의할 기회를 제공합니다.</p> },
+  ];
   return <Shell className="about-page">
     <section className="about-hero" style={{ backgroundImage: `url(${aboutHero})` }}><h1>GLOW UP RIZZ</h1><p>우리는 아티스트들의 매력을 더 빛나게 만드는 회사입니다.</p></section>
-    <section className="belief-grid">
-      <article><span>OUR<br />MISSION</span><h2>OUR<br />MISSION</h2><p>아티스트들의 자유로운 창작활동을<br />지원하지 못한다면 회사는 왜 필요할까요?<br /><br />아티스트를 책임지지 못한다면 MCN이 아닙니다.<br /><br />창작의 자유를 책임지는 MCN<br />그것이 우리의 철학입니다.</p></article>
-      <article><span>OUR<br />SLOGAN</span><h2>OUR<br />SLOGAN</h2><p className="slogan">WE WILL<br /><em>GLOW</em> YOU UP</p></article>
-      <article><span>OUR<br />VISION</span><h2>OUR<br />VISION</h2><p>우리는 창의성의 힘을 믿습니다.<br /><br />RIZZ는 모든 아티스트가<br />지속 가능한 가치를 창출하고<br />성공을 새롭게 정의할 기회를 제공합니다.</p></article>
-    </section>
-    <section className="directors"><h2>CREATIVE DIRECTORS</h2>{directors.map(([name, role, image, bio], i) => <article className={i % 2 ? 'reverse' : ''} key={name}><img src={image} alt={name} /><div><h3>{name}</h3><b>{role}</b><p>{bio}</p></div></article>)}</section>
-    <section className="office"><h2>OFFICE BUILDING</h2><div>{office.map((src, i) => <img src={src} alt={`Glow Up Rizz office ${i + 1}`} key={src} />)}</div></section>
+    <MissionCards cards={missions} />
+    <section className="directors"><h2>CREATIVE DIRECTORS</h2><div className="director-track">{directorData.map(({ name, role, image, bio }) => <article key={name}><div className="director-photo"><img src={image} alt={name} /><p>{bio}</p></div><h3>{name}</h3><span>{role}</span></article>)}</div></section>
+    <section className="office"><h2>OFFICE BUILDING</h2><OfficeGallery images={office} /></section>
     <section className="milestones"><h2>MILESTONES</h2>{milestones.map(([date, event]) => <div key={date}><time>{date}</time><p>{event}</p></div>)}</section>
     <Location />
   </Shell>;
 }
 
 export function McnPage() {
-  return <Shell className="mcn-page">
-    <section className="image-hero" style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.25),rgba(0,0,0,.05)),url(${mcnHero})` }}><h1>GLOW UP ARTIST</h1><p>아티스트의 창작이 지속 가능한 가치가 되도록 함께합니다.</p></section>
-    <SideRail items={['Artist','Management','Voice']} />
-    <section className="artist-list" id="artist"><h2>RIZZ ARTIST</h2><div className="artist-grid">{artists.map(artist => <article key={artist.en}><div className="artist-photo"><img src={artist.image} alt={artist.ko} /></div><h3>{artist.ko}</h3><p>{artist.en}</p><span>{artist.followers}</span></article>)}</div></section>
-  </Shell>;
+  return <Shell className="mcn-page"><section className="image-hero" style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.28),rgba(0,0,0,.02)),url(${mcnHero})` }}><h1>GLOW UP ARTIST</h1><p>아티스트가 회사를 통해 돈을 벌지 못하면 MCN이 아닙니다.</p></section><SideRail items={mcnRail} active="Artist" /><section className="artist-list"><h2>RIZZ ARTIST</h2><div className="artist-grid">{artists.map(artist => <article key={artist.en}><div className="artist-photo"><img src={artist.image} alt={artist.ko} /></div><h3>{artist.ko}</h3><p>{artist.en}</p><span>{artist.followers}</span><a className="instagram" href="https://www.instagram.com/">INSTAGRAM ↗</a></article>)}</div></section></Shell>;
+}
+
+function NumberSection({ num, title, children }: { num: string; title: string; children: React.ReactNode }) {
+  return <section className="number-section"><header><b>{num}</b><h2>{title}</h2></header><div>{children}</div></section>;
+}
+
+export function ManagementPage() {
+  const services = ['유튜브 성장 지원', '광고 영업 및 계약 관리', '촬영 장소 지원', '제품 협찬 및 지원', '전문 교육 및 멘토링 지원'];
+  return <Shell className="management-page"><SideRail items={mcnRail} active="Management" /><section className="management-content"><h1>“우리는 크리에이터의<br />지속가능한 비즈니스를 설계합니다.”</h1><div className="management-visual" style={{ backgroundImage: `url(${mcnHero})` }} />
+    <NumberSection num="01" title="탑 아티스트와 함께하는 더 큰 성장"><h4>Problem</h4><p>기존 MCN은 콘텐츠 경험이 부족한 매니저 중심으로 운영되어 크리에이터의 실질적인 성장을 이끌어 내기 어렵습니다.</p><h4>Solution</h4><p>RIZZ는 현직 탑티어 크리에이터가 직접 매니지먼트에 참여하여 경험으로 검증된 방향을 제시합니다.</p></NumberSection>
+    <NumberSection num="02" title="아티스트에게 필요한 실질적인 지원"><div className="service-grid">{services.map((service, i) => <article key={service}><b>{String(i + 1).padStart(2, '0')}</b><p>{service}</p></article>)}</div></NumberSection>
+    <NumberSection num="03" title="타사대비 더 높은 광고 단가 제안"><p>브랜드와 크리에이터 모두에게 합리적인 조건을 설계하고, 콘텐츠의 가치를 단가에 반영합니다.</p></NumberSection>
+    <NumberSection num="04" title="네트워킹을 통한 시너지 창출"><img src="https://static.wixstatic.com/media/dc99e3_ea26e04cbc2d4cec82176285fe5b895f~mv2.jpg/v1/fill/w_900,h_480,al_c,q_85,enc_avif,quality_auto/IMG_2171.JPG" alt="Creator networking" /><p>분야를 넘나드는 크리에이터 네트워크를 통해 새로운 콘텐츠와 협업 기회를 만듭니다.</p></NumberSection>
+    <NumberSection num="05" title="새로운 수익 창출 기회 제공"><p>광고를 넘어 커머스, 브랜드, IP로 확장해 크리에이터의 지속 가능한 수익 구조를 만듭니다.</p><Link className="inline-pill" href="/commerce">View More ↗</Link></NumberSection>
+    <NumberSection num="06" title="지속 가능한 PB 브랜드 제안"><p>아티스트의 캐릭터와 팬덤을 기반으로 오래가는 제품과 브랜드를 설계합니다.</p><h3>PB 브랜딩 서비스</h3><div className="pb-grid">{[['Branding','브랜드 정체성\n스토리·콘셉트 개발'],['Creation','제품 기획\n디자인·생산'],['Commerce','유통·판매\n콘텐츠 마케팅']].map(([a,b])=><article key={a}><h4>{a}</h4><p>{b}</p></article>)}</div></NumberSection>
+  </section></Shell>;
 }
 
 export function CommercePage() {
@@ -65,54 +84,107 @@ export function CommercePage() {
     ['02  Management','탑 아티스트가 직접\n매칭 아티스트를 핸들링','기존 MCN 아티스트 매니저들은 아티스트를 컨트롤 할 수 없습니다. 그에 따른 리스크는 MCN과 브랜드가 지게 됩니다.','RIZZ는 현직 탑티어 아티스트들이 직접 매니지먼트에 참여합니다. 같은 아티스트로서 생기는 공감대를 바탕으로 실질적 도움이 되는 콘텐츠 방향성을 제시하며 브랜드 ROAS에 직·간접적인 도움을 제공합니다.'],
     ['03  PB Branding','탑티어 아티스트가\n귀사의 마케터가 되다','브랜드는 아티스트의 IP를 활용한 PB 상품으로 새로운 수익을 창출하고, 지속 가능한 브랜드 스토리를 만들 기회를 얻습니다.','PB 상품은 아티스트의 고유한 이미지와 브랜드를 더 넓은 시장에 알릴 수 있는 강력한 도구입니다. 브랜드가 아티스트의 정체성과 맞는 제품을 함께 개발함으로써 새로운 고객층을 확보할 수 있습니다.'],
   ] as const;
-  return <Shell className="commerce-page">
-    <section className="image-hero commerce-hero" style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.08)),url(${commerceHero})` }}><h1>GLOW UP PARTNERS</h1><p>브랜드의 ROAS를 책임지지 않으면 MCN이 아닙니다.</p></section>
-    <SideRail items={['Commerce','Partners','Reference','Voice']} />
-    <section className="commerce-intro" id="commerce"><p>콘텐츠 커머스 매칭 플랫폼</p><h2>YOGO</h2><p>상품 및 서비스 공급자 브랜드와 콘텐츠 제작자 아티스트를 매칭하여<br />RIZZ 자사몰 YOGO에서 상품 및 서비스를 판매합니다.</p><div>{[['Brand','어떤 비용도 지불하지 않고 원하는 아티스트를 통해 상품 및 서비스 홍보'],['Artist','광고주 없이 자유로운 형태의 콘텐츠 제작과 판매한 만큼의 수익 창출'],['Viewer','콘텐츠에서 노출된 상품과 서비스를 가장 합리적인 금액에 구매']].map(([name, copy]) => <article key={name}><b>{name}</b><p>{copy}</p></article>)}</div></section>
-    <section className="commerce-blocks">{blocks.map(([num, title, p1, p2], i) => <article key={num}><header>{num}</header><div><h2>{title}</h2><p>{p1}</p><p>{p2}</p>{i === 0 && <><h3>글로벌 탑티어 유튜브 쇼핑 경험 제공<br />국내 최다 YouTube 쇼핑 성공 사례 - YOGO</h3><div className="stats"><div><span>총 진행 건 수</span><b>481</b></div><div><span>총 주문 건 수</span><b>88만</b></div><div><span>총 거래액</span><b>343억</b></div></div><small>*2025년 6월 기준</small></>}</div></article>)}</section>
-  </Shell>;
+  return <Shell className="commerce-page"><section className="image-hero commerce-hero" style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.08)),url(${commerceHero})` }}><h1>GLOW UP PARTNERS</h1><p>브랜드의 ROAS를 책임지지 않으면 MCN이 아닙니다.</p></section><SideRail items={commerceRail} active="Commerce" /><section className="commerce-intro"><p>콘텐츠 커머스 매칭 플랫폼</p><h2>YOGO</h2><p>상품 및 서비스 공급자 브랜드와 콘텐츠 제작자 아티스트를 매칭하여<br />RIZZ 자사몰 YOGO에서 상품 및 서비스를 판매합니다.</p><div>{[['Brand','어떤 비용도 지불하지 않고 원하는 아티스트를 통해 상품 및 서비스 홍보'],['Artist','광고주 없이 자유로운 형태의 콘텐츠 제작과 판매한 만큼의 수익 창출'],['Viewer','콘텐츠에서 노출된 상품과 서비스를 가장 합리적인 금액에 구매']].map(([name, copy]) => <article key={name}><b>{name}</b><p>{copy}</p></article>)}</div></section><section className="commerce-blocks">{blocks.map(([num, title, p1, p2], i) => <article key={num}><header>{num}</header><div><h2>{title}</h2><p>{p1}</p><p>{p2}</p>{i === 0 && <><h3>글로벌 탑티어 유튜브 쇼핑 경험 제공<br />국내 최다 YouTube 쇼핑 성공 사례 - YOGO</h3><div className="stats"><div><span>총 진행 건 수</span><b>481</b></div><div><span>총 주문 건 수</span><b>88만</b></div><div><span>총 거래액</span><b>343억</b></div></div><small>*2025년 6월 기준</small></>}</div></article>)}</section></Shell>;
 }
+
+export function PartnersPage() {
+  const labels = ['BUSINESS','TOUR','LIFE','BEAUTY & FASHION','FOOD & DINING'];
+  const ids = ['dc99e3_7889c1380bbf4f1f9f30daa70bbdf517~mv2.png','dc99e3_fea043fa9f0d4efea916abefa971aca6~mv2.png','dc99e3_4190536366c04af4b61193cebfca9801~mv2.png','dc99e3_399431cfa8804f1c8d21cc850a518fe9~mv2.png','dc99e3_e98e8d5de4d74f6b91b9383ed3fe53b0~mv2.png'];
+  const images = ids.map(id=>`https://static.wixstatic.com/media/${id}/v1/fill/w_864,h_486,al_c,q_85,enc_avif,quality_auto/partner.png`);
+  return <Shell className="commerce-subpage"><SideRail items={commerceRail} active="Partners" /><section className="partners-content"><div className="partner-stack">{images.map((image, i)=><article key={image}><h2>{labels[i]}</h2><img src={image} alt={labels[i]} /></article>)}</div></section></Shell>;
+}
+
+const referenceCases = [
+  ['채널주인부재중 X 세인트존스호텔','6,523','12.5억'],['채널주인부재중 X 여수유탑마리나','5,808','10억'],['휴먼스토리 X 세인트존스호텔','3,000','6.6억'],['채널주인부재중 X 용평리조트','1,535','6억'],['채널주인부재중 X 소노호텔앤리조트','2,317','5.3억'],['예영 X 트래블그램','206','4.2억'],['심장에박현서 X 제주유탑유블레스','1,519','2.4억'],['채널주인부재중 X 소노비발디파크','640','1.8억'],['채널주인부재중 X 제주유탑유블레스','942','1.5억'],
+  ['채널주인부재중 X 주당의비결','29,552','6.9억'],['심장에박현서 X 뉴베러','33,070','6.7억'],['채널주인부재중 X 더짱터국밥','37,981','3.5억'],['예보링 X 널담','23,415','3.4억'],['예보링 X 바르닭','9,076','2.9억'],['채널주인부재중 X 바르닭','10,994','3.4억'],['채널주인부재중 X 쑥이네','23,687','3억'],['채널주인부재중 X 쁠랑뜨','2,117','2.6억'],['채널주인부재중 X 조조칼국수','12,708','2.7억'],
+] as const;
+const beautyCases = [['심장에박현서 X 페이스팩토리','6,975','5.7억'],['매일제히 X 피부미','17,199','5.7억'],['매일제히 X sMTS','2,507','3.6억'],['예보링 X 디마레','3,935','5억'],['예보링 X 라에스테','13,272','3.7억'],['심장에박현서 X 게스케','8,398','2.8억'],['생각없이사는연 X 헤베스템','5,932','3.5억'],['심장에박현서 X 엑소메라','4,741','2억'],['매일제히 X 바디언스','5,157','1.9억']] as const;
+const livingCases = [['매일제히 X 코닥','2,448','4.6억'],['매일제히 X 도로시와','11,736','2.4억'],['생각없이사는연 X 보바','5,464','1.9억'],['심장에박현서 X 샤크플렉스타일','868','2.2억'],['생각없이사는연 X 포레올라','1,625','0.9억'],['채널주인부재중 X 제스파','641','0.9억'],['제이제이 X 브랜든','1,929','1.2억'],['채널주인부재중 X 베러댄라이프','2,138','0.7억'],['생각없이사는연 X 무스탕','942','0.8억']] as const;
+const etcCases = [['채널주인부재중 X 티오더','8','0.02억'],['채널주인부재중 X 양양세인트존스 분양권','3','21억'],['채널주인부재중 X 스시준 식사권','1,663','2.1억'],['채널주인부재중 X 양문 식사권','3,158','1.8억'],['채널주인부재중 X 불끈 식사권','1,025','1.1억'],['채널주인부재중 X 주렁주렁 입장권','2,603','0.9억'],['채널주인부재중 X 에이블짐 회원권','259','0.5억'],['채널주인부재중 X 고수의운전면허 이용권','151','0.6억'],['생각없이사는연 X 어프어프 금액권','217','0.1억']] as const;
+const referenceImgs = [
+  'https://static.wixstatic.com/media/dc99e3_d7e6ae7923d44ad99828d5d6c7141eff~mv2.webp/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/1.webp',
+  'https://static.wixstatic.com/media/dc99e3_96b354f73e674f5fa2406e80d01c279c~mv2.jpg/v1/fill/w_280,h_162,fp_0.50_0.69,q_80,enc_avif,quality_auto/2.jpg',
+  'https://static.wixstatic.com/media/dc99e3_64b22ad796ae44f6ae8b868893a6002a~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/3.jpg',
+  'https://static.wixstatic.com/media/dc99e3_873f80ae40044ac995fdab127d6d350f~mv2.webp/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/4.webp',
+  'https://static.wixstatic.com/media/dc99e3_5ad052067226460bb4d96b0051c62354~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/5.jpg',
+  'https://static.wixstatic.com/media/dc99e3_348a09808d824f61b0fadc80b6721c94~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/6.jpg',
+  'https://static.wixstatic.com/media/dc99e3_7719b274bf5040d281483e5da0fa84fd~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/7.jpg',
+  'https://static.wixstatic.com/media/dc99e3_dc9b1a4c18004f40abbb581846e9e220~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/8.jpg',
+  'https://static.wixstatic.com/media/dc99e3_3c9b454a539d4845aa0f2c093c8aa928~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/9.jpg',
+  'https://static.wixstatic.com/media/dc99e3_05a4a99fefcf45b7b3711d8ed910b3c1~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/1.jpg',
+  'https://static.wixstatic.com/media/dc99e3_980f609f5c2149beae10d7958210a5e7~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/2.jpg',
+  'https://static.wixstatic.com/media/dc99e3_6f258886ba29446bbffaa282563c895d~mv2.png/v1/fill/w_280,h_162,al_c,q_85,enc_avif,quality_auto/3.png',
+  'https://static.wixstatic.com/media/dc99e3_d7f5066270f54a8d90ef787856bb2a49~mv2.png/v1/fill/w_280,h_162,al_c,q_85,enc_avif,quality_auto/4.png',
+  'https://static.wixstatic.com/media/dc99e3_f136718f372849c2a45fc2adf7caab41~mv2.jpg/v1/fill/w_280,h_162,fp_0.50_0.48,q_80,enc_avif,quality_auto/5.jpg',
+  'https://static.wixstatic.com/media/dc99e3_4672a404a4504a8b8852e4c5727f5018~mv2.webp/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/6.webp',
+  'https://static.wixstatic.com/media/dc99e3_98a6101721774c499efbc845c974dac5~mv2.jpg/v1/fill/w_280,h_162,fp_0.50_0.43,q_80,enc_avif,quality_auto/7_jfif.jpg',
+  'https://static.wixstatic.com/media/dc99e3_795ef973ad43416c8939d13002b0a236~mv2.jpg/v1/fill/w_280,h_162,fp_0.50_0.55,q_80,enc_avif,quality_auto/8.jpg',
+  'https://static.wixstatic.com/media/dc99e3_80e193d6746647c496a31582973cdba6~mv2.jpg/v1/fill/w_280,h_162,al_c,q_80,enc_avif,quality_auto/9.jpg',
+];
+export function ReferencePage() {
+  const groups = [['TOUR',referenceCases.slice(0,9)],['FOOD',referenceCases.slice(9)],['BEAUTY',beautyCases],['LIVING',livingCases],['etc.',etcCases]] as const;
+  return <Shell className="commerce-subpage"><SideRail items={commerceRail} active="Reference" /><section className="reference-content">{groups.map(([label,cases],groupIndex)=><div className="reference-group" key={label}><h2>{label}</h2><div className="reference-cases">{cases.map((item,i)=><CaseCard item={item} image={referenceImgs[(groupIndex*9+i)%referenceImgs.length]} key={item[0]} />)}</div></div>)}</section></Shell>;
+}
+function CaseCard({ item, image }: { item: readonly [string,string,string]; image: string }) { return <article><img src={image} alt="" /><h3>{item[0]}</h3><div><span>판매 수량 <b>{item[1]}</b></span><span>거래액 <b>{item[2]}</b></span></div></article>; }
+
+const artistVoices = [
+  {name:'심장에박현서', portrait:'a3e44e_ac74dabfce7c43dcbc15097ae1ba42f8~mv2.jpg', image:'a3e44e_70dd57347d754f5ab8e71ca515d91057~mv2.jpg', title:'콘텐츠에서 커머스까지, 새로운 성장의 시작', copy:'혼자서는 어려웠던 콘텐츠 방향과 수익화 구조를 함께 설계하면서 채널의 가능성을 더 크게 만들 수 있었습니다.', stats:['318K 구독자','33,070 주문','6.7억 거래액']},
+  {name:'생각없이사는연', portrait:'a3e44e_5b3bc97091cb4044ae569b4b0b7ae715~mv2.jpg', image:'a3e44e_8881b70b77984e3d80acd32099c76fb6~mv2.jpg', title:'크리에이터의 개성이 비즈니스가 되는 순간', copy:'내 콘텐츠의 색을 지키면서도 브랜드와 자연스럽게 연결되는 방법을 배웠습니다.', stats:['140K 구독자','브랜드 협업','콘텐츠 성장']},
+  {name:'예보링', portrait:'a3e44e_44123b7beccb4ff9a90dc997e983db6e~mv2.jpg', image:'a3e44e_2ce7b51ee2d14a2688e4c2d265c6bf2c~mv2.jpg', title:'나만의 속도로 오래 성장할 수 있도록', copy:'단기적인 조회수보다 지속 가능한 채널과 커머스의 연결을 함께 고민합니다.', stats:['346K 구독자','23,415 주문','3.4억 거래액']},
+] as const;
+export function VoiceArtistPage() { return <Shell className="voice-page"><SideRail items={mcnRail} active="Voice" /><section className="voice-intro"><h1>Voice of Artist</h1><p>RIZZ와 함께 성장한 아티스트의 이야기를 소개합니다.</p><div>{artistVoices.map(v=><a href={`#${v.name}`} key={v.name}><img src={`https://static.wixstatic.com/media/${v.portrait}/v1/fill/w_512,h_684,al_c,q_85,enc_avif,quality_auto/voice.jpg`} alt={v.name} /><b>{v.name}</b></a>)}</div></section>{artistVoices.map((v,i)=><section className={`voice-story ${i%2?'reverse':''}`} id={v.name} key={v.name}><img src={`https://static.wixstatic.com/media/${v.image}/v1/fill/w_1280,h_1114,al_c,q_85,enc_avif,quality_auto/story.jpg`} alt={v.name} /><div><small>VOICE OF ARTIST</small><h2>{v.title}</h2><p>{v.copy}</p><div className="voice-stats">{v.stats.map(s=><b key={s}>{s}</b>)}</div></div></section>)}</Shell>; }
+
+const brandVoices = [
+  {name:'세인트존스 김헌성', portrait:'a3e44e_7e2ab8e90b514b89aea1ad6c80276792~mv2.jpeg', story:'a3e44e_7e2ab8e90b514b89aea1ad6c80276792~mv2.jpeg', title:'크리에이터 커머스로 호텔의 새로운 가능성을 열다', copy:'콘텐츠와 숙박 상품을 연결해 고객과 만나는 새로운 방식을 만들었습니다.', stats:['11,438 주문','22.7억 거래액','25 캠페인','2,018만 조회']},
+  {name:'유탑 호텔 최정원', portrait:'dc99e3_8a4b85cf28b94c049211891d81f14f9d~mv2.jpg', story:'dc99e3_8a4b85cf28b94c049211891d81f14f9d~mv2.jpg', title:'콘텐츠가 지역 관광의 성장 동력이 되다', copy:'크리에이터의 진정성 있는 경험이 지역과 호텔의 매력을 넓게 전했습니다.', stats:['6,427 주문','11.3억 거래액','17 캠페인','782만 조회']},
+  {name:'더짱터 문봉영', portrait:'dc99e3_b0ee27362a25499ea24f0194054b0550~mv2.avif', story:'dc99e3_b0ee27362a25499ea24f0194054b0550~mv2.avif', title:'좋은 제품을 더 많은 고객에게', copy:'제품력에 콘텐츠의 전달력이 더해져 짧은 시간 안에 큰 판매 성과로 이어졌습니다.', stats:['50,669 주문','3.9억 거래액','3 캠페인','87만 조회']},
+  {name:'스시준 이준엽', portrait:'dc99e3_5b7e8862c578435e9dcf3d35ff746fef~mv2.avif', story:'dc99e3_5b7e8862c578435e9dcf3d35ff746fef~mv2.avif', title:'오랜 진심을 하나의 브랜드로', copy:'셰프의 철학과 공간 경험을 콘텐츠로 풀어 새로운 고객과 만났습니다.', stats:['1,663 주문','2억 거래액','2 캠페인','66만 조회']},
+  {name:'더드림핑 맹정환', portrait:'dc99e3_339c3b3123e04dd1bd1948afaf6dcbd5~mv2.png', story:'dc99e3_1f38715d478e4f7fade38f222c4bc0af~mv2.avif', title:'공간의 경험을 콘텐츠 비즈니스로', copy:'콘텐츠가 고객의 방문과 구매를 이끄는 지속 가능한 캠페인을 만들었습니다.', stats:['2,558 주문','5.16억 거래액','12 캠페인','638만 조회']},
+] as const;
+export function VoiceBrandPage() { return <Shell className="voice-page brand-voice"><SideRail items={commerceRail} active="Voice" /><section className="voice-intro"><h1>Voice of Brand</h1><p>RIZZ의 콘텐츠 커머스와 함께한 브랜드 파트너의 이야기입니다.</p><div>{brandVoices.map(v=><a href={`#${v.name}`} key={v.name}><img src={`https://static.wixstatic.com/media/${v.portrait}/v1/fill/w_506,h_520,al_c,q_85,enc_avif,quality_auto/brand.jpg`} alt={v.name} /><b>{v.name}</b></a>)}</div></section>{brandVoices.map((v,i)=><section className={`voice-story ${i%2?'reverse':''}`} id={v.name} key={v.name}><img src={`https://static.wixstatic.com/media/${v.story}/v1/fill/w_1280,h_1510,al_c,q_85,enc_avif,quality_auto/brand-story.jpg`} alt={v.name} /><div><small>VOICE OF BRAND</small><h2>{v.title}</h2><p>{v.copy}</p><div className="voice-stats four">{v.stats.map(s=><b key={s}>{s}</b>)}</div></div></section>)}</Shell>; }
 
 export function AcademyPage() {
   const points = ['유튜브 7년 차, 117만 구독자 보유','연 매출 200억 콘텐츠 기반 비즈니스 운영','11개의 유튜브 채널 보유 및 운영','누적 커머스 협업 430건 이상 진행','크리에이터 컨설팅 26명 진행','10만 유튜버 3명 직접 배출','MCN 설립 및 운영 경험 보유','브랜드와 협업으로 수차례 매출 성공 사례 창출','주요 대학 및 기업 대상 강의 다수 진행'];
-  return <Shell className="academy-page">
-    <section className="academy-hero"><h1>RIZZ ACADEMY</h1><p>콘텐츠로 시작하여 비즈니스까지.<br />실전으로 증명된 크리에이터들의 성장 전략을 배웁니다.</p></section>
-    <section className="academy-intro"><p>글로우업리즈 아카데미는<br /><br />8년간 유튜브로 수많은 실험과 성장을 경험한 크리에이터가 전하는<br /><br />유튜브 기획, 수익화, 브랜드 확장, 그리고 콘텐츠 기반 사업화까지<br /><br />실무 중심으로 설계된 실전형 교육 플랫폼입니다.</p><h2><span>✦</span> 유튜브 하나로 사업까지 확장해낸<br />실전형 CEO가 직접 강의합니다.</h2></section>
-    <section className="lecturer"><img src="https://static.wixstatic.com/media/a3e44e_bad62282522b4da283dcff636b0aff34~mv2.jpg/v1/fill/w_800,h_920,fp_0.50_0.44,q_85,enc_avif,quality_auto/profile.jpg" alt="권기동" /><div><p>채널주인부재중 운영자 / 글로우업리즈 대표</p><h2>권기동</h2><ul>{points.map(point => <li key={point}>- {point}</li>)}</ul></div></section>
-    <section className="coming"><h2>COMING SOON</h2><p>실무 경험 중심의 콘텐츠 전문가들이<br />순차적으로 합류할 예정입니다.</p><div>{Array.from({ length: 5 }).map((_, i) => <article key={i}><span>COMING<br />SOON</span></article>)}</div></section>
-  </Shell>;
+  return <Shell className="academy-page"><section className="academy-hero"><div><h1>RIZZ ACADEMY</h1><p className="academy-lead">콘텐츠로 시작하여 비즈니스까지.<br />실전으로 증명된 크리에이터들의 성장 전략을 배웁니다.</p><p className="academy-copy">글로우업리즈 아카데미는 8년간 유튜브로 수많은 실험과 성장을 경험한 크리에이터가 전하는 유튜브 기획, 수익화, 브랜드 확장, 그리고 콘텐츠 기반 사업화까지 실무 중심으로 설계된 실전형 교육 플랫폼입니다.</p></div></section><section className="academy-teacher"><h2><span>✦</span> 유튜브 하나로 사업까지 확장해낸<br />실전형 CEO가 직접 강의합니다.</h2><div className="lecturer"><img src="https://static.wixstatic.com/media/a3e44e_bad62282522b4da283dcff636b0aff34~mv2.jpg/v1/fill/w_800,h_920,fp_0.50_0.44,q_85,enc_avif,quality_auto/profile.jpg" alt="권기동" /><div><p>채널주인부재중 운영자 / 글로우업리즈 대표</p><h3>권기동</h3><ul>{points.map(point => <li key={point}>- {point}</li>)}</ul></div></div></section><section className="coming"><div className="coming-cards">{Array.from({ length: 5 }).map((_, i) => <article key={i}><span>COMING<br />SOON</span></article>)}</div><div className="coming-copy"><h2>COMING SOON</h2><p>실무 경험 중심의 콘텐츠 전문가들이<br />순차적으로 합류할 예정입니다.</p></div></section></Shell>;
 }
 
-export function PropertyPage() {
-  return <Shell className="property-page">
-    <section className="property-hero"><h1>RIZZ PROPERTY</h1></section>
-    <section className="development"><h2>부동산 디벨롭</h2><img src="/property/process.png" alt="매입, 리모델링, 브랜딩, 매각 과정" /></section>
-    <section className="reference"><h2>Reference</h2><div className="reference-grid"><div className="building-pair"><img className="before" src="/property/before.jpg" alt="매입 당시 건물" /><img src="/property/after.jpg" alt="리모델링 후 건물" /><span>›</span></div><img className="value-image" src="/property/value.png" alt="건물 가치 변화" /></div></section>
-  </Shell>;
-}
+export function PropertyPage() { return <Shell className="property-page"><section className="property-hero"><h1>RIZZ PROPERTY</h1></section><section className="development"><h2>부동산 디벨롭</h2><img src="/property/process.png" alt="매입, 리모델링, 브랜딩, 매각 과정" /></section><section className="reference"><h2>Reference</h2><div className="reference-grid"><div className="building-pair"><img className="before" src="/property/before.jpg" alt="매입 당시 건물" /><img src="/property/after.jpg" alt="리모델링 후 건물" /><span>›</span></div><img className="value-image" src="/property/value.png" alt="건물 가치 변화" /></div></section></Shell>; }
+
+function FnbHero() { return <section className="fnb-hero"><h1>THE RIZZ ROOM</h1><div><h2>“Our flavor. Our rules.”</h2><p>글로우업리즈의 F&B 매장은 우리의 쇼룸입니다.<br /><br />이곳은 단순한 공간이 아닌, 우리만의 감각과 철학이 응축된 브랜드 무대입니다.<br /><br />우리는 정해진 매뉴얼보다 감각과 경험으로 채워지는 순간을 더 믿습니다.<br />그 무한한 가능성을 위해 오늘도 실험하고, 고민하고, 나아갑니다.</p></div></section>; }
 
 export function FnbPage() {
   const foods = ['얼큰 닭매운탕','엄나무 닭한마리','미나리 닭무침','옛날 닭다리','계육볶음','계장술밥','얼큰 닭 칼국수','맑은 닭 칼국수','계육덮밥','들깨 크림 수제비','닭목살 유린기','닭 된장 전골'];
-  return <Shell className="fnb-page">
-    <section className="fnb-hero"><h1>THE RIZZ ROOM</h1><div><h2>“Our flavor. Our rules.”</h2><p>글로우업리즈의 F&B 매장은 우리의 쇼룸입니다.<br /><br />이곳은 단순한 공간이 아닌, 우리만의 감각과 철학이 응축된 브랜드 무대입니다.<br /><br />우리는 정해진 매뉴얼보다 감각과 경험으로 채워지는 순간을 더 믿습니다.<br />그 무한한 가능성을 위해 오늘도 실험하고, 고민하고, 나아갑니다.</p></div></section>
-    <SideRail items={['도그아웃','스시준','에끼우동']} />
-    <section className="fnb-brand"><img className="fnb-mark" src="https://static.wixstatic.com/media/dc99e3_04119e9f5bde4a51acac39b7a1876f70~mv2.jpg/v1/fill/w_404,h_404,al_c,q_85,enc_avif,quality_auto/logo.jpg" alt="서교닭매운탕" /><div><h2>닭요리의 틀을 깨다,<br />맛의 기준을 바꾸다.</h2><p>전통의 깊이를 존중하되, 고정관념에 안주하지 않습니다.<br /><br />닭볶음탕과 매운탕의 경계를 넘나드는 새로운 해석,<br />익숙하지만 신선한 조합으로 닭요리의 정체성을 다시 씁니다.<br /><br />우리는 단순히 음식을 만드는 것이 아니라<br />새로운 기준과 브랜드 경험을 제시합니다.</p></div></section>
-    <section className="fnb-menu"><h2>끊임없는 메뉴 개발과 맛으로 증명하는 경쟁력,<br />서교닭매운탕의 성장 엔진입니다.</h2><div>{foodImages.map((src, i) => <article key={src}><img src={src} alt={foods[i]} /><span>{foods[i]}</span></article>)}</div><h3>서교닭매운탕 본점</h3><a href="https://www.instagram.com/" aria-label="Instagram">◎</a></section>
-    <section className="store-info">{[['주소','서울 마포구 독막로 3길 51, 서주빌딩'],['영업시간','11:00 - 23:00'],['브레이크타임','15:00 - 17:00'],['라스트오더','22:00'],['전화번호','070-7799-6848']].map(([label, value]) => <div key={label}><b>{label}</b><span>{value}</span></div>)}</section>
-  </Shell>;
+  return <Shell className="fnb-page"><FnbHero /><SideRail items={fnbRail} active="도그아웃" /><section className="fnb-brand"><img className="fnb-mark" src="https://static.wixstatic.com/media/dc99e3_04119e9f5bde4a51acac39b7a1876f70~mv2.jpg/v1/fill/w_404,h_404,al_c,q_85,enc_avif,quality_auto/logo.jpg" alt="서교닭매운탕" /><div><h2>닭요리의 틀을 깨다,<br />맛의 기준을 바꾸다.</h2><p>전통의 깊이를 존중하되, 고정관념에 안주하지 않습니다.<br /><br />닭볶음탕과 매운탕의 경계를 넘나드는 새로운 해석,<br />익숙하지만 신선한 조합으로 닭요리의 정체성을 다시 씁니다.<br /><br />우리는 단순히 음식을 만드는 것이 아니라<br />새로운 기준과 브랜드 경험을 제시합니다.</p></div></section><section className="fnb-menu"><h2>끊임없는 메뉴 개발과 맛으로 증명하는 경쟁력,<br />서교닭매운탕의 성장 엔진입니다.</h2><div>{foodImages.map((src, i) => <article key={src}><img src={src} alt={foods[i]} /><span>{foods[i]}</span></article>)}</div><h3>서교닭매운탕 본점</h3><a href="https://www.instagram.com/" aria-label="Instagram">◎</a></section><StoreInfo items={[['주소','서울 마포구 독막로 3길 51, 서주빌딩'],['영업시간','11:00 - 23:00'],['브레이크타임','15:00 - 17:00'],['라스트오더','22:00'],['전화번호','070-7799-6848']]} /></Shell>;
 }
 
-export function NewsPage() {
-  return <Shell className="news-page"><section className="page-title"><h1>NEWS</h1></section><section className="news-wrap"><div className="news-tabs"><button>NEWS</button><button>EVENT</button></div><article className="news-feature"><img src="https://static.wixstatic.com/media/dc99e3_0a2f9cc26309489dba687d7e6e363717~mv2.jpg/v1/crop/x_0,y_1552,w_3024,h_1210/fill/w_1214,h_486,al_c,q_85,enc_avif,quality_auto/news.jpg" alt="Glow Up Rizz event" /><div><h2>글로우업리즈, 두 번째 ‘TOP-TIER PRIVATE PARTY’ 개최</h2><time>26.08.04</time></div></article><div className="news-grid">{news.map(([title, date], i) => <article key={`${date}-${i}`}><img src={newsImages[i % newsImages.length]} alt="" /><h2>{title}</h2><time>{date}</time></article>)}</div></section></Shell>;
+const sushiImgs = ['dc99e3_04ab4479eab44f509021d431461f9ee2~mv2.jpg','dc99e3_69124c11094645758dbe9067342266b8~mv2.jpg','dc99e3_de1158987f834c019d202a180c092fe8~mv2.jpg','dc99e3_158ba8f6b9d44cb79b878634b1d1109f~mv2.jpg','dc99e3_592c1c0d297a4a5da494ab0a56d78d44~mv2.jpg','dc99e3_5cf5d859b87e4ae78adcc78899c30a5f~mv2.jpg','dc99e3_a9617563901547d193dc489d268fbbba~mv2.jpg','dc99e3_91ff7bafaf814267b80d6ccf2dc26530~mv2.jpg','dc99e3_22f63b800f1f4e2b80612f204ac3f0a7~mv2.jpg'];
+const udonImgs = ['dc99e3_61d71d0c35ce4960b7a45caca9638021~mv2.jpg','dc99e3_de06f507e6d240efb10b585609ba56e5~mv2.jpg','dc99e3_efd5f7250cae4695b464b1113e3d8c58~mv2.jpg','dc99e3_10ecd0560efa455eb02b8cc2fe028b3b~mv2.jpg','dc99e3_51760e0d391442e5a3cd09eb8e90688f~mv2.jpg','dc99e3_42160739030244189fa278f1f3ebe90a~mv2.jpg','dc99e3_6ee1e6825fd545d8a183b60e222c501d~mv2.jpg'];
+export function SushiPage() { return <Shell className="fnb-page"><FnbHero /><SideRail items={fnbRail} active="스시준" /><section className="restaurant-page"><img className="restaurant-logo sushi-logo" src="https://static.wixstatic.com/media/dc99e3_8cd41ebb0cc141fe8403f613aeccb6e2~mv2.png/v1/fill/w_438,h_482,al_c,q_85,enc_avif,quality_auto/sushijun.png" alt="스시준" /><h1>한 접시의 정성으로 브랜드의 깊이를 전하는 곳</h1><p>공덕역 뒷골목에서 시작하여 14년 경력의 셰프가 이끌어온 스시준,<br />글로우업리즈 사옥에서 새롭게 출발합니다.</p><h3>Chef. 이준엽</h3><p>매일 새벽 직접 선별한 재료와 정교한 손길로 완성된 오마카세는 단순한 식사를 넘어 깊은 신뢰를 쌓아왔습니다. 단골들의 오랜 재방문과 찬사는 스시준이 하나의 브랜드로 자리 잡은 이유입니다.<br /><br />지금, 스시준은 우리 글로우업리즈를 대표하는 하이퀄리티 F&B 오마카세 브랜드입니다.</p><ImageGrid ids={sushiImgs} square={false} /><h2>스시준 성수</h2><StoreInfo items={[['주소','서울 성동구 연무장19길 6, RIZZ'],['예약타임','런치 - 12:00, 13:30  |  디너 - 18:00, 20:00'],['영업시간','10:00 - 21:00 (매주 월요일 정기 휴무)'],['브레이크 타임','15:00 - 17:00'],['전화번호','02-2205-4889']]} inner /><a className="reserve" href="tel:0222054889">예약하기</a></section></Shell>; }
+export function UdonPage() { return <Shell className="fnb-page"><FnbHero /><SideRail items={fnbRail} active="에끼우동" /><section className="restaurant-page"><img className="restaurant-logo udon-logo" src="https://static.wixstatic.com/media/dc99e3_e22f6a046abe404ebf1af122aacda996~mv2.png/v1/fill/w_716,h_202,al_c,q_85,enc_avif,quality_auto/ekiudon.png" alt="에끼우동" /><h1>간판만 있는 식당이 아닌, 브랜드가 살아있는 공간</h1><p>단순하지만 깊은 맛, 우동 본질에 대한 진심이 담긴 한 그릇이 짧은 시간 수많은 재방문과 따뜻한 고객 리뷰로 진정성을 증명했습니다.<br /><br />그 깊이를 고스란히 담아낼 공간까지 직접 설계했고, 직접 기획한 브랜드를 우리의 사옥에 품어 고객이 오롯이 보고, 느끼고, 경험할 수 있도록 준비했습니다.</p><ImageGrid ids={udonImgs} square /><h2>성수 에끼우동</h2><StoreInfo items={[['주소','서울 성동구 연무장19길 6, RIZZ'],['영업시간','10:00 - 21:00'],['브레이크타임','15:00 - 17:00'],['라스트오더','20:30']]} inner /></section></Shell>; }
+function ImageGrid({ ids, square }: { ids: string[]; square: boolean }) { return <div className={`restaurant-grid ${square ? 'square' : ''}`}>{ids.map(id=><img key={id} src={`https://static.wixstatic.com/media/${id}/v1/fill/w_526,h_${square?'526':'434'},al_c,q_85,enc_avif,quality_auto/food.jpg`} alt="" />)}</div>; }
+function StoreInfo({ items, inner = false }: { items: readonly (readonly [string,string])[]; inner?: boolean }) { return <section className={inner ? 'store-info inner' : 'store-info'}>{items.map(([label,value])=><div key={label}><b>{label}</b><span>{value}</span></div>)}</section>; }
+
+export function NewsPage() { return <NewsListing title="NEWS" items={news} images={newsImages} featured />; }
+const oldNews = [
+  ['글로우업리즈, 2025 상반기 매출 90억 돌파…전년 대비 300% 성장','25.07.24'],['글로우업리즈, 상반기 매출 300% 성장… 콘텐츠 기반 비즈니스 모델로 주목','25.07.24'],['글로우업리즈, 2025 상반기 매출 300% 성장세 기록','25.07.24'],['글로우업리즈, 2025 서울 중소기업인대회서 중소벤처기업부 장관상 수상','25.07.08'],['글로우업리즈, 크리에이터들과 워크샵 성료','25.07.07'],['글로우업리즈 유튜브 채널 ‘채널주인부재중’, 8년 만의 첫 팬미팅 성료','25.06.20'],['글로우업리즈, 성수동 사옥에서 크리에이터 네트워킹 파티 개최','25.05.22'],['글로우업리즈, 전 부문 대규모 인재 채용… PD·MD·경영지원 등 핵심 인력 확보 나서','25.05.09'],['글로우업리즈, 1분기 실적 순항··· 크리에이터 커머스 비즈니스 안정화','25.04.11'],['글로우업리즈, 토스페이와 협업해 2030 타겟팅 강화…YOGO 성장 가속화','25.04.02'],['글로우업리즈, 중기부 벤처기업 인증 획득','25.03.28'],['글로우업리즈, 커머스 비즈니스 본격 확장… 4월 밀키트 출시 예정','25.03.21'],['글로우업리즈, 중소벤처기업부 ‘메인비즈’ 인증 획득','25.03.18'],["MCN 기업 '글로우업리즈', 유탑호텔과 MOU 체결… 지역 관광 활성화 박차",'25.03.17'],['글로우업리즈, 크리에이터 성장 지원 위한 대규모 인재 채용 실시','25.03.12'],['크리에이터 비즈니스 기업 글로우업리즈, 온누리 스토어와 MOU 체결','25.03.06'],['글로우업리즈·세인트존스 호텔, 전략적 업무협약 체결','25.02.28'],["MCN 기업 '글로우업리즈', 리브랜딩하고 올해 500억 매출 비전 발표",'25.02.21'],
+] as const;
+const oldNewsIds = ['dc99e3_b28bfe85f18b4b5886b5714bd9aa5f29~mv2.jpg','dc99e3_c3038f8459334933a0f912c5ce0fd983~mv2.jpg','dc99e3_929ecc481b2d43069a027ade33690eee~mv2.jpg','dc99e3_f087f44c1d6f49abae61f6abcf6f8e28~mv2.jpg','dc99e3_d411eb74c94a40a68102c2eb683d4ec6~mv2.jpg','dc99e3_0a2f9cc26309489dba687d7e6e363717~mv2.jpg','dc99e3_a893e49271a544f18b4f8be96006898d~mv2.jpg','dc99e3_8aa55effa7e64ef29a4156821bab1075~mv2.jpg','dc99e3_d69840cee1f0485b86c14685018ef0ad~mv2.jpg','dc99e3_88345f7073324075a80d7fd357262752~mv2.jpg','dc99e3_7dbfcdeeed29482299241b2e89af885a~mv2.jpg','dc99e3_90d5103d831d4ccabe2591eec19cc2e4~mv2.jpg','dc99e3_501b1899937340a681f52ff1536191a7~mv2.jpg','dc99e3_a78ccab06a164ebd8ecfd8921ccfea02~mv2.jpg','dc99e3_ddc6106e4fed463d87452ddad6a2df68~mv2.jpg','dc99e3_009b49a870154cabac5c7673a00d8df8~mv2.jpg','dc99e3_eb3bc1d48f7f48ca9cc5e89bfe19e9cf~mv2.jpg','dc99e3_c6f33ed5a2db441dab5854613c09fee3~mv2.jpg'];
+export function OldNewsPage() { const imgs=oldNewsIds.map(id=>`https://static.wixstatic.com/media/${id}/v1/fill/w_690,h_420,al_c,q_85,enc_avif,quality_auto/news.jpg`); return <NewsListing title="NEWS" items={oldNews} images={imgs} featured />; }
+function NewsListing({ title, items, images, featured = false }: { title: string; items: readonly (readonly [string,string])[]; images: readonly string[]; featured?: boolean }) {
+  const lead='https://static.wixstatic.com/media/dc99e3_0a2f9cc26309489dba687d7e6e363717~mv2.jpg/v1/crop/x_0,y_1552,w_3024,h_1210/fill/w_1214,h_486,al_c,q_85,enc_avif,quality_auto/news.jpg';
+  return <Shell className="news-page"><section className="page-title news-title"><h1>{title}</h1><nav><Link className="active" href="/news">NEWS</Link><Link href="/event-1">EVENT</Link></nav></section><section className="news-wrap">{featured&&<article className="news-feature"><img src={lead} alt="Glow Up Rizz event" /><div><h2>{items[0][0]}</h2><time>{items[0][1]}</time></div></article>}<div className="news-grid">{items.map(([itemTitle,date],i)=><article key={`${date}-${i}`}><img src={images[i%images.length]} alt="" /><h2>{itemTitle}</h2><time>{date}</time></article>)}</div></section></Shell>;
 }
 
-export function CareerPage() {
-  const values = [['PROFESSIONAL','자기 분야에서 끊임없이 성장하는 프로'],['LOYALTY','동료와 조직의 성공을 함께 만드는 사람'],['CREATIVE','익숙함을 깨고 새로운 답을 만드는 사람'],['SMART','목표를 명확히 하고 효율적으로 실행하는 사람'],['LEADERSHIP','주도적으로 책임지고 팀을 이끄는 사람']];
-  const ways = ['솔직하고 투명하게 소통합니다.','목표를 향해 빠르게 실행합니다.','서로의 전문성을 존중합니다.','성과와 성장에 집중합니다.'];
-  return <Shell className="career-page"><section className="page-title"><h1>Career</h1></section><section className="career-content"><p className="red-label">QUALIFICATION</p><div className="value-stack">{values.map(([en, ko]) => <article key={en}><h2>{en}</h2><p>{ko}</p></article>)}</div><p className="red-label">HOW WE WORK</p><div className="work-grid">{ways.map((way, i) => <article key={way}><div className={`work-photo work-${i + 1}`} /><p>{way}</p></article>)}</div><p className="red-label">WELFARE</p><div className="benefits">{['자율과 책임','성장 지원','식사 지원','휴가와 리프레시','최신 장비','팀 문화'].map(item => <article key={item}><span>✦</span><b>{item}</b></article>)}</div><p className="red-label">RECRUIT PROCESS</p><div className="recruit-process"><span>01 서류 전형</span><i>→</i><span>02 인터뷰</span><i>→</i><span>03 최종 합격</span></div><div className="career-mail"><h2>JOIN OUR TEAM</h2><a href="mailto:recruit@glowuprizz.com">recruit@glowuprizz.com</a></div></section></Shell>;
-}
+const eventIds = ['dc99e3_f884102e9edf4d37afce23e8b720e712~mv2.jpg','dc99e3_ea26e04cbc2d4cec82176285fe5b895f~mv2.jpg','dc99e3_0e4835938ac54d9f9ef83ea8bdc9027e~mv2.jpg','dc99e3_887b19a7ec184012a166dc08ff4742a3~mv2.jpg','dc99e3_897d307878f741dab39dd415ab87f599~mv2.jpg','dc99e3_5af3d33912be4aa586defd502bc11db1~mv2.jpg','dc99e3_5c005409c0b44b3082c16fbb7bf39d31~mv2.jpg','dc99e3_f831d70e39d6477697f9066f055529fd~mv2.jpg','dc99e3_372020392e244dc1aaf033e8dc7f00b3~mv2.jpg','dc99e3_6b5624b0f6f4436f82e34e5a9c5756c3~mv2.png','dc99e3_9b6198ce92eb497a8a4f77d692c1b467~mv2.png','dc99e3_6bde5f8826454860a8693591cc2bdcdd~mv2.jpg'];
+export function EventPage() { return <Shell className="news-page event-page"><section className="page-title news-title"><h1>EVENT</h1><nav><Link href="/news">NEWS</Link><Link className="active" href="/event-1">EVENT</Link></nav></section><section className="event-feature">{eventIds.slice(0,2).map((id,i)=><article key={id}><img src={`https://static.wixstatic.com/media/${id}/v1/fill/w_1044,h_630,al_c,q_85,enc_avif,quality_auto/event.jpg`} alt="" /><h2>{i?'(2025.05) 크리에이터 네트워킹 파티':'(2025.06) 채널주인부재중 팬미팅'}</h2></article>)}</section><EventGallery title="(2025.06) 채널주인부재중 팬미팅" ids={eventIds.slice(2,8)} /><EventGallery title="(2025.05) 크리에이터 네트워킹 파티" ids={eventIds.slice(8)} /></Shell>; }
+function EventGallery({title,ids}:{title:string;ids:string[]}) {return <section className="event-gallery"><h2>{title}</h2><div>{ids.map(id=><img key={id} src={`https://static.wixstatic.com/media/${id}/v1/fill/w_686,h_658,al_c,q_85,enc_avif,quality_auto/event.jpg`} alt="" />)}</div></section>}
+
+const careerAssets = [
+  ['dc99e3_256a43dd5a8b42eaa8656b40c866e952~mv2.webp','06.webp','981'],['dc99e3_bdad84f8347140c4b2a40215550c5a1a~mv2.webp','08-.webp','1720'],['dc99e3_8ca00f1c93584fa18677d10720d8b8a8~mv2.webp','대지_1.webp','769'],['dc99e3_b5cb159fb4804414bea076ee7a20888c~mv2.webp','09.webp','162'],['dc99e3_e29ba50b4a974d358f259ebfdfd3a31f~mv2.webp','대지_3.webp','236'],
+] as const;
+export function CareerPage() { return <Shell className="career-page"><section className="page-title"><h1>Career</h1></section><section className="career-assets">{careerAssets.map(([id,name,height])=><img key={id} src={`https://static.wixstatic.com/media/${id}/v1/fill/w_688,h_${height},al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/${encodeURIComponent(name)}`} alt="Glow Up Rizz career" />)}</section></Shell>; }
 
 export function ContactPage() {
   const contacts = [['아티스트 지원','artist@glowuprizz.com'],['브랜드/광고 파트너십','partner@glowuprizz.com'],['투자 파트너십','contact@glowuprizz.com'],['언론보도','contact@glowuprizz.com']];
-  return <Shell className="contact-page"><section className="page-title"><h1>CONTACT US</h1></section><section className="contact-wrap"><aside><a href="#email">E-Mail</a><a href="#homepage">Homepage</a></aside><div><section id="email"><h2>E-Mail CONTACT</h2><div className="email-grid">{contacts.map(([label, email]) => <article key={label}><div><span>{label}</span><a href={`mailto:${email}`}>{email}</a></div><CopyButton value={email} /></article>)}</div></section><section id="homepage" className="homepage-contact"><h2>HOMEPAGE CONTACT</h2><form><select defaultValue=""><option value="" disabled>선택하기</option><option>아티스트 지원</option><option>브랜드/광고 파트너십</option><option>투자 파트너십</option><option>언론보도</option></select><div><input placeholder="이름*" /><input placeholder="회사명" /></div><div><input placeholder="연락처 *" /><input type="email" placeholder="이메일" /></div><textarea placeholder="내용*" rows={8} /><button type="button">제출</button></form></section></div></section></Shell>;
+  return <Shell className="contact-page"><section className="page-title"><h1>CONTACT US</h1></section><section className="contact-wrap"><aside><a href="#email">E-Mail</a><a href="#homepage">Homepage</a></aside><div><section id="email"><h2>E-Mail CONTACT</h2><div className="email-grid">{contacts.map(([label,email])=><article key={label}><div><span>{label}</span><a href={`mailto:${email}`}>{email}</a></div><CopyButton value={email} /></article>)}</div></section><section id="homepage" className="homepage-contact"><h2>HOMEPAGE CONTACT</h2><ContactForm /></section></div></section></Shell>;
 }
