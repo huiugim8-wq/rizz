@@ -15,9 +15,15 @@ function Location() {
 
 export function HomePage() {
   const homeArtists = [
-    { ...artists[0], ko: '권기동', en: 'KIDONG' }, { ...artists[1], ko: '핏블리', en: 'FITVELY' }, { ...artists[2], ko: '스윙스', en: 'SWINGS' },
-    { ...artists[3], ko: '기우쌤', en: 'KIUSSAEM' }, { ...artists[4], ko: '깡스타일리스트', en: 'KKANGSTYLIST' }, { ...artists[5], ko: '준우', en: 'JUNWOO' },
-    { ...artists[6], ko: '독고독', en: 'DOGODOG' }, { ...artists[7], ko: '생각없이사는연', en: 'HEEYEON' }, { ...artists[8], ko: '재넌', en: 'JAENUNE' },
+    { ko: '권기동', en: 'KIDONG', image: 'https://static.wixstatic.com/media/dc99e3_076075b1aedd46c7af48df509600e9c7~mv2.jpg/v1/fill/w_780,h_850,fp_0.50_0.14,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EA%B6%8C%EA%B8%B0%EB%8F%99.jpg' },
+    { ko: '핏블리', en: 'FITVELY', image: 'https://static.wixstatic.com/media/dc99e3_b887cc441081414db357dd11971e82c0~mv2.jpg/v1/fill/w_780,h_850,fp_0.50_0.24,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%ED%95%8F%EB%B8%94%EB%A6%AC.jpg' },
+    { ko: '스윙스', en: 'SWINGS', image: 'https://static.wixstatic.com/media/dc99e3_909f471904714993b6739f1cecfe9931~mv2.jpg/v1/fill/w_780,h_850,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/SW_%ED%94%84%EB%A1%9C%ED%95%8420242025.jpg' },
+    { ko: '기우쌤', en: 'KIUSSAEM', image: 'https://static.wixstatic.com/media/dc99e3_505d61ea6f5945adabe3a9427699b25a~mv2.png/v1/fill/w_780,h_850,fp_0.55_0.30,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EA%B8%B0%EC%9A%B0%EC%8C%A4.png' },
+    { ko: '깡스타일리스트', en: 'KKANGSTYLIST', image: 'https://static.wixstatic.com/media/dc99e3_c280a72a03f24fc9868642891659f9ed~mv2.jpg/v1/fill/w_780,h_850,fp_0.43_0.19,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EA%B9%A1%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A6%AC%EC%8A%A4%ED%8A%B833.jpg' },
+    { ko: '준우', en: 'JUNWOO', image: 'https://static.wixstatic.com/media/dc99e3_fd9065d33e7f42149186b24af688c710~mv2.jpg/v1/fill/w_780,h_850,fp_0.50_0.25,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%A4%80%EC%9A%B0.jpg' },
+    { ko: '독고독', en: 'DOGODOG', image: 'https://static.wixstatic.com/media/dc99e3_1bc570c7892d44c68be2a694000a8aa1~mv2.jpg/v1/fill/w_780,h_850,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%82%B4%EB%B9%BC%EC%A1%B0%ED%99%95%EC%9E%A5.jpg' },
+    { ko: '생각없이사는연', en: 'HEEYEON', image: 'https://static.wixstatic.com/media/dc99e3_88ed578bcf25409a8a1b037012929784~mv2.jpg/v1/fill/w_780,h_850,fp_0.49_0.27,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%8B%A0%EC%A7%80%EB%8B%883.jpg' },
+    { ko: '재넌', en: 'JAENUNE', image: 'https://static.wixstatic.com/media/dc99e3_bbaf58ac05f1467d8643bbf95911412d~mv2.jpg/v1/fill/w_780,h_850,fp_0.47_0.28,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EB%A7%A4%EB%93%9C%EB%B8%8C%EB%A1%9C.jpg' },
   ];
   return <Shell className="home-page">
     <section className="home-hero" style={{ backgroundImage: `url(${homeHero})` }}><div><h1>GLOW UP</h1><p>매력을 지속 가능한 가치로</p></div></section>
