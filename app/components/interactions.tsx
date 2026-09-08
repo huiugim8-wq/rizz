@@ -46,8 +46,7 @@ export function OfficeGallery({ images }: { images: string[] }) {
   const [current, setCurrent] = useState(0);
   const next = () => setCurrent(value => (value + 1) % images.length);
   return <div className="office-gallery">
-    <div className="office-main"><img key={images[current]} src={images[current]} alt={`Glow Up Rizz office ${current + 1}`} /><button type="button" onClick={next} aria-label="Next office image">→</button></div>
-    <div className="office-thumbs">{images.slice(0, 5).map((src, index) => <button type="button" onClick={() => setCurrent(index)} className={index === current ? 'active' : ''} key={src}><img src={src} alt={`Office thumbnail ${index + 1}`} /></button>)}</div>
+    <div className="office-main"><div className="office-track" style={{ '--office-index': current } as React.CSSProperties}>{images.map((src, index) => <img src={src} alt={`Glow Up Rizz office ${index + 1}`} key={src} />)}</div><button type="button" onClick={next} aria-label="Next office image">→</button></div>
   </div>;
 }
 

@@ -1,7 +1,7 @@
 export const homeHero = 'https://static.wixstatic.com/media/dc99e3_78885fede7d046068769be5ce302a3a2~mv2.jpg/v1/fill/w_1280,h_486,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%95%84%ED%8A%B8%EB%B3%B4%EB%93%9C%202%20%EB%B3%B5%EC%82%AC.jpg';
-export const aboutHero = 'https://static.wixstatic.com/media/dc99e3_035ddfe6408f40d6bfe2a7dd4501064f~mv2.jpg/v1/fill/w_1280,h_304,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/dc99e3_035ddfe6408f40d6bfe2a7dd4501064f~mv2.jpg';
-export const mcnHero = 'https://static.wixstatic.com/media/dc99e3_663f6c8b1753466d8de0de3facf5485b~mv2.jpg/v1/fill/w_1280,h_324,fp_0.48_0.37,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/dc99e3_663f6c8b1753466d8de0de3facf5485b~mv2.jpg';
-export const commerceHero = 'https://static.wixstatic.com/media/dc99e3_c1b2ac9a73db4ad9a0e2b93d2ac62ecf~mv2.avif/v1/fill/w_1280,h_324,al_c,q_85,enc_avif,quality_auto/dc99e3_c1b2ac9a73db4ad9a0e2b93d2ac62ecf~mv2.avif';
+export const aboutHero = 'https://static.wixstatic.com/media/dc99e3_035ddfe6408f40d6bfe2a7dd4501064f~mv2.jpg';
+export const mcnHero = 'https://static.wixstatic.com/media/dc99e3_663f6c8b1753466d8de0de3facf5485b~mv2.jpg';
+export const commerceHero = 'https://static.wixstatic.com/media/dc99e3_c1b2ac9a73db4ad9a0e2b93d2ac62ecf~mv2.avif';
 
 export const business = [
   ['MCN', '크리에이터를 위한\n맞춤형 프로듀싱', '/mcn', 'https://static.wixstatic.com/media/dc99e3_02943c1c249f4902b98c42772136a884~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/abstract-colorful-lights.jpg'],
@@ -14,10 +14,54 @@ export const business = [
 const artistImages = [
   'dc99e3_36e8602e095a45c2bca2994f3c5557b9~mv2.jpg','dc99e3_b887cc441081414db357dd11971e82c0~mv2.jpg','dc99e3_909f471904714993b6739f1cecfe9931~mv2.jpg','dc99e3_87ef7b7675204ec1953cff841b2f106d~mv2.png','dc99e3_453196501d8a4e46b349c588a515cfa4~mv2.jpg','dc99e3_fd9065d33e7f42149186b24af688c710~mv2.jpg','dc99e3_1b831f4d3e3441d2ad117eaf93837bc8~mv2.jpg','dc99e3_f9f94fd346f34f1093178a36dae4d15e~mv2.jpg','dc99e3_6f9f28b5f1674c868f5e7c01519b0b07~mv2.jpg','dc99e3_7fcd56bb7fba480889fc8e54f240ecea~mv2.png','dc99e3_b3313e589b994f5f86d5afe4332c2f96~mv2.jpg','dc99e3_7f50af1e91ee499e9911770625857856~mv2.jpg','dc99e3_f1447e50f5644860a8001c007a630863~mv2.jpg','dc99e3_c0ab015ed211413c84c7d4912bd0a454~mv2.jpg','dc99e3_1637ce9084b9406d8ce5c347e599549f~mv2.jpg','dc99e3_11287026b01c4d6cb80e4d8f77493ed7~mv2.jpg','dc99e3_ffbdee9346a74c18ba0f57dd107b2fea~mv2.jpg','dc99e3_49ba06d1d7104c97b17e330e2aa5ab9c~mv2.jpg','dc99e3_d6ac3b7e6bee475cb9e3356a7c9ae761~mv2.jpg','dc99e3_910a1f1d693c4ab58d21ea41b8a09d5d~mv2.jpg','dc99e3_83c924fbeed7466fa7474392c47fe0a6~mv2.png','dc99e3_fb1cedad553f41fe90fd785df68136b8~mv2.jpg','dc99e3_a7e5aad484e2469d80542c1d95d2044c~mv2.jpg','dc99e3_d8942c431bd04225a790ddfd13a424ea~mv2.jpg','dc99e3_ed4fa30f8db6499b8b6901d364ae7369~mv2.jpg','dc99e3_5208239a169141a4b8f4068e4597c9fd~mv2.jpg','dc99e3_d1150d278fe14ebe99f7929e577fd1ca~mv2.jpg','dc99e3_3c824ad18bb0480bb9470f4cd6e45126~mv2.jpg','dc99e3_2e02b62a24f540cca40a9159f04f2b8e~mv2.jpg','dc99e3_d07734e8218644da978c6890471e6f0d~mv2.jpg','dc99e3_04e139e6fb6448e68c7fca0675f6cb4a~mv2.jpg','dc99e3_a9f755ff418c4f7981e1aa2e9cdfa1fa~mv2.jpg','a3e44e_7e2ab8e90b514b89aea1ad6c80276792~mv2.jpeg','dc99e3_7bc6f080aa724d0dbf0ac918b52b92c5~mv2.jpg','dc99e3_3fb9e0d6c3eb4e7db509eeb6993fb45d~mv2.jpg','dc99e3_df80017f434642b2a433c49b3912c162~mv2.jpg','dc99e3_9e5f0e147d0848a49966cf47ba7b1d6b~mv2.jpg',
 ];
+const artistImageCrops = [
+  'crop/x_12,y_42,w_1137,h_1315/fill/w_816,h_969,fp_0.50_0.50,q_80',
+  'fill/w_816,h_969,fp_0.50_0.24,q_80',
+  'fill/w_816,h_969,al_c,q_80',
+  'fill/w_816,h_969,fp_0.55_0.30,q_85',
+  'fill/w_816,h_969,fp_0.43_0.19,q_80',
+  'fill/w_816,h_969,fp_0.50_0.25,q_80',
+  'fill/w_816,h_969,al_c,q_80',
+  'fill/w_816,h_969,fp_0.48_0.27,q_80',
+  'fill/w_816,h_969,fp_0.48_0.22,q_80',
+  'fill/w_816,h_969,fp_0.45_0.31,q_85',
+  'fill/w_816,h_969,fp_0.62_0.28,q_80',
+  'fill/w_816,h_969,fp_0.52_0.23,q_80',
+  'fill/w_816,h_969,fp_0.51_0.22,q_80',
+  'fill/w_816,h_969,fp_0.53_0.26,q_80',
+  'fill/w_816,h_969,fp_0.50_0.13,q_80',
+  'fill/w_816,h_969,fp_0.48_0.31,q_80',
+  'fill/w_816,h_969,fp_0.45_0.36,q_80',
+  'fill/w_816,h_969,fp_0.60_0.24,q_80',
+  'fill/w_816,h_969,fp_0.46_0.28,q_80',
+  'fill/w_816,h_969,fp_0.44_0.25,q_80',
+  'fill/w_816,h_969,fp_0.47_0.33,q_85',
+  'fill/w_816,h_969,fp_0.50_0.16,q_80',
+  'crop/x_0,y_382,w_3840,h_4442/fill/w_816,h_969,fp_0.50_0.50,q_80',
+  'crop/x_68,y_22,w_737,h_852/fill/w_816,h_969,fp_0.50_0.50,q_80',
+  'fill/w_816,h_969,fp_0.42_0.36,q_80',
+  'fill/w_816,h_969,fp_0.42_0.33,q_80',
+  'fill/w_816,h_969,fp_0.46_0.31,q_80',
+  'fill/w_816,h_969,fp_0.51_0.29,q_80',
+  'fill/w_816,h_969,fp_0.46_0.15,q_80',
+  'fill/w_816,h_969,fp_0.47_0.29,q_80',
+  'fill/w_816,h_969,al_c,q_80',
+  'fill/w_816,h_969,fp_0.48_0.19,q_80',
+  'fill/w_816,h_969,fp_0.50_0.24,q_80',
+  'fill/w_816,h_969,fp_0.47_0.26,q_80',
+  'fill/w_816,h_969,fp_0.49_0.15,q_80',
+  'fill/w_816,h_969,al_c,q_80',
+  'fill/w_816,h_969,fp_0.48_0.26,q_80',
+];
 const artistInfo = [
   ['권기동','KIDONG','1.17M'],['핏블리','FITVELY','1.43M'],['스윙스','SWINGS','218K'],['기우쌤','KIUSSAEM','1.6M'],['깡스타일리스트','KKANGSTYLIST','1.17M'],['준우','JUNWOO','1.43M'],['살빼조','SALPPAEJO','453K'],['비타민신지니','JINY','1.3M'],['매드브로','MADBRO','521K'],['애주가참PD','CHAMPD','1.51M'],['매일제히','JEHEE','343K'],['심장에박현서','HYUNSEO','318K'],['생각없이사는연','HEEYEON','140K'],['예보링','YEBORING','346K'],['정재열','JAEYEOL','1.17M'],['권아린','ARIN','184K'],['유준호','JUNHO','1.12M'],['모찌','MOCHI','307K'],['재넌','JAENUNE','1.08M'],['심아윤','AYOON','206K'],['섭이는못말려','WOONAM','967K'],['권별','BYEOL','164K'],['제이제이','JAYJAY','840K'],['형바디','JUHYEON','131K'],['독고독','DOGODOG','648K'],['유경몬','YOOKYUNG','126K'],['최혜성','HYESEONG','332K'],['최수정','SUJEONG','96K'],['김승배','SEUNGBAE','263K'],['유지혜','JIHYE','88K'],['잡학게티','JAPHAKGETTI','157K'],['박아진','AJIN','67K'],['호텔사장 기먼성','HUNSUNG','106K'],['데알남','DATEALNAM','95K'],['미지수','JISOO','36K'],['하루다인','DAIN','18K'],['휘또','PHYTO','1.99K'],
 ];
-export const artists = artistInfo.map((item, index) => ({ ko: item[0], en: item[1], followers: item[2], image: `https://static.wixstatic.com/media/${artistImages[index]}/v1/fill/w_600,h_712,al_c,q_85,enc_avif,quality_auto/${artistImages[index]}` }));
+export const artists = artistInfo.map((item, index) => ({
+  ko: item[0],
+  en: item[1],
+  followers: item[2],
+  image: `https://static.wixstatic.com/media/${artistImages[index]}/v1/${artistImageCrops[index]},usm_0.66_1.00_0.01,enc_avif,quality_auto/${artistImages[index]}`,
+}));
 
 export const milestones = [
   ['2025   MAR','경영혁신형 중소기업인\n메인비즈 & 벤처기업 인증 획득'],['2024   NOV','GLOW UP RIZZ INC. 리브랜딩'],['2024   OCT','성수동 사옥 매입'],['2024   SEP','YOGO 누적 거래액 200억 돌파'],['2024   APR','100억 매출 돌파'],['2024   MAR','자체제작 유튜브 11개 채널 운영'],['2024   FEB','YOGO 플랫폼 런칭'],['2024   JAN','벤처 혁신 성장형 인증'],['2020   MAR','(주)플랫폼구사삼 사명 변경'],['2019   JAN','(주)핫도그미디어 법인 설립'],
@@ -30,4 +74,5 @@ export const news = [
 ] as const;
 export const newsImages = [
   'dc99e3_ea7b2fbd559c4390a0d7b4c089c2abe9~mv2.jpg','dc99e3_c15eaaa487ca433091c13015e0e40341~mv2.png','dc99e3_5b51437d47bb4b43bc0a0d6362e2d9f3~mv2.jpg','dc99e3_f7a5ba748a5b4671882533f63204d2d5~mv2.jpg','dc99e3_14a4a00cd30c4db0ba604c59c43a7d3d~mv2.png','dc99e3_39897b302b3041698c3b9626afe10e4d~mv2.png','dc99e3_ef950518ca90409a847903f851dbf98a~mv2.png','dc99e3_8021dd6cc3da4e088aa3c864ff7af05d~mv2.jpg','dc99e3_fc188518f73e437c81cfbfefa114726f~mv2.jpg',
-].map(id => `https://static.wixstatic.com/media/${id}/v1/fill/w_700,h_426,al_c,q_85,enc_avif,quality_auto/${id}`);
+  'dc99e3_1d89db727b004b709df187cc405b9870~mv2.jpg','dc99e3_1fb85a339cdb4fc69178a18acee8703f~mv2.png','dc99e3_b28bfe85f18b4b5886b5714bd9aa5f29~mv2.jpg','dc99e3_c3038f8459334933a0f912c5ce0fd983~mv2.jpg','dc99e3_929ecc481b2d43069a027ade33690eee~mv2.jpg','dc99e3_f087f44c1d6f49abae61f6abcf6f8e28~mv2.jpg','dc99e3_d411eb74c94a40a68102c2eb683d4ec6~mv2.jpg','dc99e3_0a2f9cc26309489dba687d7e6e363717~mv2.jpg','dc99e3_a893e49271a544f18b4f8be96006898d~mv2.jpg','dc99e3_8aa55effa7e64ef29a4156821bab1075~mv2.jpg','dc99e3_d69840cee1f0485b86c14685018ef0ad~mv2.jpg','dc99e3_88345f7073324075a80d7fd357262752~mv2.jpg','dc99e3_7dbfcdeeed29482299241b2e89af885a~mv2.jpg','dc99e3_90d5103d831d4ccabe2591eec19cc2e4~mv2.jpg','dc99e3_501b1899937340a681f52ff1536191a7~mv2.jpg','dc99e3_a78ccab06a164ebd8ecfd8921ccfea02~mv2.jpg','dc99e3_ddc6106e4fed463d87452ddad6a2df68~mv2.jpg','dc99e3_009b49a870154cabac5c7673a00d8df8~mv2.jpg','dc99e3_eb3bc1d48f7f48ca9cc5e89bfe19e9cf~mv2.jpg','dc99e3_c6f33ed5a2db441dab5854613c09fee3~mv2.jpg',
+].map((id,index) => `https://static.wixstatic.com/media/${id}/v1/fill/w_700,h_426,${['al_c','al_c','fp_0.48_0.33','fp_0.57_0.30','al_c','fp_0.48_0.45','fp_0.53_0.24'][index] || 'al_c'},q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/${id}`);

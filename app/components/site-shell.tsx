@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const navigation = [
   ['About Us', '/aboutus'], ['MCN', '/mcn'], ['Commerce', '/commerce'],
-  ['Academy', '/academy'], ['Property', '/property'], ['F&B', '/seogyodak'],
+  ['Academy', '/academy'], ['Property', '/property'], ['F&B', '/seogyodak-2'],
   ['Community', '/news'], ['Career', '/career'],
 ] as const;
 
@@ -20,7 +20,7 @@ export function SiteHeader() {
   const active = (href: string) => pathname === href ||
     (href === '/mcn' && ['/management', '/voice-artist'].includes(pathname)) ||
     (href === '/commerce' && ['/partners', '/reference', '/voice-brand'].includes(pathname)) ||
-    (href === '/seogyodak' && ['/sushijun-1', '/ekiudon-1'].includes(pathname)) ||
+    (href === '/seogyodak-2' && ['/seogyodak', '/sushijun-1', '/ekiudon-1'].includes(pathname)) ||
     (href === '/news' && ['/news-2', '/event-1'].includes(pathname));
   return (
     <header className="site-header">
