@@ -18,52 +18,70 @@
   border-color: #111;
 }
 
-.hero {
+.film {
+  --title-opacity: 1;
+  --title-shift: 0px;
+  --copy-opacity: 0;
+  --copy-shift: 38px;
+  --outro-opacity: 0;
+  --outro-shift: 34px;
+  --media-scale: 1;
+  --film-dim: 0.12;
   position: relative;
-  min-height: calc(100svh - 88px);
-  overflow: hidden;
-  color: #fff;
-  background: #c83540;
+  height: 300svh;
+  background: #111;
 }
 
-.heroVisual,
-.heroVisual > div {
+.filmSticky {
+  position: sticky;
+  top: 88px;
+  height: calc(100svh - 88px);
+  overflow: hidden;
+  color: #fff;
+  background: #171717;
+}
+
+.filmVideo,
+.filmDim,
+.filmCanvas {
   position: absolute;
   inset: 0;
 }
 
-.heroVisual {
-  display: grid;
-  place-items: center;
-}
-
-.heroVisual img {
+.filmVideo {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  animation: heroImageIn 650ms ease both;
+  object-fit: cover;
+  transform: scale(var(--media-scale));
+  transform-origin: center;
+  transition: transform 80ms linear;
 }
 
-@keyframes heroImageIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+.filmDim {
+  z-index: 1;
+  background: rgba(9, 7, 8, var(--film-dim));
 }
 
-.heroVisual > div {
-  background: linear-gradient(180deg, transparent 42%, rgba(18, 0, 2, 0.35));
-}
-
-.eyebrow,
-.heroCaption,
-.hero h1,
-.heroArrow,
-.heroCount,
-.scrollCue {
-  position: absolute;
+.filmCanvas {
   z-index: 2;
+  width: 100%;
+  height: 100%;
+  opacity: 0.78;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
-.eyebrow {
+.filmEyebrow,
+.filmTitle,
+.filmCopy,
+.filmOutro,
+.filmScroll {
+  position: absolute;
+  z-index: 3;
+}
+
+.filmEyebrow {
   top: 34px;
   left: 3vw;
   margin: 0;
@@ -71,58 +89,87 @@
   letter-spacing: 0.18em;
 }
 
-.hero h1 {
-  right: 2.5vw;
-  bottom: 26px;
-  left: 2.5vw;
+.filmTitle {
+  top: 5.5%;
+  right: 1.8vw;
+  left: 1.8vw;
   margin: 0;
-  font: 900 clamp(78px, 13vw, 220px) / 0.78 Arial Black, Arial, sans-serif;
-  letter-spacing: -0.085em;
-  white-space: nowrap;
+  font: 900 clamp(88px, 12.6vw, 238px) / 0.76 Arial Black, Arial, sans-serif;
+  letter-spacing: -0.09em;
+  opacity: var(--title-opacity);
+  transform: translate3d(0, var(--title-shift), 0);
+  transition: opacity 80ms linear, transform 80ms linear;
 }
 
-.heroCaption {
-  right: 0;
-  bottom: 20px;
-  left: 0;
-  margin: 0;
-  text-align: center;
-  font: 700 9px/1.05 Arial, sans-serif;
+.filmTitle span {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  color: transparent;
+  background: linear-gradient(100deg, #83b9ff 0%, #df9ad8 48%, #ff6859 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
-.heroArrow {
-  right: 3vw;
-  top: 50%;
-  display: grid;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  border: 0;
-  color: #111;
-  background: #fff;
-  place-items: center;
-  font: 24px/1 Arial, sans-serif;
-  cursor: pointer;
-  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+.filmTitle span:last-child {
+  margin-left: 20%;
 }
 
-.heroArrow:hover,
-.heroArrow:focus-visible {
-  color: #fff;
-  background: #111;
-  transform: translateX(5px);
-}
-
-.heroCount {
-  right: 3vw;
-  bottom: 34px;
-  font: 700 10px/1 Arial, sans-serif;
-  letter-spacing: 0.12em;
-}
-
-.scrollCue {
+.filmCopy {
   left: 3vw;
-  bottom: 30px;
+  bottom: 10vh;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) minmax(300px, 1.15fr);
+  align-items: end;
+  width: min(760px, 72vw);
+  gap: 64px;
+  opacity: var(--copy-opacity);
+  transform: translate3d(0, var(--copy-shift), 0);
+  transition: opacity 80ms linear, transform 80ms linear;
+}
+
+.filmCopy p {
+  margin: 0;
+}
+
+.filmCopy p:first-child {
+  font: 900 clamp(24px, 2.2vw, 38px) / 0.95 Arial Black, Arial, sans-serif;
+  letter-spacing: -0.055em;
+}
+
+.filmCopy p:last-child {
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.65;
+}
+
+.filmOutro {
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  opacity: var(--outro-opacity);
+  transform: translate3d(0, var(--outro-shift), 0);
+  transition: opacity 80ms linear, transform 80ms linear;
+}
+
+.filmOutro p {
+  margin: 0;
+  font: 900 clamp(44px, 7.4vw, 132px) / 0.82 Arial Black, Arial, sans-serif;
+  letter-spacing: -0.075em;
+  text-align: center;
+}
+
+.filmOutro p:last-child {
+  color: transparent;
+  background: linear-gradient(90deg, #8fc3ff, #ea9bcf 50%, #ff6958);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.filmScroll {
+  right: 3vw;
+  bottom: 26px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -130,8 +177,15 @@
   letter-spacing: 0.12em;
 }
 
-.scrollCue span {
-  font-size: 16px;
+.filmScroll i {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  place-items: center;
+  font-size: 14px;
+  font-style: normal;
 }
 
 .creators {
@@ -371,38 +425,54 @@
     height: 72px;
   }
 
-  .hero {
-    min-height: calc(100svh - 72px);
+  .filmSticky {
+    top: 72px;
+    height: calc(100svh - 72px);
   }
 
-  .eyebrow {
+  .filmVideo {
+    object-fit: contain;
+  }
+
+  .filmEyebrow {
     left: 16px;
   }
 
-  .hero h1 {
+  .filmTitle {
+    top: 9%;
     right: 16px;
-    bottom: 62px;
     left: 16px;
-    font-size: clamp(57px, 18vw, 92px);
-    line-height: 0.82;
-    white-space: normal;
+    font-size: clamp(57px, 17vw, 92px);
   }
 
-  .heroArrow {
+  .filmTitle span:last-child {
+    margin-left: 0;
+  }
+
+  .filmCopy {
     right: 16px;
-    top: 46%;
-    width: 48px;
-    height: 48px;
-  }
-
-  .heroCount {
-    right: 16px;
-    bottom: 24px;
-  }
-
-  .scrollCue {
+    bottom: 84px;
     left: 16px;
-    bottom: 22px;
+    grid-template-columns: 1fr;
+    width: auto;
+    gap: 22px;
+  }
+
+  .filmCopy p:first-child {
+    font-size: 27px;
+  }
+
+  .filmCopy p:last-child {
+    font-size: 14px;
+  }
+
+  .filmOutro p {
+    font-size: clamp(42px, 13vw, 74px);
+  }
+
+  .filmScroll {
+    right: 16px;
+    bottom: 18px;
   }
 
   .creators {
@@ -491,8 +561,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroVisual img {
-    animation: none;
+  .filmVideo {
+    transform: none;
   }
 
   .creatorOverlay {
