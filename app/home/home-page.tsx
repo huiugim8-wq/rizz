@@ -1,7 +1,17 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { Shell } from '../components/site-shell';
-import { featuredCreators, homeBusinesses, homeMedia, latestNews, proofMetrics, type HomeBusiness } from './home-content';
+import {
+  businessMediaPanels,
+  featuredCreators,
+  homeBusinesses,
+  homeMedia,
+  homeTeamImage,
+  latestNews,
+  proofMetrics,
+  type HomeBusiness,
+} from './home-content';
+import { ScrollCaption } from './scroll-caption';
 import styles from './home.module.css';
 
 function BusinessPanel({ business, index }: { business: HomeBusiness; index: number }) {
@@ -40,28 +50,30 @@ export default function HomePage() {
       <section
         className={styles.hero}
         aria-labelledby="home-hero-title"
-        style={{ backgroundImage: `url(${homeMedia.poster})` }}
+        data-scroll-reveal-root=""
       >
-        <video
-          className={styles.heroVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={homeMedia.poster}
-          aria-hidden="true"
-        >
-          <source src={homeMedia.film} type="video/mp4" />
-        </video>
-        <div className={styles.heroShade} />
+        <div className={styles.heroMedia} style={{ backgroundImage: `url(${homeMedia.poster})` }}>
+          <video
+            className={styles.heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={homeMedia.poster}
+            aria-hidden="true"
+          >
+            <source src={homeMedia.film} type="video/mp4" />
+          </video>
+          <div className={styles.heroShade} />
+        </div>
         <h1 id="home-hero-title" className={styles.heroTitle}>
           <span>GLOW UP</span><span> RIZZ</span>
         </h1>
-        <div className={styles.heroBottom}>
+        <ScrollCaption className={styles.heroBottom} mode="hero">
           <p>크리에이터의 트래픽을<br />지속 가능한 비즈니스로 전환합니다.</p>
           <Link href="#business">DISCOVER RIZZ <span aria-hidden="true">↗</span></Link>
-        </div>
+        </ScrollCaption>
       </section>
 
       <section className={styles.manifesto} aria-labelledby="manifesto-title">
@@ -116,6 +128,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className={styles.mediaStory} aria-labelledby="media-story-title" data-scroll-reveal-root="">
+        <header className={styles.mediaStoryHeader}>
+          <p>BUSINESS IN MOTION</p>
+          <h2 id="media-story-title">FROM TRAFFIC<br />TO EXPERIENCE</h2>
+        </header>
+        <div className={styles.mediaPanelGrid}>
+          {businessMediaPanels.map((panel) => (
+            <article className={styles.mediaPanel} data-orientation={panel.orientation} key={panel.number}>
+              <header>
+                <span>{panel.number}</span>
+                <h3>{panel.title}</h3>
+              </header>
+              <video autoPlay muted loop playsInline preload="metadata" aria-label={`${panel.title} 사업 영상`}>
+                <source src={panel.src} type="video/mp4" />
+              </video>
+            </article>
+          ))}
+        </div>
+        <ScrollCaption className={styles.mediaCaptions}>
+          {businessMediaPanels.map((panel) => (
+            <div data-orientation={panel.orientation} key={panel.number}>
+              <span>{panel.title}</span>
+              <p>{panel.description}</p>
+            </div>
+          ))}
+        </ScrollCaption>
+      </section>
+
       <section id="business" className={styles.businesses} aria-labelledby="business-title">
         <div className={styles.businessesIntro}>
           <p>ONE CONNECTED PLATFORM</p>
@@ -128,7 +168,7 @@ export default function HomePage() {
       </section>
 
       <section className={styles.declaration} aria-labelledby="declaration-title">
-        <img src={featuredCreators[0].image} alt="크리에이터 권기동" />
+        <img src={homeTeamImage} alt="글로우업리즈 크리에이터와 팀" />
         <div />
         <p>YOU ARE NOT JUST<br />A CREATOR ANYMORE</p>
         <h2 id="declaration-title">매력은 콘텐츠가 되고,<br />콘텐츠는 새로운 산업이 됩니다.</h2>

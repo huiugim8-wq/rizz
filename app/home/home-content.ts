@@ -1,9 +1,35 @@
 import { artists, news, newsImages } from '../data';
 
 export const homeMedia = {
-  film: '/video/rizz-youtube-showreel/rizz-history-film-v8.mp4',
-  poster: '/video/rizz-youtube-showreel/rizz-history-film-v8-poster.jpg',
+  film: '/video/glowup-rizz-hero-concept.mp4',
+  poster: '/video/glowup-rizz-hero-concept-poster.jpg',
 } as const;
+
+export const businessMediaPanels = [
+  {
+    number: '01',
+    title: 'YOGO',
+    description: '크리에이터의 영향력을 구매 경험으로 연결합니다.',
+    src: '/video/rizz-youtube-showreel/sources/c4QeB2sbcqQ.mp4',
+    orientation: 'portrait',
+  },
+  {
+    number: '02',
+    title: 'ADVERTISING',
+    description: '콘텐츠의 언어로 브랜드를 더 선명하게 전달합니다.',
+    src: '/video/rizz-youtube-showreel/sources/ceAGmbifyDM.mp4',
+    orientation: 'portrait',
+  },
+  {
+    number: '03',
+    title: 'HOTEL',
+    description: '온라인에서 쌓은 취향을 실제 경험과 공간으로 확장합니다.',
+    src: homeMedia.film,
+    orientation: 'landscape',
+  },
+] as const;
+
+export const homeTeamImage = '/media/rizz-team-wide.jpg';
 
 export type BusinessTone = 'red' | 'blue' | 'white' | 'charcoal';
 
