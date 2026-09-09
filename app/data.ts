@@ -1,4 +1,3 @@
-export const homeHero = 'https://static.wixstatic.com/media/dc99e3_78885fede7d046068769be5ce302a3a2~mv2.jpg/v1/fill/w_1280,h_486,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%95%84%ED%8A%B8%EB%B3%B4%EB%93%9C%202%20%EB%B3%B5%EC%82%AC.jpg';
 export const mcnHero = 'https://static.wixstatic.com/media/dc99e3_663f6c8b1753466d8de0de3facf5485b~mv2.jpg';
 export const commerceHero = 'https://static.wixstatic.com/media/dc99e3_c1b2ac9a73db4ad9a0e2b93d2ac62ecf~mv2.avif';
 

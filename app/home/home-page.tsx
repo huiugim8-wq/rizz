@@ -1,8 +1,7 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { Shell } from '../components/site-shell';
-import { homeHero } from '../data';
-import { featuredCreators, homeBusinesses, latestNews, proofMetrics, type HomeBusiness } from './home-content';
+import { featuredCreators, homeBusinesses, homeMedia, latestNews, proofMetrics, type HomeBusiness } from './home-content';
 import styles from './home.module.css';
 
 function BusinessPanel({ business, index }: { business: HomeBusiness; index: number }) {
@@ -41,7 +40,7 @@ export default function HomePage() {
       <section
         className={styles.hero}
         aria-labelledby="home-hero-title"
-        style={{ backgroundImage: `url(${homeHero})` }}
+        style={{ backgroundImage: `url(${homeMedia.poster})` }}
       >
         <video
           className={styles.heroVideo}
@@ -50,10 +49,10 @@ export default function HomePage() {
           loop
           playsInline
           preload="metadata"
-          poster={homeHero}
+          poster={homeMedia.poster}
           aria-hidden="true"
         >
-          <source src="/video/glowup-rizz-image-film-v2.mp4" type="video/mp4" />
+          <source src={homeMedia.film} type="video/mp4" />
         </video>
         <div className={styles.heroShade} />
         <h1 id="home-hero-title" className={styles.heroTitle}>

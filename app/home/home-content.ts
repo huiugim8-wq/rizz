@@ -1,5 +1,10 @@
 import { artists, news, newsImages } from '../data';
 
+export const homeMedia = {
+  film: '/video/rizz-youtube-showreel/rizz-history-film-v8.mp4',
+  poster: '/video/rizz-youtube-showreel/rizz-history-film-v8-poster.jpg',
+} as const;
+
 export type BusinessTone = 'red' | 'blue' | 'white' | 'charcoal';
 
 export type HomeBusiness = {
