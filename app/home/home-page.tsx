@@ -58,12 +58,12 @@ export default function HomePage() {
         <div className={styles.heroShade} />
         <p className={styles.heroEyebrow}>CREATOR BUSINESS GROUP · SEOUL</p>
         <h1 id="home-hero-title" className={styles.heroTitle}>
-          <span>BE A</span>
-          <span>CREATOR</span>
+          <span>GLOW UP</span>
+          <span>RIZZ</span>
         </h1>
         <div className={styles.heroBottom}>
           <p>크리에이터의 트래픽을<br />지속 가능한 비즈니스로 전환합니다.</p>
-          <Link href="/aboutus">DISCOVER RIZZ <span aria-hidden="true">↗</span></Link>
+          <Link href="#business">DISCOVER RIZZ <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
@@ -119,7 +119,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.businesses} aria-labelledby="business-title">
+      <section id="business" className={styles.businesses} aria-labelledby="business-title">
         <div className={styles.businessesIntro}>
           <p>ONE CONNECTED PLATFORM</p>
           <h2 id="business-title">OUR BUSINESS</h2>

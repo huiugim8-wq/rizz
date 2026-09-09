@@ -1,65 +1,13 @@
 import Link from 'next/link';
-import { ContactForm, MissionCards, OfficeGallery } from './components/interactions';
+import { ContactForm } from './components/interactions';
 import { CopyButton, Shell } from './components/site-shell';
-import { aboutHero, artists, business, commerceHero, foodImages, mcnHero, milestones, news, newsImages } from './data';
+import { artists, commerceHero, foodImages, mcnHero, news, newsImages } from './data';
 
 type RailItem = readonly [string, string];
 const mcnRail: RailItem[] = [['Artist', '/mcn'], ['Management', '/management'], ['Voice', '/voice-artist']];
 const commerceRail: RailItem[] = [['Commerce', '/commerce'], ['Partners', '/partners'], ['Reference', '/reference'], ['Voice', '/voice-brand']];
 const fnbRail: RailItem[] = [['도그아웃', '/seogyodak'], ['스시준', '/sushijun-1'], ['에끼우동', '/ekiudon-1']];
 const SideRail = ({ items, active }: { items: RailItem[]; active: string }) => <aside className="side-rail">{items.map(([label, href]) => <Link className={label === active ? 'active' : ''} href={href} key={href}>{label}</Link>)}</aside>;
-
-function Location() {
-  return <section className="location-section"><h2>LOCATION</h2><p>서울 성동구 연무장19길 6 RIZZ</p><iframe title="Glow Up Rizz location" loading="lazy" src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%8F%99%EA%B5%AC%20%EC%97%B0%EB%AC%B4%EC%9E%A519%EA%B8%B8%206&output=embed" /></section>;
-}
-
-export function AboutPage() {
-  const directors = [
-    ['권기준 대표', '브랜딩 & 콘텐츠 전략 디렉터', 'a3e44e_bad62282522b4da283dcff636b0aff34~mv2.jpg', '· 연 매출 200억 CEO\n· 유튜브 경력 7년차, 100만 유튜버\n· MCN 설립\n· 보유 유튜브 채널 4개\n· 누적 커머스 430건 이상 진행\n· 컨설팅 크리에이터 26명\n· 10만+ 유튜버 3명 배출'],
-    ['윤승준 부사장', '경영 혁신과 성장 전략을 선도하는 총괄 리더', 'dc99e3_da13bdabd3b442f283378664d025c6b3~mv2.jpg', '· 경영·관리 경력 30년\n· 콘텐츠 관련 HR 14년 경력\n· 재무·회계·세무 전문가\n· 스타트업 관리 시스템 및 전략 구축 경험'],
-    ['문석기 이사', '크리에이터 매니지먼트 아티스트 디렉터', 'dc99e3_9b13b6fb687e41d3a5fbb21b44f35ae0~mv2.jpg', '· 유튜브 채널 운영 6년차, 구독자 143만명\n· 국제트레이너 & 스포츠영양코치\n· 혁신벤처기업 (주)핏블리 대표이사'],
-    ['정재열 본부장', '콘텐츠 전략 총괄 · 채주부 커머스 마케팅 총괄', 'a3e44e_71a4ffdf1a574bfab3b8967edad776e8~mv2.jpg', '· 콘텐츠 기획 및 총괄 디렉팅 경력 7년차\n· 멀티 플랫폼 콘텐츠 기획 3,300편+\n· 대표 기획 콘텐츠 누적 조회수 17억+'],
-    ['최예빈 CD', '콘텐츠 크리에이티브 디렉터', 'dc99e3_c0ab015ed211413c84c7d4912bd0a454~mv2.jpg', '· 크리에이터 예보링\n· 브랜드 콘텐츠 기획 및 제작\n· 크리에이터 성장 컨설팅'],
-    ['이재승 CD', '콘텐츠 크리에이티브 디렉터', 'dc99e3_21f282faeba84a20842414c5d7aa65f4~mv2.jpg', '· 콘텐츠 전략 수립\n· 채널 브랜딩 및 운영\n· 숏폼 콘텐츠 제작'],
-    ['정희용 PD', '콘텐츠 프로듀서', 'dc99e3_51bf5e6a13244312bad1a2cfb5efb89e~mv2.jpg', '· 영상 기획 및 연출\n· 채널 콘텐츠 운영'],
-    ['남승완 CD', '콘텐츠 크리에이티브 디렉터', 'dc99e3_4ca8c054718540d0895804d6beb5670f~mv2.jpg', '· 브랜드 캠페인 기획\n· 콘텐츠 제작 총괄'],
-    ['서영석 Lead', '커머스 콘텐츠 리드', 'dc99e3_2131413b9b1043978fe7f081cbe61408~mv2.jpg', '· 커머스 콘텐츠 전략\n· 프로젝트 리딩'],
-    ['박재영 Lead', '비즈니스 리드', 'dc99e3_66a6cfcf04b1473894707a8f26848905~mv2.jpg', '· 브랜드 파트너십\n· 신규 비즈니스 개발'],
-  ] as const;
-  const directorCrops = [
-    'x_0,y_101,w_841,h_1020',
-    'x_246,y_965,w_2476,h_3002',
-    'x_517,y_342,w_3337,h_4167',
-    'x_0,y_97,w_967,h_1173',
-    'x_0,y_0,w_900,h_1091',
-    'x_525,y_752,w_2166,h_2626',
-    'x_336,y_630,w_2476,h_3002',
-    'x_505,y_1346,w_2040,h_2474',
-    'x_212,y_642,w_2378,h_2884',
-    'x_256,y_939,w_2550,h_3093',
-  ];
-  const directorData = directors.map(([name, role, id, bio], index) => ({
-    name,
-    role,
-    bio,
-    image: `https://static.wixstatic.com/media/${id}/v1/crop/${directorCrops[index]}/fill/w_648,h_808,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/profile.jpg`,
-  }));
-  const officeIds = ['dc99e3_2ec0f17fd5ae4b3fb0676ab6ea602f94~mv2.jpg','dc99e3_29d959e63c1846f38379387436dd14a0~mv2.jpg','dc99e3_3c859fe4bb4c4647bfce399802d51ca6~mv2.jpg','dc99e3_6cf1f02470a14bb29f5d895a70979c1d~mv2.jpg','dc99e3_354ec8d2961f4dc09f8634108a83200d~mv2.jpg','dc99e3_e2b05e9ad3964fd6a26ac9824b5550bf~mv2.jpg','dc99e3_cf789287f5474bd88489f76ac6528b6b~mv2.jpg','dc99e3_52a396fd4da54876a655f7cd5f6665b9~mv2.jpg','dc99e3_7339a960e0ac4d9db38de650c3dda812~mv2.jpg','dc99e3_4a89738f9ab347078df1f1b97ef32c28~mv2.jpg','dc99e3_a6ffa2fe22d04a49ac69f880e94da2ee~mv2.jpg','dc99e3_c5666ed6e37b44ae9de32f9bbcc81de3~mv2.jpg','dc99e3_6b57b3fbc68a42439cfa5cfd8ac2390d~mv2.jpg','dc99e3_e0198164f93a430db6ced853ee132581~mv2.jpg','dc99e3_f94ffab7fabd4b679425986d80ac5c8f~mv2.jpg','dc99e3_f48cf8d4df0e4df79c85d271a3983d26~mv2.jpg','dc99e3_eccdd824fd664be2bfb73e2a7a593303~mv2.jpg','dc99e3_72d1890e67d347d8a91e1d2cd953fcbc~mv2.jpg','dc99e3_044cb10576dc4b3ba98a438edc18037f~mv2.jpg','dc99e3_03bf9ae0d1b04b8e9fd78eb18df4a1a3~mv2.jpg','dc99e3_934de1cf17ee46a59135bd830bcb4264~mv2.jpg','dc99e3_accd717397c64fdcbb545f08dc6844ef~mv2.jpg'];
-  const office = officeIds.map(id => `https://static.wixstatic.com/media/${id}/v1/fill/w_978,h_550,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/${id}`);
-  const missions = [
-    { title: 'OUR MISSION', image: aboutHero, copy: <p>아티스트들의 자유로운 창작활동을<br />지원하지 못한다면 회사는 왜 필요할까요?<br /><br />아티스트를 책임지지 못한다면 MCN이 아닙니다.<br /><br />창작의 자유를 책임지는 MCN<br />그것이 우리의 철학입니다.</p> },
-    { title: 'OUR SLOGAN', image: business[1][3], slogan: true, copy: <p>WE WILL<br /><em>GLOW</em> YOU UP</p> },
-    { title: 'OUR VISION', image: business[3][3], copy: <p>우리는 창의성의 힘을 믿습니다.<br /><br />RIZZ는 모든 아티스트가<br />지속 가능한 가치를 창출하고<br />성공을 새롭게 정의할 기회를 제공합니다.</p> },
-  ];
-  return <Shell className="about-page">
-    <section className="about-hero" style={{ backgroundImage: `url(${aboutHero})` }}><h1>GLOW UP RIZZ</h1><p>우리는 아티스트들의 매력을 더 빛나게 만드는 회사입니다.</p></section>
-    <MissionCards cards={missions} />
-    <section className="directors"><h2>CREATIVE DIRECTORS</h2><div className="director-track">{directorData.map(({ name, role, image, bio }) => <article key={name}><div className="director-photo"><img src={image} alt={name} /><p>{bio}</p></div><h3>{name}</h3><span>{role}</span></article>)}</div></section>
-    <section className="office"><h2>OFFICE BUILDING</h2><OfficeGallery images={office} /></section>
-    <section className="milestones"><h2>MILESTONES</h2>{milestones.map(([date, event]) => <div key={date}><time>{date}</time><p>{event}</p></div>)}</section>
-    <Location />
-  </Shell>;
-}
 
 export function McnPage() {
   return <Shell className="mcn-page"><section className="image-hero" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url(${mcnHero})` }}><h1>GLOW UP ARTIST</h1><p>아티스트가 회사를 통해 돈을 벌지 못하면 MCN이 아닙니다.</p></section><SideRail items={mcnRail} active="Artist" /><section className="artist-list"><h2>RIZZ ARTIST</h2><div className="artist-grid">{artists.map(artist => <article key={artist.en}><div className="artist-photo"><img src={artist.image} alt={artist.ko} /><div className="artist-overlay"><b>{artist.followers}</b><a href="https://www.instagram.com/">INSTAGRAM</a></div></div><h3>{artist.ko}</h3><p>{artist.en}</p></article>)}</div></section></Shell>;

@@ -1,37 +1,6 @@
 'use client';
 
-import { FormEvent, ReactNode, useState } from 'react';
-
-export type Mission = { title: string; copy: ReactNode; image: string; slogan?: boolean };
-
-export function MissionCards({ cards }: { cards: Mission[] }) {
-  const [active, setActive] = useState<number | null>(null);
-  return <section className="belief-grid">
-    {cards.map((card, index) => <article
-      key={card.title}
-      className={active === index ? 'active' : ''}
-      onMouseEnter={() => setActive(index)}
-      onMouseLeave={() => setActive(null)}
-      onFocus={() => setActive(index)}
-      onBlur={() => setActive(null)}
-      onClick={() => setActive(active === index ? null : index)}
-      tabIndex={0}
-      style={{ '--card-image': `url(${card.image})` } as React.CSSProperties}
-    >
-      <span>{card.title.split(' ').map((part, i) => <span key={part}>{i ? <br /> : null}{part}</span>)}</span>
-      <h2>{card.title.split(' ').map((part, i) => <span key={part}>{i ? <br /> : null}{part}</span>)}</h2>
-      <div className={card.slogan ? 'mission-copy slogan' : 'mission-copy'}>{card.copy}</div>
-    </article>)}
-  </section>;
-}
-
-export function OfficeGallery({ images }: { images: string[] }) {
-  const [current, setCurrent] = useState(0);
-  const next = () => setCurrent(value => (value + 1) % images.length);
-  return <div className="office-gallery">
-    <div className="office-main"><div className="office-track" style={{ '--office-index': current } as React.CSSProperties}>{images.map((src, index) => <img src={src} alt={`Glow Up Rizz office ${index + 1}`} key={src} />)}</div><button type="button" onClick={next} aria-label="Next office image">→</button></div>
-  </div>;
-}
+import { FormEvent, useState } from 'react';
 
 export function Carousel({ images, labels }: { images: string[]; labels?: string[] }) {
   const [current, setCurrent] = useState(0);

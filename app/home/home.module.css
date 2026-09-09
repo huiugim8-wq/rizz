@@ -14,10 +14,6 @@
   border-bottom: 1px solid #e7e7e7;
 }
 
-.page :global(.site-logo img) {
-  filter: invert(1);
-}
-
 .page :global(.contact-pill) {
   color: #111;
   border-color: #111;
@@ -678,14 +674,14 @@
 
   .page :global(.site-logo) {
     left: 16px;
-    top: 25px;
-    width: 52px;
-    height: 28px;
+    top: 20px;
+    width: 36px;
+    height: 31px;
   }
 
   .page :global(.site-logo img) {
-    width: 52px;
-    height: 28px;
+    width: 36px;
+    height: 31px;
   }
 
   .hero {

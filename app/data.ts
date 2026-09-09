@@ -1,15 +1,6 @@
 export const homeHero = 'https://static.wixstatic.com/media/dc99e3_78885fede7d046068769be5ce302a3a2~mv2.jpg/v1/fill/w_1280,h_486,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%95%84%ED%8A%B8%EB%B3%B4%EB%93%9C%202%20%EB%B3%B5%EC%82%AC.jpg';
-export const aboutHero = 'https://static.wixstatic.com/media/dc99e3_035ddfe6408f40d6bfe2a7dd4501064f~mv2.jpg';
 export const mcnHero = 'https://static.wixstatic.com/media/dc99e3_663f6c8b1753466d8de0de3facf5485b~mv2.jpg';
 export const commerceHero = 'https://static.wixstatic.com/media/dc99e3_c1b2ac9a73db4ad9a0e2b93d2ac62ecf~mv2.avif';
-
-export const business = [
-  ['MCN', '크리에이터를 위한\n맞춤형 프로듀싱', '/mcn', 'https://static.wixstatic.com/media/dc99e3_02943c1c249f4902b98c42772136a884~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/abstract-colorful-lights.jpg'],
-  ['Commerce', '요고 플랫폼을 통한\n효과적인 브랜드 마케팅', '/commerce', 'https://static.wixstatic.com/media/dc99e3_06135457417d4c0eb02d61b51253dcae~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/film-texture-leaks.jpg'],
-  ['Academy', '실전형 유튜브 교육으로\n차세대 크리에이터 양성', '/academy', 'https://static.wixstatic.com/media/dc99e3_10fa06fc84e6467c8941dd028abdf9a6~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/light-leak-effect-black-mobile-screen-background.jpg'],
-  ['Property', 'Coming soon', '/property', 'https://static.wixstatic.com/media/dc99e3_71918ef172164a4a96528f5f817c62f3~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/prism-dispersing-light-concept.jpg'],
-  ['F&B', '단순한 식당을 넘어,\n감각 있는 식음 브랜드', '/seogyodak', 'https://static.wixstatic.com/media/dc99e3_035ddfe6408f40d6bfe2a7dd4501064f~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/dynamic-bright-lights-prism-effect.jpg'],
-] as const;
 
 const artistImages = [
   'dc99e3_36e8602e095a45c2bca2994f3c5557b9~mv2.jpg','dc99e3_b887cc441081414db357dd11971e82c0~mv2.jpg','dc99e3_909f471904714993b6739f1cecfe9931~mv2.jpg','dc99e3_87ef7b7675204ec1953cff841b2f106d~mv2.png','dc99e3_453196501d8a4e46b349c588a515cfa4~mv2.jpg','dc99e3_fd9065d33e7f42149186b24af688c710~mv2.jpg','dc99e3_1b831f4d3e3441d2ad117eaf93837bc8~mv2.jpg','dc99e3_f9f94fd346f34f1093178a36dae4d15e~mv2.jpg','dc99e3_6f9f28b5f1674c868f5e7c01519b0b07~mv2.jpg','dc99e3_7fcd56bb7fba480889fc8e54f240ecea~mv2.png','dc99e3_b3313e589b994f5f86d5afe4332c2f96~mv2.jpg','dc99e3_7f50af1e91ee499e9911770625857856~mv2.jpg','dc99e3_f1447e50f5644860a8001c007a630863~mv2.jpg','dc99e3_c0ab015ed211413c84c7d4912bd0a454~mv2.jpg','dc99e3_1637ce9084b9406d8ce5c347e599549f~mv2.jpg','dc99e3_11287026b01c4d6cb80e4d8f77493ed7~mv2.jpg','dc99e3_ffbdee9346a74c18ba0f57dd107b2fea~mv2.jpg','dc99e3_49ba06d1d7104c97b17e330e2aa5ab9c~mv2.jpg','dc99e3_d6ac3b7e6bee475cb9e3356a7c9ae761~mv2.jpg','dc99e3_910a1f1d693c4ab58d21ea41b8a09d5d~mv2.jpg','dc99e3_83c924fbeed7466fa7474392c47fe0a6~mv2.png','dc99e3_fb1cedad553f41fe90fd785df68136b8~mv2.jpg','dc99e3_a7e5aad484e2469d80542c1d95d2044c~mv2.jpg','dc99e3_d8942c431bd04225a790ddfd13a424ea~mv2.jpg','dc99e3_ed4fa30f8db6499b8b6901d364ae7369~mv2.jpg','dc99e3_5208239a169141a4b8f4068e4597c9fd~mv2.jpg','dc99e3_d1150d278fe14ebe99f7929e577fd1ca~mv2.jpg','dc99e3_3c824ad18bb0480bb9470f4cd6e45126~mv2.jpg','dc99e3_2e02b62a24f540cca40a9159f04f2b8e~mv2.jpg','dc99e3_d07734e8218644da978c6890471e6f0d~mv2.jpg','dc99e3_04e139e6fb6448e68c7fca0675f6cb4a~mv2.jpg','dc99e3_a9f755ff418c4f7981e1aa2e9cdfa1fa~mv2.jpg','a3e44e_7e2ab8e90b514b89aea1ad6c80276792~mv2.jpeg','dc99e3_7bc6f080aa724d0dbf0ac918b52b92c5~mv2.jpg','dc99e3_3fb9e0d6c3eb4e7db509eeb6993fb45d~mv2.jpg','dc99e3_df80017f434642b2a433c49b3912c162~mv2.jpg','dc99e3_9e5f0e147d0848a49966cf47ba7b1d6b~mv2.jpg',
@@ -62,10 +53,6 @@ export const artists = artistInfo.map((item, index) => ({
   followers: item[2],
   image: `https://static.wixstatic.com/media/${artistImages[index]}/v1/${artistImageCrops[index]},usm_0.66_1.00_0.01,enc_avif,quality_auto/${artistImages[index]}`,
 }));
-
-export const milestones = [
-  ['2025   MAR','경영혁신형 중소기업인\n메인비즈 & 벤처기업 인증 획득'],['2024   NOV','GLOW UP RIZZ INC. 리브랜딩'],['2024   OCT','성수동 사옥 매입'],['2024   SEP','YOGO 누적 거래액 200억 돌파'],['2024   APR','100억 매출 돌파'],['2024   MAR','자체제작 유튜브 11개 채널 운영'],['2024   FEB','YOGO 플랫폼 런칭'],['2024   JAN','벤처 혁신 성장형 인증'],['2020   MAR','(주)플랫폼구사삼 사명 변경'],['2019   JAN','(주)핫도그미디어 법인 설립'],
-] as const;
 
 export const foodImages = ['dc99e3_650f7f3a968e411bb444cf5650c02e58~mv2.jpg','dc99e3_c34d21c049334ad1b9b42229570b0c4c~mv2.jpg','dc99e3_bb1855b21dfb43c48c457ddeef2c3a58~mv2.jpg','dc99e3_40251087e67d464091cbcf267308f00b~mv2.jpg','dc99e3_35254e3d387e4b3c8ccbacddb97e4863~mv2.jpg','dc99e3_58f5782f580d4265a9d3d7d926ff579e~mv2.jpg','dc99e3_24966fb9d52f45b2be12443be19bd960~mv2.png','dc99e3_1910e3f64ec44a4a9c3eaac563626af6~mv2.png','dc99e3_bae55c53f6d64cbcb114bac0949e8d3b~mv2.png','dc99e3_9041d806ae6e4960a0ca8ad883742ff9~mv2.png','dc99e3_fdcf8b53daeb4031b9877b4d78a93b67~mv2.png','dc99e3_5225d708c33c494dbe3b5adc2aa58687~mv2.png'].map(id => `https://static.wixstatic.com/media/${id}/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/${id}`);
 

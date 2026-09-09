@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const navigation = [
-  ['About Us', '/aboutus'], ['MCN', '/mcn'], ['Commerce', '/commerce'],
-  ['Academy', '/academy'], ['Property', '/property'], ['F&B', '/seogyodak-2'],
+  ['MCN', '/mcn'], ['Commerce', '/commerce'], ['Academy', '/academy'],
+  ['Property', '/property'], ['F&B', '/seogyodak-2'],
   ['Community', '/news'], ['Career', '/career'],
 ] as const;
 
@@ -24,7 +24,7 @@ export function SiteHeader() {
     (href === '/news' && ['/news-2', '/event-1'].includes(pathname));
   return (
     <header className="site-header">
-      <Link className="site-logo" href="/" aria-label="Glow Up Rizz home"><img src="/property/logo.png" alt="Glow Up Rizz" /></Link>
+      <Link className="site-logo" href="/" aria-label="Glow Up Rizz home"><img src="/rizz-symbol.png" alt="" /></Link>
       <nav className="desktop-nav" aria-label="Main navigation">
         {navigation.map(([label, href]) => <Link className={active(href) ? 'active' : ''} href={href} key={href}>{label}</Link>)}
       </nav>

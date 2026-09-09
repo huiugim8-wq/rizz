@@ -1,1 +1,5 @@
-export { AboutPage as default } from '../site-pages';
+import { redirect } from 'next/navigation';
+
+export default function AboutPage() {
+  redirect('/');
+}
