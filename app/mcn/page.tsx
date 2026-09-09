@@ -1,1 +1,3 @@
-export { McnPage as default } from '../site-pages';
+import CreatorPage from './creator-page';
+
+export default CreatorPage;
