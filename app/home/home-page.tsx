@@ -56,10 +56,8 @@ export default function HomePage() {
           <source src="/video/glowup-rizz-image-film-v2.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroShade} />
-        <p className={styles.heroEyebrow}>CREATOR BUSINESS GROUP · SEOUL</p>
         <h1 id="home-hero-title" className={styles.heroTitle}>
-          <span>GLOW UP</span>
-          <span>RIZZ</span>
+          <span>GLOW UP</span><span> RIZZ</span>
         </h1>
         <div className={styles.heroBottom}>
           <p>크리에이터의 트래픽을<br />지속 가능한 비즈니스로 전환합니다.</p>

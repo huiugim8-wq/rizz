@@ -31,21 +31,23 @@
 }
 
 .hero {
+  --media-top: clamp(270px, 31vh, 340px);
   position: relative;
   min-height: calc(100svh - 88px);
   overflow: hidden;
-  color: #fff;
-  background-color: #111;
-  background-position: center;
-  background-size: cover;
+  color: #111;
+  background-color: #fff;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% calc(100% - var(--media-top));
 }
 
 .heroVideo,
 .heroShade {
   position: absolute;
-  inset: 0;
+  inset: var(--media-top) 0 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - var(--media-top));
 }
 
 .heroVideo {
@@ -53,38 +55,32 @@
 }
 
 .heroShade {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.15) 45%, rgba(0, 0, 0, 0.72));
-}
-
-.heroEyebrow {
-  position: absolute;
-  top: 34px;
-  left: 40px;
-  margin: 0;
-  font: 600 12px/1.2 Arial, sans-serif;
-  letter-spacing: 0.2em;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(0, 0, 0, 0.08) 42%, rgba(0, 0, 0, 0.68));
 }
 
 .heroTitle {
   position: absolute;
-  top: 13%;
-  left: 3.4%;
+  z-index: 2;
+  top: clamp(135px, 17vh, 180px);
+  right: 4.5%;
+  left: 4.5%;
   margin: 0;
-  font: 900 clamp(76px, 13vw, 210px) / 0.76 Arial Black, Arial, sans-serif;
-  letter-spacing: -0.075em;
+  color: transparent;
+  background: linear-gradient(90deg, #9ab9e8 0%, #c9b5dc 38%, #ed9fbd 68%, #ff805f 100%);
+  background-clip: text;
+  font: 900 clamp(76px, 10.8vw, 190px) / 1 Arial Black, Arial, sans-serif;
+  letter-spacing: -0.08em;
+  white-space: nowrap;
+  -webkit-background-clip: text;
 }
 
 .heroTitle span {
-  display: block;
-}
-
-.heroTitle span:last-child {
-  color: transparent;
-  -webkit-text-stroke: 2px #fff;
+  display: inline;
 }
 
 .heroBottom {
   position: absolute;
+  z-index: 2;
   right: 40px;
   bottom: 38px;
   left: 40px;
@@ -685,13 +681,8 @@
   }
 
   .hero {
+    --media-top: 225px;
     min-height: calc(100svh - 72px);
-  }
-
-  .heroEyebrow {
-    top: 22px;
-    left: 16px;
-    font-size: 9px;
   }
 
   .heroVideo {
@@ -699,13 +690,16 @@
   }
 
   .heroTitle {
-    top: 18%;
+    top: 72px;
+    right: 16px;
     left: 16px;
-    font-size: clamp(58px, 22vw, 88px);
+    font-size: clamp(58px, 20vw, 88px);
+    line-height: 0.82;
+    white-space: normal;
   }
 
-  .heroTitle span:last-child {
-    -webkit-text-stroke-width: 1px;
+  .heroTitle span {
+    display: block;
   }
 
   .heroBottom {
