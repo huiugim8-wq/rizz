@@ -154,7 +154,7 @@ export function ScrollFilmHero({ film, poster }: ScrollFilmHeroProps) {
     };
   }, []);
 
-  const introOpacity = Math.max(0, 1 - introProgress * 1.18);
+  const introOpacity = Math.max(0, 1 - Math.max(0, introProgress - 0.72) / 0.28);
   const captionVisibility = Math.min(1, Math.max(0, (introProgress - 0.68) / 0.32));
   const promptOpacity = 1 - introProgress;
   const activeCues = useMemo(
@@ -227,7 +227,10 @@ export function ScrollFilmHero({ film, poster }: ScrollFilmHeroProps) {
         <h1
           id="home-hero-title"
           className={styles.heroTitle}
-          style={{ opacity: introOpacity, transform: `translate3d(0, ${-introProgress * 96}px, 0)` }}
+          style={{
+            opacity: introOpacity,
+            transform: `translate3d(${-introProgress * 112}vw, 0, 0)`,
+          }}
           aria-label="GLOW UP RIZZ"
         >
           <img src="/brand/glow-up-rizz-hero-title-v2.svg?v=4" alt="" aria-hidden="true" />

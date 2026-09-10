@@ -1,18 +1,8 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { Shell } from '../components/site-shell';
-import {
-  businessMediaPanels,
-  featuredCreators,
-  homeBusinesses,
-  homeMedia,
-  homeTeamImage,
-  latestNews,
-  proofMetrics,
-  type HomeBusiness,
-} from './home-content';
+import { homeBusinesses, homeMedia, type HomeBusiness } from './home-content';
 import { ScrollFilmHero } from './scroll-film-hero';
-import { ScrollCaption } from './scroll-caption';
 import styles from './home.module.css';
 
 function BusinessPanel({ business, index }: { business: HomeBusiness; index: number }) {
@@ -22,16 +12,13 @@ function BusinessPanel({ business, index }: { business: HomeBusiness; index: num
       data-tone={business.tone}
       style={{ '--panel-index': index + 1 } as CSSProperties}
     >
-      <div className={styles.businessImage}>
+      <div className={styles.businessVisual}>
         <img src={business.image} alt="" />
-        <span>{business.label}</span>
+        <strong>{business.label}</strong>
       </div>
       <div className={styles.businessCopy}>
-        <header>
-          <p>{business.name}</p>
-          <span>{business.number}</span>
-        </header>
-        <div className={styles.businessBody}>
+        <header><span>{business.name}</span></header>
+        <div>
           <p>{business.label}</p>
           <h3>{business.headline}</h3>
           <p>{business.description}</p>
@@ -39,7 +26,7 @@ function BusinessPanel({ business, index }: { business: HomeBusiness; index: num
             {business.points.map((point) => <li key={point}>{point}</li>)}
           </ul>
         </div>
-        <Link className={styles.textLink} href={business.href}>VIEW BUSINESS <span aria-hidden="true">↗</span></Link>
+        <Link href={business.href}>VIEW BUSINESS</Link>
       </div>
     </article>
   );
@@ -56,115 +43,34 @@ export default function HomePage() {
           콘텐츠로 사람을 모으고,<br />
           트래픽으로 시장을 만듭니다.
         </h2>
-        <div>
-          <span>GLOW UP RIZZ</span>
-          <p>우리는 크리에이터의 매력을 발견하고 성장시켜<br />콘텐츠, 커머스, 교육, 브랜드로 연결합니다.</p>
-        </div>
+        <footer>GLOW UP RIZZ</footer>
       </section>
 
-      <section className={styles.creators} aria-labelledby="creators-title">
-        <header className={styles.sectionHeader}>
-          <p>MAKE UP THE WORLD<br />MORE INTERESTING</p>
-          <h2 id="creators-title">RIZZ CREATORS</h2>
-          <Link href="/mcn">VIEW ALL <span aria-hidden="true">↗</span></Link>
-        </header>
-        <div className={styles.creatorTrack}>
-          {featuredCreators.map((creator) => (
-            <Link className={styles.creatorCard} href="/mcn" key={creator.en}>
-              <div>
-                <img src={creator.image} alt={creator.ko} />
-                <span>{creator.followers}</span>
-              </div>
-              <p>{creator.category}</p>
-              <h3>{creator.ko}</h3>
-              <span>{creator.en}</span>
-            </Link>
-          ))}
-        </div>
+      <section className={styles.creatorCollage} aria-label="Rizz creators">
+        <img src="/home-scroll/creator-collage.png" alt="글로우업리즈 크리에이터" />
       </section>
 
-      <section className={styles.platform} aria-labelledby="platform-title">
-        <div className={styles.platformIntro}>
-          <p>INFLUENCE VALUE CHAIN</p>
-          <h2 id="platform-title">TRAFFIC<br />TO BUSINESS</h2>
-          <div className={styles.cycle} aria-label="글로우업리즈 사업 순환">
-            <span>CREATOR</span><i>→</i><span>CONTENT</span><i>→</i><span>TRAFFIC</span><i>→</i><span>COMMERCE</span><i>→</i><span>IP</span>
-          </div>
-        </div>
-        <div className={styles.metrics}>
-          {proofMetrics.map((metric) => (
-            <div key={metric.label}>
-              <strong>{metric.value}</strong>
-              <span>{metric.label}</span>
-            </div>
-          ))}
-          <small>공개 성과 자료 기준 · 2025년 6월</small>
-        </div>
-      </section>
-
-      <section className={styles.mediaStory} aria-labelledby="media-story-title" data-scroll-reveal-root="">
-        <header className={styles.mediaStoryHeader}>
-          <p>BUSINESS IN MOTION</p>
-          <h2 id="media-story-title">FROM TRAFFIC<br />TO EXPERIENCE</h2>
-        </header>
-        <div className={styles.mediaPanelGrid}>
-          {businessMediaPanels.map((panel) => (
-            <article className={styles.mediaPanel} data-orientation={panel.orientation} key={panel.number}>
-              <header>
-                <span>{panel.number}</span>
-                <h3>{panel.title}</h3>
-              </header>
-              <video autoPlay muted loop playsInline preload="metadata" aria-label={`${panel.title} 사업 영상`}>
-                <source src={panel.src} type="video/mp4" />
-              </video>
-            </article>
-          ))}
-        </div>
-        <ScrollCaption className={styles.mediaCaptions}>
-          {businessMediaPanels.map((panel) => (
-            <div data-orientation={panel.orientation} key={panel.number}>
-              <span>{panel.title}</span>
-              <p>{panel.description}</p>
-            </div>
-          ))}
-        </ScrollCaption>
+      <section className={styles.directors} aria-label="Creative Directors">
+        <img src="/home-scroll/creative-directors.png" alt="글로우업리즈 크리에이티브 디렉터" />
       </section>
 
       <section id="business" className={styles.businesses} aria-labelledby="business-title">
-        <div className={styles.businessesIntro}>
+        <header className={styles.businessesIntro}>
           <p>ONE CONNECTED PLATFORM</p>
           <h2 id="business-title">OUR BUSINESS</h2>
-          <p>하나의 영향력이 다음 사업을 만드는 구조</p>
-        </div>
+          <footer>하나의 영향력이 다음 사업을 만드는 구조</footer>
+        </header>
         {homeBusinesses.map((business, index) => (
-          <BusinessPanel business={business} index={index} key={business.number} />
+          <BusinessPanel business={business} index={index} key={business.name} />
         ))}
       </section>
 
       <section className={styles.declaration} aria-labelledby="declaration-title">
-        <img src={homeTeamImage} alt="글로우업리즈 크리에이터와 팀" />
-        <div />
+        <img src="/home-scroll/team-declaration.jpg" alt="글로우업리즈 크리에이터와 팀" />
+        <div aria-hidden="true" />
         <p>YOU ARE NOT JUST<br />A CREATOR ANYMORE</p>
         <h2 id="declaration-title">매력은 콘텐츠가 되고,<br />콘텐츠는 새로운 산업이 됩니다.</h2>
         <span>GLOW UP RIZZ CREATOR BUSINESS GROUP</span>
-      </section>
-
-      <section className={styles.news} aria-labelledby="news-title">
-        <header className={styles.sectionHeader}>
-          <p>WHAT IS HAPPENING<br />AT GLOW UP RIZZ</p>
-          <h2 id="news-title">RIZZ NEWS</h2>
-          <Link href="/news">VIEW ALL <span aria-hidden="true">↗</span></Link>
-        </header>
-        <div className={styles.newsGrid}>
-          {latestNews.map((item) => (
-            <Link href="/news" key={item.title}>
-              <div><img src={item.image} alt="" /></div>
-              <time>{item.date}</time>
-              <h3>{item.title}</h3>
-              <span>READ MORE ↗</span>
-            </Link>
-          ))}
-        </div>
       </section>
 
       <section className={styles.contact} aria-labelledby="contact-title">
