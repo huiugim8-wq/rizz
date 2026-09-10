@@ -1,5 +1,5 @@
 export const homeMedia = {
-  film: '/video/rizz-youtube-showreel/rizz-home-film-v19-motion.mp4',
+  film: '/video/rizz-youtube-showreel/rizz-home-film-v19-motion-web.mp4',
   poster: '/video/rizz-youtube-showreel/rizz-home-film-v19-motion-poster.jpg',
 } as const;
 
