@@ -1,8 +1,8 @@
 import { artists, news, newsImages } from '../data';
 
 export const homeMedia = {
-  film: '/video/glowup-rizz-hero-concept.mp4',
-  poster: '/video/glowup-rizz-hero-concept-poster.jpg',
+  film: '/video/rizz-youtube-showreel/rizz-home-film-v19-motion.mp4',
+  poster: '/video/rizz-youtube-showreel/rizz-home-film-v19-motion-poster.jpg',
 } as const;
 
 export const businessMediaPanels = [
@@ -24,12 +24,12 @@ export const businessMediaPanels = [
     number: '03',
     title: 'HOTEL',
     description: '온라인에서 쌓은 취향을 실제 경험과 공간으로 확장합니다.',
-    src: homeMedia.film,
+    src: '/video/rizz-youtube-showreel/sources/mJkx6173PJA-hotel.mp4',
     orientation: 'landscape',
   },
 ] as const;
 
-export const homeTeamImage = '/media/rizz-team-wide.jpg';
+export const homeTeamImage = '/video/rizz-youtube-showreel/home-v18-assets/team-mcn-original.jpg';
 
 export type BusinessTone = 'red' | 'blue' | 'white' | 'charcoal';
 

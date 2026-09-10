@@ -11,6 +11,7 @@ import {
   proofMetrics,
   type HomeBusiness,
 } from './home-content';
+import { ScrollFilmHero } from './scroll-film-hero';
 import { ScrollCaption } from './scroll-caption';
 import styles from './home.module.css';
 
@@ -47,34 +48,7 @@ function BusinessPanel({ business, index }: { business: HomeBusiness; index: num
 export default function HomePage() {
   return (
     <Shell className={`${styles.page} modern-home-page`}>
-      <section
-        className={styles.hero}
-        aria-labelledby="home-hero-title"
-        data-scroll-reveal-root=""
-      >
-        <div className={styles.heroMedia} style={{ backgroundImage: `url(${homeMedia.poster})` }}>
-          <video
-            className={styles.heroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={homeMedia.poster}
-            aria-hidden="true"
-          >
-            <source src={homeMedia.film} type="video/mp4" />
-          </video>
-          <div className={styles.heroShade} />
-        </div>
-        <h1 id="home-hero-title" className={styles.heroTitle}>
-          <span>GLOW UP</span><span> RIZZ</span>
-        </h1>
-        <ScrollCaption className={styles.heroBottom} mode="hero">
-          <p>크리에이터의 트래픽을<br />지속 가능한 비즈니스로 전환합니다.</p>
-          <Link href="#business">DISCOVER RIZZ <span aria-hidden="true">↗</span></Link>
-        </ScrollCaption>
-      </section>
+      <ScrollFilmHero film={homeMedia.film} poster={homeMedia.poster} />
 
       <section className={styles.manifesto} aria-labelledby="manifesto-title">
         <p>WE ARE NOT ORDINARY ANYMORE</p>
