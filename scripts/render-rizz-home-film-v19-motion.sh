@@ -7,6 +7,9 @@ source_dir="$video_dir/sources"
 work_dir="/tmp/rizz-home-film-v19-motion-work"
 output_file="$video_dir/rizz-home-film-v19-motion.mp4"
 
+# Keep this master render at review quality. The hosting package makes a
+# separate web-optimized copy so the editable source is never degraded.
+
 mkdir -p "$work_dir"
 
 encode=( -an -c:v libx264 -preset fast -crf 15 -profile:v high -level 4.2 -pix_fmt yuv420p -r 30 )
