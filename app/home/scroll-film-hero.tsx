@@ -132,7 +132,7 @@ export function ScrollFilmHero({ film, poster }: ScrollFilmHeroProps) {
     const update = () => {
       frame = 0;
       const rect = section.getBoundingClientRect();
-      const revealDistance = Math.max(180, window.innerHeight * 0.25);
+      const revealDistance = Math.min(360, Math.max(180, window.innerHeight * 0.25));
       const next = reducedMotion.matches ? 1 : Math.min(1, Math.max(0, -rect.top / revealDistance));
       setIntroProgress((current) => Math.abs(current - next) > 0.0005 ? next : current);
     };

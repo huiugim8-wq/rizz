@@ -1,36 +1,9 @@
-import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { Shell } from '../components/site-shell';
-import { homeBusinesses, homeMedia, type HomeBusiness } from './home-content';
+import { homeBusinesses, homeMedia } from './home-content';
+import { HorizontalBusinessRail } from './horizontal-business-rail';
 import { ScrollFilmHero } from './scroll-film-hero';
 import styles from './home.module.css';
-
-function BusinessPanel({ business, index }: { business: HomeBusiness; index: number }) {
-  return (
-    <article
-      className={styles.businessPanel}
-      data-tone={business.tone}
-      style={{ '--panel-index': index + 1 } as CSSProperties}
-    >
-      <div className={styles.businessVisual}>
-        <img src={business.image} alt="" />
-        <strong>{business.label}</strong>
-      </div>
-      <div className={styles.businessCopy}>
-        <header><span>{business.name}</span></header>
-        <div>
-          <p>{business.label}</p>
-          <h3>{business.headline}</h3>
-          <p>{business.description}</p>
-          <ul>
-            {business.points.map((point) => <li key={point}>{point}</li>)}
-          </ul>
-        </div>
-        <Link href={business.href}>VIEW BUSINESS</Link>
-      </div>
-    </article>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -47,6 +20,10 @@ export default function HomePage() {
       </section>
 
       <section className={styles.creatorCollage} aria-label="Rizz creators">
+        <Link className={styles.creatorEntry} href="/mcn" aria-label="크리에이터 페이지로 이동">
+          <span>RIZZ<br />CREATOR</span>
+          <i aria-hidden="true">→</i>
+        </Link>
         <img src="/home-scroll/creator-collage.png" alt="글로우업리즈 크리에이터" />
       </section>
 
@@ -60,9 +37,7 @@ export default function HomePage() {
           <h2 id="business-title">OUR BUSINESS</h2>
           <footer>하나의 영향력이 다음 사업을 만드는 구조</footer>
         </header>
-        {homeBusinesses.map((business, index) => (
-          <BusinessPanel business={business} index={index} key={business.name} />
-        ))}
+        <HorizontalBusinessRail businesses={homeBusinesses} />
       </section>
 
       <section className={styles.declaration} aria-labelledby="declaration-title">

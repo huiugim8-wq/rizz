@@ -21,7 +21,7 @@
 }
 
 .page :global(.site-footer) {
-  min-height: 320px;
+  min-height: clamp(280px, 16.5vw, 470px);
   height: auto;
   padding-top: 72px;
   background: #050505;
@@ -33,7 +33,7 @@
 
 .hero {
   position: relative;
-  height: 180svh;
+  height: calc(100svh + 440px);
   color: #fff;
   background: #fff;
 }
@@ -225,7 +225,7 @@
 }
 
 .manifesto {
-  min-height: 920px;
+  min-height: 48vw;
   padding: 142px 7.5vw 86px;
 }
 
@@ -265,24 +265,78 @@
   background: #fff;
 }
 
-.creatorCollage img,
 .directors img {
   display: block;
   width: 100%;
   height: auto;
 }
 
+.creatorCollage {
+  display: grid;
+  grid-template-columns: 12vw minmax(0, 1fr);
+  height: 48.2vw;
+}
+
+.creatorCollage > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.creatorEntry {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  padding: 3.6vw 2.3vw;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  color: #111;
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+
+.creatorEntry span {
+  font: 800 clamp(10px, 0.85vw, 16px) / 1.15 Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.creatorEntry i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: clamp(38px, 4vw, 72px);
+  aspect-ratio: 1;
+  border: 1px solid #111;
+  border-radius: 50%;
+  place-items: center;
+  font-style: normal;
+  font-size: clamp(16px, 1.5vw, 28px);
+  transform: translate(-50%, -50%);
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.creatorEntry:hover i,
+.creatorEntry:focus-visible i {
+  color: #fff;
+  background: #111;
+  transform: translate(calc(-50% + 8px), -50%);
+}
+
 .directors {
-  padding: 2vw;
+  padding: 0;
 }
 
 .businesses {
   position: relative;
-  background: #111;
+  background: #fff;
 }
 
 .businessesIntro {
-  min-height: 620px;
+  min-height: 32.3vw;
   padding: 100px 7.2vw 72px;
 }
 
@@ -298,17 +352,53 @@
   font-size: clamp(20px, 2vw, 38px);
 }
 
-.businessPanel {
+.businessRail {
+  position: relative;
+  height: calc(200vw + 100svh - 88px);
+  background: #111;
+}
+
+.businessRailSticky {
   position: sticky;
-  z-index: var(--panel-index);
   top: 88px;
-  display: grid;
-  grid-template-columns: minmax(0, 84.7fr) minmax(0, 15.3fr);
   height: calc(100svh - 88px);
   min-height: 700px;
   overflow: hidden;
+}
+
+.businessTrack {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.businessPanel {
+  display: grid;
+  flex: 0 0 100vw;
+  grid-template-columns: minmax(0, 84.7fr) minmax(0, 15.3fr);
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
   color: #fff;
   background: #111;
+}
+
+.businessProgress {
+  position: absolute;
+  z-index: 8;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.businessProgress i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform-origin: left center;
 }
 
 .businessVisual {
@@ -420,7 +510,7 @@
 
 .declaration {
   position: relative;
-  min-height: min(995px, 52vw);
+  min-height: 51.4vw;
   overflow: hidden;
   color: #fff;
   background: #111;
@@ -477,7 +567,7 @@
 }
 
 .contact {
-  min-height: 740px;
+  min-height: 38.2vw;
   padding: 88px 5.2vw 58px;
 }
 
@@ -540,7 +630,7 @@
   }
 
   .hero {
-    height: 160svh;
+    height: calc(100svh + 440px);
   }
 
   .heroSticky {
@@ -590,15 +680,33 @@
     left: 18px;
   }
 
-  .creatorCollage img {
-    width: 170vw;
+  .creatorCollage {
+    grid-template-columns: 72px minmax(0, 1fr);
+    height: min(78svh, 760px);
+    min-height: 520px;
+  }
+
+  .creatorCollage > img {
+    width: 155vw;
     max-width: none;
-    transform: translateX(-30vw);
+    object-position: 52% center;
+  }
+
+  .creatorEntry {
+    padding: 24px 12px;
+  }
+
+  .creatorEntry span {
+    font-size: 9px;
+  }
+
+  .creatorEntry i {
+    width: 42px;
   }
 
   .directors {
     overflow-x: auto;
-    padding: 18px;
+    padding: 0;
   }
 
   .directors img {
@@ -616,16 +724,23 @@
     font-size: 24vw;
   }
 
-  .businessPanel {
-    position: relative;
-    top: auto;
-    grid-template-columns: 1fr;
-    height: auto;
+  .businessRail {
+    height: calc(200vw + 100svh - 72px);
+  }
+
+  .businessRailSticky {
+    top: 72px;
+    height: calc(100svh - 72px);
     min-height: 0;
   }
 
+  .businessPanel {
+    grid-template-rows: minmax(0, 58fr) minmax(0, 42fr);
+    grid-template-columns: 1fr;
+  }
+
   .businessVisual {
-    height: 72svh;
+    height: auto;
   }
 
   .businessVisual strong {
@@ -635,8 +750,8 @@
   }
 
   .businessCopy {
-    min-height: 620px;
-    padding: 34px 18px 28px;
+    min-height: 0;
+    padding: 22px 18px 18px;
   }
 
   .businessCopy header,
@@ -648,7 +763,25 @@
   }
 
   .businessCopy h3 {
-    font-size: 12vw;
+    margin-bottom: 14px;
+    font-size: clamp(30px, 9vw, 46px);
+  }
+
+  .businessCopy > div > p:first-child {
+    margin-bottom: 16px;
+  }
+
+  .businessCopy > div > p:nth-of-type(2) {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .businessCopy ul {
+    display: none;
+  }
+
+  .businessCopy > a {
+    padding: 11px 0;
   }
 
   .declaration {
