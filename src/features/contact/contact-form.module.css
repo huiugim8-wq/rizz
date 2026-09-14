@@ -1,0 +1,69 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0 24px;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.form label > span {
+  font-size: 13px;
+}
+.form select,
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid #111;
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+.selectField {
+  width: 325px;
+}
+.form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.form textarea {
+  height: 150px;
+  padding: 12px;
+  border: 1px solid #111;
+  resize: vertical;
+}
+.form > button {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  color: #fff;
+  background: #1836ff;
+}
+.success {
+  margin: 0;
+  text-align: center;
+  color: #1836ff;
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .form {
+    padding: 0;
+  }
+  .form > div {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .selectField {
+    width: 100%;
+  }
+  .form input,
+  .form select,
+  .form textarea {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,143 @@
+.header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  padding: 0 25px 0 37px;
+  color: #fff;
+  background: #101010;
+}
+.logo {
+  display: block;
+  width: 44px;
+  height: 32px;
+}
+.mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
+:global(.modern-home-page) .mark {
+  filter: none;
+}
+.desktopNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28.5px;
+  height: 100%;
+  transform: translateX(-6px);
+}
+.desktopNav a {
+  font-family: Arial, sans-serif;
+  font-size: 13.5px;
+  line-height: 17px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.desktopNav a:hover,
+.active {
+  color: #c50017;
+}
+.menuButton,
+.mobileMenu {
+  display: none;
+}
+:global(html[data-slide-navigation]) .header {
+  view-transition-name: site-header;
+}
+@media (max-width: 900px) {
+  .header {
+    display: flex;
+    height: 56px;
+    padding: 0;
+    color: #000;
+    background: #fff;
+  }
+  .logo {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 38px;
+    height: 28px;
+  }
+  .mark {
+    filter: none;
+  }
+  .desktopNav {
+    display: none;
+  }
+  .menuButton {
+    position: absolute;
+    z-index: 60;
+    top: 6px;
+    right: 10px;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 12px 10px;
+    border: 0;
+    background: none;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menuButton span {
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transition: 0.22s;
+    transform-origin: center;
+  }
+  .menuButton.open span:first-child {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menuButton.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menuButton.open span:last-child {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  .mobileMenu {
+    position: fixed;
+    z-index: 55;
+    inset: 56px 0 0;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    padding: 24px 20px;
+    overflow-y: auto;
+    align-items: stretch;
+    flex-direction: column;
+    background: #fff;
+    transition:
+      opacity 0.22s,
+      visibility 0.22s;
+  }
+  .mobileMenu.open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .mobileMenu nav {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobileMenu nav a {
+    min-height: 48px;
+    padding: 14px 4px;
+    border-bottom: 1px solid #eee;
+    font:
+      22px Arial,
+      sans-serif;
+  }
+  .mobileMenu nav a.active {
+    color: #183cff;
+  }
+}

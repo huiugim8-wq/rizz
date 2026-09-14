@@ -1,0 +1,1553 @@
+[
+  {
+    "id": "google",
+    "name": "구글",
+    "wordmark": "Google",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/google.png",
+      "source": "https://www.google.com/images/branding/google_wordmark/v1/1x/googlelogo_color_white_background_272x92dp.png",
+      "width": 272,
+      "height": 92,
+      "viewport": [0, 0, 272, 92]
+    }
+  },
+  {
+    "id": "naver",
+    "name": "네이버",
+    "wordmark": "NAVER",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/naver.svg",
+      "source": "https://www.navercorp.com/img/common/logo.svg",
+      "width": 104,
+      "height": 20,
+      "viewport": [0, 0, 104, 20]
+    }
+  },
+  {
+    "id": "kakao",
+    "name": "카카오",
+    "wordmark": "kakao",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/kakao.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_dcb18980f72f4eb296ed1557dd759e5d~mv2.png",
+      "width": 762,
+      "height": 757,
+      "viewport": [0, 0, 762, 757]
+    }
+  },
+  {
+    "id": "amorepacific",
+    "name": "아모레퍼시픽",
+    "wordmark": "AMOREPACIFIC",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/amorepacific.png",
+      "source": "https://www.apgroup.com/int/ko/resource/images/a/amorepacific_s.png",
+      "width": 300,
+      "height": 30,
+      "viewport": [0, 0, 300, 30]
+    }
+  },
+  {
+    "id": "cafe24",
+    "name": "카페24",
+    "wordmark": "cafe24",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/cafe24.svg",
+      "source": "https://img.echosting.cafe24.com/imgcafe24com/images/common/cafe24.svg",
+      "width": 112,
+      "height": 20,
+      "viewport": [0, 0, 112, 20]
+    }
+  },
+  {
+    "id": "daesang",
+    "name": "대상",
+    "wordmark": "DAESANG",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/daesang.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_7e594cf6fb154330a16235345038559a~mv2.png",
+      "width": 448,
+      "height": 408,
+      "viewport": [87, 55, 277, 291]
+    }
+  },
+  {
+    "id": "dongwon",
+    "name": "동원",
+    "wordmark": "DONGWON",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/dongwon.svg",
+      "source": "https://www.dongwon.com/asset/image/logo/dongwon_blue.svg",
+      "width": 113,
+      "height": 47,
+      "viewport": [0, 0, 113, 47]
+    }
+  },
+  {
+    "id": "harim",
+    "name": "하림",
+    "wordmark": "하림",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/harim.png",
+      "source": "https://www.harim.com/main/img/main/logo.png",
+      "width": 58,
+      "height": 42,
+      "viewport": [0, 0, 58, 42]
+    }
+  },
+  {
+    "id": "bbq",
+    "name": "BBQ",
+    "wordmark": "bb.q",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/bbq.svg",
+      "source": "https://bbq.co.kr/images/symbols/logo-red.svg",
+      "width": 75,
+      "height": 33,
+      "viewport": [0, 0, 75, 33]
+    }
+  },
+  {
+    "id": "apr",
+    "name": "APR",
+    "wordmark": "APR",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/apr.png",
+      "source": "https://www.apr-in.com/img/logo_fixed.png",
+      "width": 162,
+      "height": 52,
+      "viewport": [0, 0, 162, 52]
+    }
+  },
+  {
+    "id": "torder",
+    "name": "티오더",
+    "wordmark": "t’order",
+    "categories": ["Business", "Life"],
+    "logo": {
+      "src": "/partners/torder.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_f635593b847543f59ed535244a854773~mv2.png",
+      "width": 279,
+      "height": 299,
+      "viewport": [41, 104, 188, 95]
+    }
+  },
+  {
+    "id": "everland",
+    "name": "에버랜드",
+    "wordmark": "EVERLAND",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/everland.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_4cd4320457ba4ed9b32be4a473bf6a30~mv2.png",
+      "width": 257,
+      "height": 252,
+      "viewport": [33, 39, 191, 176]
+    }
+  },
+  {
+    "id": "playstory",
+    "name": "플레이스토리",
+    "wordmark": "Play Story",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/playstory.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_edad44f40ada46ddbbe82fbc0461fc1a~mv2.png",
+      "width": 279,
+      "height": 268,
+      "viewport": [7, 99, 269, 91]
+    }
+  },
+  {
+    "id": "featuring",
+    "name": "피처링",
+    "wordmark": "featuring",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/featuring.svg",
+      "source": "https://featuring.co/",
+      "width": 106,
+      "height": 28,
+      "viewport": [0, 0, 106, 28]
+    }
+  },
+  {
+    "id": "siseon",
+    "name": "시선",
+    "wordmark": "시선",
+    "categories": ["Business"],
+    "logo": {
+      "src": "/partners/siseon.png",
+      "source": "https://cdn.imweb.me/thumbnail/20240909/0a2c9defbfa77.png",
+      "width": 192,
+      "height": 117,
+      "viewport": [0, 0, 192, 117]
+    }
+  },
+  {
+    "id": "stanford",
+    "name": "스탠포드호텔",
+    "wordmark": "STANFORD HOTEL",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/stanford.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_8226d002b6d445c9afeb02364102f931~mv2.png",
+      "width": 373,
+      "height": 397,
+      "viewport": [43, 89, 285, 186]
+    }
+  },
+  {
+    "id": "hanwha",
+    "name": "한화리조트",
+    "wordmark": "Hanwha",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/hanwha.png",
+      "source": "https://www.hanwharesort.co.kr/irsweb/resort3/app/images/common/logo_top.png",
+      "dark": true,
+      "width": 200,
+      "height": 25,
+      "viewport": [0, 0, 200, 25]
+    }
+  },
+  {
+    "id": "stjohns",
+    "name": "세인트존스",
+    "wordmark": "ST. JOHN’S",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/stjohns.jpg",
+      "source": "https://static.wixstatic.com/media/dc99e3_9877f4776bed405d95ba52ce6c594e9e~mv2.jpg",
+      "width": 307,
+      "height": 325,
+      "viewport": [40, 127, 235, 71]
+    }
+  },
+  {
+    "id": "utop",
+    "name": "유탑마리나",
+    "wordmark": "UTOP MARINA",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/utop.png",
+      "source": "https://www.utopmarina.com/UtopMarinaNew_common/images/homepage/common/logo.png",
+      "width": 167,
+      "height": 55,
+      "viewport": [0, 0, 167, 55]
+    }
+  },
+  {
+    "id": "take",
+    "name": "테이크",
+    "wordmark": "Take",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/take.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_2b9fc191d2e7415fa52850aebe7359d1~mv2.png",
+      "width": 324,
+      "height": 318,
+      "viewport": [54, 121, 224, 70]
+    }
+  },
+  {
+    "id": "mona",
+    "name": "모나용평",
+    "wordmark": "MONA",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/mona.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_6b14ba64c0e54500bdc839d46a3a465d~mv2.png",
+      "width": 395,
+      "height": 368,
+      "viewport": [35, 124, 325, 132]
+    }
+  },
+  {
+    "id": "sono",
+    "name": "소노호텔앤리조트",
+    "wordmark": "SONO",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/sono-logo.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_ff66394ed48e4c99a6fecebf36442650~mv2.png",
+      "width": 380,
+      "height": 395,
+      "viewport": [49, 142, 285, 131]
+    }
+  },
+  {
+    "id": "eland",
+    "name": "이랜드크루즈",
+    "wordmark": "E·LAND CRUISE",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/eland.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_2ee99264bb0d494bb8511e9fbcb38072~mv2.png",
+      "width": 230,
+      "height": 219,
+      "viewport": [48, 24, 135, 170]
+    }
+  },
+  {
+    "id": "indigo",
+    "name": "인디고트래블",
+    "wordmark": "INDIGO TRAVEL",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/indigo.png",
+      "source": "https://cdn.imweb.me/thumbnail/20231229/bbfcd4e2f9f57.png",
+      "width": 156,
+      "height": 55,
+      "viewport": [0, 0, 156, 55]
+    }
+  },
+  {
+    "id": "clubd",
+    "name": "클럽디오아시스",
+    "wordmark": "CLUBD OASIS",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/clubd.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_ffe329f355b44cc38536aab07a8edb29~mv2.png",
+      "width": 576,
+      "height": 563,
+      "viewport": [0, 0, 576, 563]
+    }
+  },
+  {
+    "id": "phoenix",
+    "name": "휘닉스파크",
+    "wordmark": "phoenix",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/phoenix.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_c7570c37af4841e69ecfb58c58d741d4~mv2.png",
+      "width": 438,
+      "height": 434,
+      "viewport": [92, 145, 252, 144]
+    }
+  },
+  {
+    "id": "yongpyong",
+    "name": "용평리조트",
+    "wordmark": "YONG PYONG",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/yongpyong.png",
+      "source": "https://www.yongpyong.co.kr/images/kor/main_winter_2016/img_logo.png",
+      "width": 190,
+      "height": 30,
+      "viewport": [0, 0, 188, 29]
+    }
+  },
+  {
+    "id": "theweek",
+    "name": "더위크앤리조트",
+    "wordmark": "THE WEEK&",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/theweek.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_e0c12b986db84df0a55000a1ad37da08~mv2.png",
+      "width": 405,
+      "height": 397,
+      "viewport": [43, 137, 318, 129]
+    }
+  },
+  {
+    "id": "palede",
+    "name": "팔레드시즈",
+    "wordmark": "PALE DE CZ",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/palede.svg",
+      "source": "https://www.paledecz.com/images/common/logo.svg",
+      "width": 169,
+      "height": 112,
+      "viewport": [0, 0, 169, 112]
+    }
+  },
+  {
+    "id": "dreamping",
+    "name": "더드림핑",
+    "wordmark": "THE DREAMPING",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/dreamping.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_72e648cabe454b1e8c6aa1321ca72ebb~mv2.png",
+      "width": 475,
+      "height": 501,
+      "viewport": [86, 147, 286, 216]
+    }
+  },
+  {
+    "id": "connoisseur",
+    "name": "더코노셔",
+    "wordmark": "THE CONNOISSEUR",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/connoisseur.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_0efae9e492ac4d1588bd3cf12c9e660a~mv2.png",
+      "width": 2604,
+      "height": 2584,
+      "viewport": [0, 0, 2604, 2584]
+    }
+  },
+  {
+    "id": "elijah",
+    "name": "엘리야",
+    "wordmark": "ELIJAH POOL VILLA",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/elijah.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_8e5108049183425993a226a9db1054fe~mv2.png",
+      "width": 599,
+      "height": 570,
+      "viewport": [61, 119, 469, 279]
+    }
+  },
+  {
+    "id": "travelgram",
+    "name": "트래블그램",
+    "wordmark": "travelgram",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/travelgram.jpg",
+      "source": "https://k.kakaocdn.net/dn/Xjsos/btsuelny7vs/Jg8BUZdeLSCX4c45oGDBU1/img_m.jpg",
+      "width": 400,
+      "height": 400,
+      "viewport": [0, 0, 400, 400]
+    }
+  },
+  {
+    "id": "grang",
+    "name": "그랑모던",
+    "wordmark": "GRANG MODERN",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/grang.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_9a1132b436ec4c9e8d20792084bf0dd9~mv2.png",
+      "width": 574,
+      "height": 567,
+      "viewport": [0, 0, 574, 567]
+    }
+  },
+  {
+    "id": "hangsari",
+    "name": "항사리91",
+    "wordmark": "HANGSARI 91",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/hangsari.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_d384aef003574595b1895cf62a01ad62~mv2.png",
+      "width": 558,
+      "height": 556,
+      "viewport": [34, 197, 504, 158]
+    }
+  },
+  {
+    "id": "hoshikage",
+    "name": "호시카게료칸",
+    "wordmark": "ほしかげ",
+    "categories": ["Tour"],
+    "logo": {
+      "src": "/partners/hoshikage.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_1ca1c3e8b5c249fd8033c682a10fac56~mv2.png",
+      "width": 565,
+      "height": 566,
+      "viewport": [60, 235, 461, 111]
+    }
+  },
+  {
+    "id": "kodak",
+    "name": "코닥",
+    "wordmark": "Kodak",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/kodak.png",
+      "source": "https://www.kodak.com/content/lp/_600x600_fit_center-center_82_none/42671/Kodak-logo.png?mtime=1742606190",
+      "width": 600,
+      "height": 548,
+      "viewport": [0, 0, 600, 548]
+    }
+  },
+  {
+    "id": "bissell",
+    "name": "비쎌",
+    "wordmark": "BISSELL",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/bissell.png",
+      "source": "https://www.bissell.com/mobify/bundle/2401/static/img/global/logo.png",
+      "width": 659,
+      "height": 478,
+      "viewport": [0, 0, 659, 478]
+    }
+  },
+  {
+    "id": "goodhabit",
+    "name": "좋은습관",
+    "wordmark": "좋은습관",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/goodhabit.png",
+      "source": "https://cdn.imweb.me/thumbnail/20251028/ce3d646e54146.png",
+      "width": 332,
+      "height": 153,
+      "viewport": [280, 0, 52, 42]
+    }
+  },
+  {
+    "id": "preri",
+    "name": "프레리포토그라피",
+    "wordmark": "PRÉRI",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/preri.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_e156871b56d244cfae93ea05a0700600~mv2.png",
+      "width": 607,
+      "height": 578,
+      "viewport": [90, 193, 415, 180]
+    }
+  },
+  {
+    "id": "fuerza",
+    "name": "푸에르자부르타",
+    "wordmark": "FUERZA BRUTA",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/fuerza.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_d4bd04a641db4d268deadf812e366c14~mv2.png",
+      "width": 649,
+      "height": 693,
+      "viewport": [85, 247, 504, 199]
+    }
+  },
+  {
+    "id": "calobowl",
+    "name": "칼로볼",
+    "wordmark": "CALOBOWL",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/calobowl.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_a693df9c1cb943ccb115533d3bc03338~mv2.png",
+      "width": 631,
+      "height": 655,
+      "viewport": [102, 292, 431, 80]
+    }
+  },
+  {
+    "id": "shark",
+    "name": "샤크",
+    "wordmark": "Shark",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/shark.svg",
+      "source": "https://www.sharkninja.com/on/demandware.static/-/Library-Sites-NA-SharkNinja-SharedLibrary/default/dw94b7d6de/footer-social-icon/shark-logo.svg",
+      "width": 61,
+      "height": 17,
+      "viewport": [0, 0, 61, 17]
+    }
+  },
+  {
+    "id": "ninja",
+    "name": "닌자",
+    "wordmark": "NINJA",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/ninja.svg",
+      "source": "https://www.sharkninja.com/on/demandware.static/-/Library-Sites-NA-SharkNinja-SharedLibrary/default/dw0c7fcfce/footer-social-icon/ninja-logo.svg",
+      "width": 45,
+      "height": 21,
+      "viewport": [0, 0, 45, 21]
+    }
+  },
+  {
+    "id": "olly",
+    "name": "올리",
+    "wordmark": "OLLY",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/olly.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_e16f714fe9554722a042be98221d0028~mv2.png",
+      "width": 595,
+      "height": 585,
+      "viewport": [110, 259, 373, 67]
+    }
+  },
+  {
+    "id": "jenniferoom",
+    "name": "제니퍼룸",
+    "wordmark": "JENNIFEROOM",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/jenniferoom.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_050ad180e5d64c768ce9f7155c7ea98b~mv2.png",
+      "width": 636,
+      "height": 591,
+      "viewport": [33, 256, 578, 80]
+    }
+  },
+  {
+    "id": "branden",
+    "name": "브랜든",
+    "wordmark": "Branden",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/branden.svg",
+      "source": "https://www.branden.shop/web/baton/images/logo.svg",
+      "width": 84,
+      "height": 18,
+      "viewport": [0, 0, 84, 18]
+    }
+  },
+  {
+    "id": "vova",
+    "name": "보바",
+    "wordmark": "VOVA",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/vova.svg",
+      "source": "https://ecimg.cafe24img.com/pg318b10298575043/vova123/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/f098099fa181bbbf42b9ec24fbb384b2.svg",
+      "width": 117,
+      "height": 24,
+      "viewport": [0, 0, 117, 24]
+    }
+  },
+  {
+    "id": "berman",
+    "name": "베르만",
+    "wordmark": "BERMAN",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/berman.jpg",
+      "source": "https://ugc.production.linktr.ee/e026c079-eeb6-4e17-9360-2b39ba9fb07c_.jpeg",
+      "invert": true,
+      "width": 600,
+      "height": 600,
+      "viewport": [177, 274, 247, 53]
+    }
+  },
+  {
+    "id": "kundal",
+    "name": "쿤달",
+    "wordmark": "KUNDAL",
+    "categories": ["Life", "Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/kundal.svg",
+      "source": "https://img.echosting.cafe24.com/ec/shop_global/main/logo_kundal.svg",
+      "width": 106,
+      "height": 56,
+      "viewport": [0, 14, 106, 27]
+    }
+  },
+  {
+    "id": "maxsun",
+    "name": "맥선",
+    "wordmark": "MAXSUN",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/maxsun-logo.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_43ad51124ba14431bde443b4a8caa107~mv2.png",
+      "width": 542,
+      "height": 521,
+      "viewport": [41, 159, 431, 141]
+    }
+  },
+  {
+    "id": "powerzone",
+    "name": "파워존",
+    "wordmark": "POWER ZONE",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/powerzone.png",
+      "source": "https://powerzone.co.kr/_ruben/img/powerzone_logo.png",
+      "width": 970,
+      "height": 142,
+      "viewport": [39, 6, 893, 130]
+    }
+  },
+  {
+    "id": "earpearp",
+    "name": "어프어프",
+    "wordmark": "earpearp",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/earpearp.png",
+      "source": "https://cafe24.poxo.com/ec01/earpearp/QxBPYdnlvXLAhqc8BXxYZdukKjFwlrnlTXBi7xeSHpjYRlvef3gHbwkxLYEpYu372CFTxzKMWvLVoesHOj4cjg==/_/2022_web_img/web/logo.png",
+      "dark": true,
+      "width": 165,
+      "height": 48,
+      "viewport": [0, 0, 165, 48]
+    }
+  },
+  {
+    "id": "therabreath",
+    "name": "테라브레스",
+    "wordmark": "TheraBreath",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/therabreath.svg",
+      "source": "https://www.therabreath.com/cdn/shop/files/logo.svg?v=1723028964&width=600",
+      "width": 547,
+      "height": 141,
+      "viewport": [0, 0, 547, 141]
+    }
+  },
+  {
+    "id": "vakuEn",
+    "name": "바퀜",
+    "wordmark": "VAKUEN.",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/vakuEn.png",
+      "source": "https://www.vakuen.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/e6577abc1e9e16c4c17f2e2b3819ceab.png",
+      "width": 120,
+      "height": 40,
+      "viewport": [0, 7, 120, 26]
+    }
+  },
+  {
+    "id": "coolean",
+    "name": "쿨린",
+    "wordmark": "coolean",
+    "categories": ["Life"],
+    "logo": {
+      "src": "/partners/coolean.png",
+      "source": "https://ecimg.cafe24img.com/pg2462b63235131041/coolean001/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/2a0b9b673723ba6a459d557c5f9b58b5.png",
+      "width": 161,
+      "height": 35,
+      "viewport": [0, 0, 161, 35]
+    }
+  },
+  {
+    "id": "smts",
+    "name": "sMTS",
+    "wordmark": "sMTS",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/smts.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_ef7e512c1511472088d77f36352b3a48~mv2.png",
+      "width": 609,
+      "height": 594,
+      "viewport": [66, 226, 456, 163]
+    }
+  },
+  {
+    "id": "facefactory",
+    "name": "페이스팩토리",
+    "wordmark": "face factory",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/facefactory.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_2b9163bbf89b40f497befaa9ff2e6833~mv2.png",
+      "width": 557,
+      "height": 566,
+      "viewport": [0, 0, 557, 566]
+    }
+  },
+  {
+    "id": "dinsee",
+    "name": "딘시",
+    "wordmark": "dinsee",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/dinsee.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_d37051ffece446e6b72878268886d210~mv2.png",
+      "width": 599,
+      "height": 531,
+      "viewport": [81, 182, 436, 140]
+    }
+  },
+  {
+    "id": "pibumi",
+    "name": "피부미",
+    "wordmark": "PIBUMI",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/pibumi.png",
+      "source": "https://www.pibumi.com/img/web/topLB.png",
+      "width": 150,
+      "height": 70,
+      "viewport": [0, 17, 150, 53]
+    }
+  },
+  {
+    "id": "celimax",
+    "name": "셀리맥스",
+    "wordmark": "celimax",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/celimax.png",
+      "source": "https://ecimg.cafe24img.com/pg2019b28217072075/celimax001/web/upload/category/logo/v2_fa6a40f7ab54bdeb57e28ceaf639c7a3_YVwpSeDsKn_top.jpg",
+      "width": 1600,
+      "height": 345,
+      "viewport": [0, 0, 1600, 345]
+    }
+  },
+  {
+    "id": "laeste",
+    "name": "라에스테",
+    "wordmark": "LÀ ESTE",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/laeste.jpg",
+      "source": "https://ihee.co.kr/detail_page/laesthe/laesthe_LOGO_500.jpg",
+      "width": 500,
+      "height": 300,
+      "viewport": [145, 120, 211, 61]
+    }
+  },
+  {
+    "id": "exomera",
+    "name": "엑소메라",
+    "wordmark": "exomera",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/exomera.png",
+      "source": "https://exomera.co.kr/web/upload/category/editor/2023/10/13/ea6e40564e38fe2cd712d63d8b568213.png",
+      "width": 190,
+      "height": 30,
+      "viewport": [0, 0, 190, 30]
+    }
+  },
+  {
+    "id": "blancdiva",
+    "name": "블랑디바",
+    "wordmark": "BLANC DIVA",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/blancdiva.png",
+      "source": "https://blancdiva.com/web/upload/kment/images/PC_logo.png",
+      "width": 1200,
+      "height": 180,
+      "viewport": [30, 21, 762, 141]
+    }
+  },
+  {
+    "id": "oiad",
+    "name": "오아드",
+    "wordmark": "Oiad.",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/oiad.svg",
+      "source": "https://ecimg.cafe24img.com/pg326b45779995089/oiad/web/oiad_renewal/img/oiad-header-logo.svg",
+      "width": 243,
+      "height": 77,
+      "viewport": [0, 0, 243, 77]
+    }
+  },
+  {
+    "id": "laundryou",
+    "name": "런드리유",
+    "wordmark": "laundryou",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/laundryou.png",
+      "source": "https://bvmtcos.cafe24.com/web/upload/bvmt/image/toplogo_black.png",
+      "width": 180,
+      "height": 55,
+      "viewport": [0, 0, 180, 55]
+    }
+  },
+  {
+    "id": "geske",
+    "name": "게스케",
+    "wordmark": "GESKE",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/geske.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_1f4e9580b7b040abac16f70e9139bca7~mv2.png",
+      "width": 806,
+      "height": 781,
+      "viewport": [91, 302, 627, 231]
+    }
+  },
+  {
+    "id": "meditherapy",
+    "name": "메디테라피",
+    "wordmark": "MEDITHERAPY",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/meditherapy.png",
+      "source": "https://meditherapy.co.kr/web_img/25new/meditherapy_black_logo_2025ver.png",
+      "width": 4245,
+      "height": 435,
+      "viewport": [0, 0, 4245, 435]
+    }
+  },
+  {
+    "id": "dimare",
+    "name": "디마레",
+    "wordmark": "DIMARE",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/dimare.png",
+      "source": "https://ecimg.cafe24img.com/pg1142b95441593055/dmare2024/web/upload/category/editor/2024/09/09/c22d9bc2f31b3d3b8f3b38a209123ecb.png",
+      "width": 340,
+      "height": 140,
+      "viewport": [0, 26, 340, 92]
+    }
+  },
+  {
+    "id": "borotalco",
+    "name": "보로탈코",
+    "wordmark": "BOROTALCO",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/borotalco.png",
+      "source": "https://www.borotalco.com/img/borotalco-logo-lg-new.png",
+      "width": 1006,
+      "height": 335,
+      "viewport": [24, 81, 654, 172]
+    }
+  },
+  {
+    "id": "bodiance",
+    "name": "바디언스",
+    "wordmark": "Bodiance.",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/bodiance.png",
+      "source": "https://bodiance.net/_images/ft_logo.png",
+      "dark": true,
+      "width": 110,
+      "height": 20,
+      "viewport": [0, 0, 109, 20]
+    }
+  },
+  {
+    "id": "antoto",
+    "name": "엔젤토",
+    "wordmark": "ANTOTO",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/antoto.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_3f72b6eb2c0b4ae5bdbee9fc9d547d5a~mv2.png",
+      "width": 812,
+      "height": 807,
+      "viewport": [0, 0, 812, 807]
+    }
+  },
+  {
+    "id": "hebestem",
+    "name": "헤베스템",
+    "wordmark": "Hebestem",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/hebestem.png",
+      "source": "https://hebestem.kr/clothic_studio/image/logo.png",
+      "width": 380,
+      "height": 84,
+      "viewport": [0, 0, 380, 84]
+    }
+  },
+  {
+    "id": "eptq",
+    "name": "에피티크",
+    "wordmark": "e.p.t.q.",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/eptq.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_3b798972eb574eda93fe7ed8129181d9~mv2.png",
+      "width": 621,
+      "height": 615,
+      "viewport": [0, 0, 621, 615]
+    }
+  },
+  {
+    "id": "revcell",
+    "name": "리브이셀",
+    "wordmark": "REVCELL",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/revcell.png",
+      "source": "https://revcell.co.kr/web/upload/wp/167417/logo_i3.png",
+      "width": 190,
+      "height": 52,
+      "viewport": [0, 13, 137, 31]
+    }
+  },
+  {
+    "id": "aida",
+    "name": "아이다",
+    "wordmark": "AIDA",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/aida.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_6abdcab112ba4095982c50e7cbff1a27~mv2.png",
+      "width": 641,
+      "height": 615,
+      "viewport": [62, 124, 531, 350]
+    }
+  },
+  {
+    "id": "tovegan",
+    "name": "투비건",
+    "wordmark": "Tovegan",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/tovegan.png",
+      "source": "https://tovegan.com/cdn/shop/files/logo_115462d2-d347-45fe-8f2a-cbc59e3d8c63.png?v=1764747525&width=160",
+      "width": 160,
+      "height": 80,
+      "viewport": [0, 0, 160, 80]
+    }
+  },
+  {
+    "id": "azh",
+    "name": "AZH",
+    "wordmark": "AZH",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/azh.png",
+      "source": "https://azh.co.kr/web/upload/category/editor/2025/03/24/c003decf04d5a4d9e3bb83422b4852a7.png",
+      "width": 2084,
+      "height": 1084,
+      "viewport": [0, 0, 2084, 1084]
+    }
+  },
+  {
+    "id": "animo",
+    "name": "아니모",
+    "wordmark": "ANIMO",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/animo.png",
+      "source": "https://ecimg.cafe24img.com/pg763b49602354081/animo2/web/upload/category/logo/v2_cbb70ecf83479524e020f24f9fff1523_Ui91ckNwMW_top.jpg",
+      "width": 1500,
+      "height": 1000,
+      "viewport": [0, 280, 1500, 443]
+    }
+  },
+  {
+    "id": "juno",
+    "name": "준오헤어",
+    "wordmark": "JUNO HAIR",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/juno.jpg",
+      "source": "https://www.junohair.com/static_resources/images/junohair_logo.jpg",
+      "width": 800,
+      "height": 800,
+      "viewport": [137, 354, 523, 98]
+    }
+  },
+  {
+    "id": "skinlab",
+    "name": "스킨랩엘",
+    "wordmark": "SKINLAB L",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/skinlab.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_9c0a1c1031dd4b8e9a557f2f5d302505~mv2.png",
+      "width": 701,
+      "height": 718,
+      "viewport": [131, 124, 444, 468]
+    }
+  },
+  {
+    "id": "chaakan",
+    "name": "착한구두",
+    "wordmark": "착한구두",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/chaakan.png",
+      "source": "https://chakanshoes.cafe24.com/web/upload/logo/chaakan_01.png",
+      "width": 807,
+      "height": 120,
+      "viewport": [0, 0, 807, 120]
+    }
+  },
+  {
+    "id": "dorosiwa",
+    "name": "도로시와",
+    "wordmark": "DOROSIWA",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/dorosiwa.png",
+      "source": "https://dorosiwa.co.kr/dorosiwa/New-260707/top-logo.png",
+      "width": 901,
+      "height": 95,
+      "viewport": [0, 0, 901, 95]
+    }
+  },
+  {
+    "id": "badigo",
+    "name": "바디코",
+    "wordmark": "bodyco",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/badigo.png",
+      "source": "https://bodyco.kr/web/upload/category/editor/2023/01/02/f8c8a6fa083b8f132e854cb57b7448fd.png",
+      "width": 60,
+      "height": 60,
+      "viewport": [7, 0, 46, 60]
+    }
+  },
+  {
+    "id": "foleolla",
+    "name": "포레올라",
+    "wordmark": "POLEOLLA",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/foleolla.png",
+      "source": "https://poleolla.com/web/upload/goodymall/kr/main/logo.png",
+      "width": 189,
+      "height": 30,
+      "viewport": [0, 0, 189, 30]
+    }
+  },
+  {
+    "id": "lacollecta",
+    "name": "라컬렉타",
+    "wordmark": "LA COLLECTA",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/lacollecta.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_630e417f97c340278f8c3839906c42ab~mv2.png",
+      "width": 676,
+      "height": 648,
+      "viewport": [0, 0, 676, 648]
+    }
+  },
+  {
+    "id": "vanwalk",
+    "name": "반워크",
+    "wordmark": "Vanwalk",
+    "categories": ["Beauty & Fashion"],
+    "logo": {
+      "src": "/partners/vanwalk.png",
+      "source": "https://cdn.imweb.me/thumbnail/20260202/e65719aa6b886.png",
+      "width": 560,
+      "height": 166,
+      "viewport": [0, 0, 560, 166]
+    }
+  },
+  {
+    "id": "crown",
+    "name": "크라운해태",
+    "wordmark": "CROWN",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/crown.png",
+      "source": "https://www.crown.co.kr/resources/image/web/common/logo_g.png?2",
+      "width": 240,
+      "height": 54,
+      "viewport": [0, 0, 240, 54]
+    }
+  },
+  {
+    "id": "kelloggs",
+    "name": "켈로그",
+    "wordmark": "Kellogg’s",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/kelloggs.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_d12c07205d314a14b9de7599dd6e692f~mv2.png",
+      "width": 791,
+      "height": 767,
+      "viewport": [94, 268, 612, 228]
+    }
+  },
+  {
+    "id": "barudam",
+    "name": "바르닭",
+    "wordmark": "바르닭",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/barudam.png",
+      "source": "https://barudak.co.kr/web/upload/category/editor/2025/12/18/5f0fecfdeebcd7343fabca002fc7d34b.png",
+      "width": 162,
+      "height": 48,
+      "viewport": [0, 0, 162, 48]
+    }
+  },
+  {
+    "id": "jaximdak",
+    "name": "작심닭",
+    "wordmark": "JAXIMDAK",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/jaximdak.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_0b4271977d6345809335a8821167c657~mv2.png",
+      "width": 798,
+      "height": 735,
+      "viewport": [94, 211, 608, 314]
+    }
+  },
+  {
+    "id": "raon",
+    "name": "라온콕",
+    "wordmark": "라온콕",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/raon.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_30fd7b15646c4e17a0f95e6b4023db47~mv2.png",
+      "width": 774,
+      "height": 846,
+      "viewport": [102, 185, 551, 414]
+    }
+  },
+  {
+    "id": "nuldam",
+    "name": "널담",
+    "wordmark": "Nuldam",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/nuldam.svg",
+      "source": "https://nuldam.com/web/upload/logo/logo.svg",
+      "width": 146,
+      "height": 31,
+      "viewport": [0, 0, 146, 31]
+    }
+  },
+  {
+    "id": "labnosh",
+    "name": "랩노쉬",
+    "wordmark": "LABNOSH",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/labnosh.jpg",
+      "source": "https://labnosh.com/web/upload/category/logo/v2_614ae989071df0b30e0e58f18599837f_T9tcIF1E9t_top.jpg",
+      "width": 1516,
+      "height": 268,
+      "viewport": [0, 0, 1516, 268]
+    }
+  },
+  {
+    "id": "iconique",
+    "name": "하루단백바",
+    "wordmark": "ICONIQUE",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/iconique.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_b19779b111894d6e90818b8e323b62ad~mv2.png",
+      "width": 884,
+      "height": 772,
+      "viewport": [0, 0, 884, 772]
+    }
+  },
+  {
+    "id": "jojo",
+    "name": "조조칼국수",
+    "wordmark": "조조칼국수",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/jojo.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_7414eda884aa4e988db78ae792e4a9a7~mv2.png",
+      "width": 633,
+      "height": 646,
+      "viewport": [61, 108, 478, 428]
+    }
+  },
+  {
+    "id": "thejjang",
+    "name": "더짱터",
+    "wordmark": "The 짱터",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/thejjang.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_c26698d6f14c4ac791400d8fb36ae13c~mv2.png",
+      "width": 757,
+      "height": 655,
+      "viewport": [88, 216, 600, 179]
+    }
+  },
+  {
+    "id": "jinhans",
+    "name": "진한식품",
+    "wordmark": "진한식품",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/jinhans.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_68603b83b65b47fd9e3a478a410de7e9~mv2.png",
+      "width": 674,
+      "height": 704,
+      "viewport": [155, 137, 351, 396]
+    }
+  },
+  {
+    "id": "chef",
+    "name": "셰프애찬",
+    "wordmark": "셰프애찬",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/chef.jpg",
+      "source": "https://spdy-flexg-main.flexgate.co.kr/data/main_logo/owenfood/logo_300x90_20220323051927816_1.jpg",
+      "width": 300,
+      "height": 90,
+      "viewport": [32, 12, 235, 65]
+    }
+  },
+  {
+    "id": "geodae",
+    "name": "거대곰탕",
+    "wordmark": "거대곰탕",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/geodae.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_3392d325b5e143edaf9eb087f15ef851~mv2.png",
+      "width": 701,
+      "height": 729,
+      "viewport": [168, 135, 447, 452]
+    }
+  },
+  {
+    "id": "subaek",
+    "name": "수백당",
+    "wordmark": "수백당",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/subaek.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_0f02aa86f83549348933a6907cf718cc~mv2.png",
+      "width": 650,
+      "height": 641,
+      "viewport": [132, 119, 418, 427]
+    }
+  },
+  {
+    "id": "sundae",
+    "name": "순대보감",
+    "wordmark": "순대보감",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/sundae.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_bd3bf584f084433a874678ca274e7781~mv2.png",
+      "width": 767,
+      "height": 691,
+      "viewport": [97, 254, 601, 166]
+    }
+  },
+  {
+    "id": "ssok",
+    "name": "쑥이네",
+    "wordmark": "쑥이네",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/ssok.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_c0e3febee0f548a2b1f28d972860b3f4~mv2.png",
+      "width": 644,
+      "height": 596,
+      "viewport": [0, 0, 644, 596]
+    }
+  },
+  {
+    "id": "osung",
+    "name": "오성게장",
+    "wordmark": "오성게장",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/osung.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_1a84a14b091f4cbfa47bca869ae197d5~mv2.png",
+      "width": 650,
+      "height": 649,
+      "viewport": [73, 112, 501, 325]
+    }
+  },
+  {
+    "id": "giant",
+    "name": "자이언트막창",
+    "wordmark": "자이언트막창",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/giant.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_18fff53ea42b40848205f4ec97a7af46~mv2.png",
+      "width": 711,
+      "height": 696,
+      "viewport": [0, 0, 711, 696]
+    }
+  },
+  {
+    "id": "judang",
+    "name": "주당의비결",
+    "wordmark": "주당의 비결",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/judang.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_72acc9f6f35f4e968a1c234625822c83~mv2.png",
+      "width": 690,
+      "height": 678,
+      "viewport": [106, 153, 452, 381]
+    }
+  },
+  {
+    "id": "drliv",
+    "name": "닥터리브",
+    "wordmark": "Dr.Liv",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/drliv.png",
+      "source": "https://drliv.co.kr/innoy/logo.png",
+      "width": 192,
+      "height": 54,
+      "viewport": [0, 0, 192, 54]
+    }
+  },
+  {
+    "id": "neulssin",
+    "name": "늘씬자피",
+    "wordmark": "neulssin",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/neulssin.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_9a591f5124ea404aa53c5017b47d184f~mv2.png",
+      "width": 686,
+      "height": 691,
+      "viewport": [66, 187, 542, 216]
+    }
+  },
+  {
+    "id": "dilib",
+    "name": "딜립",
+    "wordmark": "dilib",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/dilib.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_b7dc6b814dab4a9a8edc9d0cbb1b617f~mv2.png",
+      "width": 615,
+      "height": 586,
+      "viewport": [0, 0, 615, 586]
+    }
+  },
+  {
+    "id": "newberry",
+    "name": "뉴베러",
+    "wordmark": "NUBETTER",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/newberry.png",
+      "source": "https://findther.cafe24.com/web/upload/kment/images/NUEBETTER_logo.png",
+      "width": 250,
+      "height": 39,
+      "viewport": [0, 0, 250, 39]
+    }
+  },
+  {
+    "id": "kagameat",
+    "name": "가가미트",
+    "wordmark": "가가미트",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/kagameat.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_4959bdd871d74e389bf4e386b42d1876~mv2.png",
+      "width": 682,
+      "height": 721,
+      "viewport": [154, 153, 390, 439]
+    }
+  },
+  {
+    "id": "plante",
+    "name": "쁠랑뜨",
+    "wordmark": "Plante",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/plante.png",
+      "source": "https://ecimg.cafe24img.com/pg1022b35489656047/plante01/web/upload/category/logo/v2_79e63650c2a54520a88a4db65f0fa72c_aIC5rcK0Wa_top.jpg",
+      "width": 600,
+      "height": 600,
+      "viewport": [35, 87, 528, 426]
+    }
+  },
+  {
+    "id": "biotta",
+    "name": "바이오타",
+    "wordmark": "Biotta",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/biotta.svg",
+      "source": "https://biotta.ch/static/biotta/images/logo.svg",
+      "width": 454,
+      "height": 114,
+      "viewport": [0, 0, 454, 114]
+    }
+  },
+  {
+    "id": "giridori",
+    "name": "기러기둥지",
+    "wordmark": "기러기둥지",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/giridori.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_49dc64903d7d45c084eeb670741900a1~mv2.png",
+      "width": 535,
+      "height": 536,
+      "viewport": [122, 118, 311, 288]
+    }
+  },
+  {
+    "id": "song",
+    "name": "송계옥",
+    "wordmark": "송계옥",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/song.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_e4471b61527643ddb0a60ba4b3ac09ec~mv2.png",
+      "width": 529,
+      "height": 479,
+      "viewport": [50, 155, 415, 150]
+    }
+  },
+  {
+    "id": "sushijun",
+    "name": "스시준",
+    "wordmark": "스시준",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/sushijun.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_ce27ce380e46447084897daab734ea13~mv2.png",
+      "width": 505,
+      "height": 541,
+      "viewport": [56, 83, 378, 372]
+    }
+  },
+  {
+    "id": "yangmun",
+    "name": "양문",
+    "wordmark": "양문",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/yangmun.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_5e4ebfa7cb0440c79f6ce1a75effe6b3~mv2.png",
+      "width": 516,
+      "height": 548,
+      "viewport": [72, 146, 379, 290]
+    }
+  },
+  {
+    "id": "bulkkeut",
+    "name": "불끈",
+    "wordmark": "불끈",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/bulkkeut.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_c235499cdda4479d9f64748a612e5bbb~mv2.png",
+      "width": 514,
+      "height": 565,
+      "viewport": [77, 92, 355, 390]
+    }
+  },
+  {
+    "id": "people",
+    "name": "피플더테라스",
+    "wordmark": "PEOPLE THE TERRACE",
+    "categories": ["Food & Dining"],
+    "logo": {
+      "src": "/partners/people.png",
+      "source": "https://static.wixstatic.com/media/dc99e3_9406517135f74bfbb30ed1a254bbb3a0~mv2.png",
+      "width": 605,
+      "height": 574,
+      "viewport": [81, 226, 438, 116]
+    }
+  }
+]

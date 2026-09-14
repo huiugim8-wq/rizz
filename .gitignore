@@ -4,3 +4,17 @@ dist/
 .vinext/
 .wrangler/
 .DS_Store
+*.tsbuildinfo
+tmp/
+# Local media-production history; not application source or deployable assets.
+archive/
+
+.env*
+!.env.example
+.local/
+src/generated/
+coverage/
+release/
+.release/
+artifacts/
+output/

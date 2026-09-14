@@ -1,0 +1,654 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@source '../../src/admin';
+.adminRoot {
+  --accent: #174638;
+  font:
+    15px/1.65 Arial,
+    'Apple SD Gothic Neo',
+    sans-serif;
+  color: #202820;
+  background: #f6f7f5;
+  min-height: 100vh;
+  letter-spacing: 0;
+}
+.adminRoot *,
+.adminDialog * {
+  box-sizing: border-box;
+}
+.adminRoot a {
+  color: inherit;
+  text-decoration: none;
+}
+.adminRoot button,
+.adminRoot input,
+.adminRoot select,
+.adminRoot textarea,
+.adminDialog button {
+  font: inherit;
+  letter-spacing: 0;
+}
+.adminRoot button {
+  cursor: pointer;
+}
+.adminRoot button:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+.adminRoot h1,
+.adminRoot h2,
+.adminRoot h3,
+.adminRoot p {
+  margin: 0;
+}
+.adminRoot h1 {
+  font-size: 30px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+}
+.adminRoot h2 {
+  font-size: 21px;
+  line-height: 1.4;
+}
+.adminRoot small,
+.adminMuted {
+  color: #647066;
+}
+.adminRoot label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+.adminRoot input:not([type='checkbox']):not([type='range']),
+.adminRoot select,
+.adminRoot textarea {
+  width: 100%;
+  border: 1px solid #cad1ca;
+  border-radius: 7px;
+  padding: 10px 12px;
+  min-height: 44px;
+  background: white;
+  color: #202820;
+  font-size: 16px;
+}
+.adminRoot input[type='range'] {
+  width: 100%;
+}
+.adminRoot input:focus-visible,
+.adminRoot select:focus-visible,
+.adminRoot textarea:focus-visible,
+.adminRoot button:focus-visible,
+.adminRoot a:focus-visible,
+.adminDialog button:focus-visible {
+  outline: 3px solid #9dc4b5;
+  outline-offset: 2px;
+}
+.adminRoot fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.adminRoot .adminCheck {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.adminBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 15px;
+  border: 1px solid #ccd3cb;
+  border-radius: 7px;
+  background: white;
+  color: #26382b;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.adminBtn[data-tone='primary'] {
+  background: #174638;
+  color: white;
+  border-color: #174638;
+}
+.adminBtn[data-tone='danger'] {
+  color: #b22424;
+  border-color: #e4baba;
+  background: #fff;
+}
+.adminBtn:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+.adminFrame {
+  max-width: 1440px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  min-height: 100vh;
+}
+.adminSide {
+  min-width: 0;
+  padding: 32px 22px;
+  background: #fff;
+  border-right: 1px solid #e2e6df;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.adminBrand {
+  font-weight: 900;
+  font-size: 23px;
+  letter-spacing: -1px;
+}
+.adminSide nav {
+  display: grid;
+  gap: 6px;
+}
+.adminSide nav a {
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+.adminSide nav a:hover {
+  background: #eef2ec;
+}
+.adminSide .adminAccount {
+  margin-top: auto;
+  font-size: 13px;
+}
+.adminMain {
+  padding: 44px;
+  min-width: 0;
+}
+.adminDemoBanner {
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border: 1px solid #cfddcf;
+  border-radius: 8px;
+  background: #eef5ef;
+  color: #28503a;
+  font-size: 14px;
+}
+.adminTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.adminStack {
+  min-width: 0;
+  display: grid;
+  gap: 20px;
+}
+.adminRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.adminSpread {
+  justify-content: space-between;
+}
+.adminCard {
+  background: white;
+  border: 1px solid #e0e5df;
+  border-radius: 10px;
+  padding: 24px;
+}
+.adminFilters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.adminFilters input {
+  flex: 1;
+}
+.adminFilters select {
+  max-width: 160px;
+}
+.adminTableWrap {
+  overflow: auto;
+  background: white;
+  border: 1px solid #e0e5df;
+  border-radius: 10px;
+}
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+.adminTable th {
+  background: #f0f3ef;
+  color: #5d695f;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.adminTable td,
+.adminTable th {
+  padding: 15px 18px;
+  border-bottom: 1px solid #e9ece6;
+}
+.adminTable tr:last-child td {
+  border-bottom: 0;
+}
+.adminThumb {
+  width: 54px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 5px;
+  background: #eef0eb;
+}
+.adminBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: #edf2ed;
+  color: #3d5744;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.adminBadge[data-state='PUBLISHED'],
+.adminBadge[data-state='ACTIVE'] {
+  background: #dfefe5;
+  color: #20503a;
+}
+.adminAuth {
+  max-width: 680px;
+  margin: auto;
+  padding: 56px 24px;
+}
+.adminAuth .adminBrand {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+.adminAuth > .adminCard {
+  border-radius: 18px;
+  padding: 36px 40px 40px;
+  box-shadow: 0 18px 60px rgb(29 45 34 / 8%);
+}
+.adminAuth > .adminCard > .adminMuted {
+  margin-top: 8px;
+}
+.adminAuthBody {
+  display: grid;
+  gap: 24px;
+  margin-top: 26px;
+}
+.adminAuthLead {
+  color: #556058;
+}
+.adminAuthForm {
+  display: grid;
+  gap: 20px;
+}
+.adminAuthTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 5px;
+  border-radius: 11px;
+  background: #e9ede9;
+}
+.adminAuthTabs button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  color: #657067;
+  background: transparent;
+  font-weight: 700;
+}
+.adminAuthTabs button[aria-selected='true'] {
+  color: #fff;
+  background: #174638;
+  box-shadow: 0 2px 8px rgb(23 70 56 / 18%);
+}
+.adminAuthAccountPanel,
+.adminAuthSectionHeading {
+  display: grid;
+  gap: 16px;
+}
+.adminAuthSectionHeading {
+  gap: 3px;
+}
+.adminAuthSectionHeading strong {
+  font-size: 18px;
+}
+.adminAuthSectionHeading small {
+  font-weight: 400;
+}
+.adminDemoAccount {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #cbd9cf;
+  border-radius: 12px;
+  background: #f1f6f2;
+}
+.adminDemoAccount > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+.adminDemoAccount > div:first-child small {
+  font-weight: 400;
+}
+.adminDemoAccount dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.adminDemoAccount dl > div {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 7px 8px 7px 12px;
+  border: 1px solid #d8e1da;
+  border-radius: 8px;
+  background: #fff;
+}
+.adminDemoAccount dt {
+  color: #66736a;
+  font-size: 13px;
+}
+.adminDemoAccount dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+}
+.adminDemoAccount dl button {
+  min-width: 58px;
+  min-height: 34px;
+  border: 1px solid #b8c5bb;
+  border-radius: 6px;
+  background: #fff;
+  color: #174638;
+  font-weight: 700;
+}
+.adminDemoLogin {
+  width: 100%;
+  min-height: 50px;
+}
+.adminAuthProvider {
+  position: relative;
+  width: 100%;
+  min-height: 54px;
+  border-color: #d8ddd8;
+  border-radius: 11px;
+  font-size: 16px;
+}
+.adminGoogleMark {
+  position: absolute;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d8ddd8;
+  border-radius: 50%;
+  color: #4285f4;
+  background: #fff;
+  font-weight: 800;
+}
+.adminAuthDivider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  align-items: center;
+  color: #8a938c;
+  font-size: 13px;
+}
+.adminAuthDivider::before,
+.adminAuthDivider::after {
+  content: '';
+  height: 1px;
+  background: #e0e5df;
+}
+.adminAuthForm label {
+  gap: 8px;
+}
+.adminAuthForm .adminBtn[data-tone='primary'] {
+  min-height: 52px;
+  margin-top: 4px;
+}
+.adminMessage {
+  padding: 12px 15px;
+  border-radius: 7px;
+  background: #e8f0e7;
+  color: #28523a;
+}
+.adminMessage[data-error='true'] {
+  background: #fff0eb;
+  color: #a23520;
+}
+.adminEditor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+.adminForm {
+  display: grid;
+  gap: 22px;
+}
+.adminForm small {
+  font-weight: 400;
+}
+.adminTwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.adminPreview {
+  position: sticky;
+  top: 24px;
+}
+.adminPreview img {
+  width: 100%;
+  aspect-ratio: 700/426;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.adminPreview[data-kind='creators'] img {
+  aspect-ratio: 816/969;
+}
+.adminPreview h2 {
+  margin-top: 12px;
+}
+.adminDrop {
+  padding: 20px;
+  border: 1px dashed #9bac9e;
+  border-radius: 8px;
+  background: #f8faf7;
+}
+.adminDrop img {
+  max-width: 140px;
+  max-height: 120px;
+  object-fit: contain;
+}
+.adminActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid #e1e6de;
+}
+.adminEmpty {
+  padding: 60px 24px;
+  text-align: center;
+  color: #687265;
+}
+.adminOverlay {
+  position: fixed;
+  inset: 0;
+  background: #15231b88;
+  z-index: 10000;
+}
+.adminDialog {
+  font:
+    15px/1.6 Arial,
+    sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #202820;
+  padding: 28px;
+  border-radius: 12px;
+  width: min(640px, calc(100vw - 32px));
+  max-height: 85vh;
+  overflow: auto;
+  z-index: 10001;
+}
+.adminDialog h2 {
+  margin: 0 0 12px;
+}
+.adminMediaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.adminMediaGrid img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+.adminMediaGrid button {
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+.adminMediaGrid .adminDelete {
+  font-size: 12px;
+  width: 100%;
+  margin-top: 4px;
+  color: #a23520;
+}
+.adminSortItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+.adminSortItem strong {
+  flex: 1;
+}
+@media (max-width: 900px) {
+  .adminFrame {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .adminSide {
+    padding: 18px 20px;
+    border-right: 0;
+    border-bottom: 1px solid #ddd;
+    gap: 12px;
+  }
+  .adminSide nav {
+    display: flex;
+    overflow: auto;
+  }
+  .adminSide nav a {
+    white-space: nowrap;
+  }
+  .adminSide .adminAccount {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .adminMain {
+    padding: 24px 18px;
+  }
+  .adminEditor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .adminPreview {
+    position: static;
+    max-width: 380px;
+  }
+  .adminTop {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .adminRoot h1 {
+    font-size: 25px;
+  }
+  .adminFilters {
+    flex-wrap: wrap;
+  }
+  .adminFilters select {
+    max-width: none;
+  }
+  .adminTwo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .adminMediaGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .adminAuth {
+    padding: 28px 16px;
+  }
+  .adminAuth > .adminCard {
+    padding: 26px 20px 30px;
+    border-radius: 14px;
+  }
+  .adminAuthProvider {
+    min-height: 50px;
+  }
+  .adminDemoAccount {
+    padding: 16px;
+  }
+  .adminAuthTabs button {
+    padding-inline: 6px;
+    font-size: 12px;
+  }
+  .adminDemoAccount dl > div {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .adminDemoAccount dt {
+    grid-column: 1 / -1;
+  }
+  .adminContentTable,
+  .adminContentTable tbody {
+    display: block;
+  }
+  .adminContentTable thead {
+    display: none;
+  }
+  .adminContentTable tr {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 8px 14px;
+    padding: 18px;
+    border-bottom: 1px solid #e9ece6;
+  }
+  .adminContentTable td {
+    display: block;
+    border: 0;
+    padding: 0;
+  }
+  .adminContentTable td:first-child {
+    grid-row: 1 / 3;
+  }
+  .adminContentTable td:nth-child(2),
+  .adminContentTable td:nth-child(3) {
+    grid-column: 2;
+  }
+  .adminContentTable td:last-child {
+    grid-column: 1 / -1;
+    padding-top: 8px;
+  }
+  .adminContentTable .adminRow {
+    justify-content: flex-end;
+  }
+}

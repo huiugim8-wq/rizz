@@ -1,0 +1,337 @@
+.page {
+  color: #171717;
+  background: #f3eddf;
+}
+
+.content {
+  --accent: #c7001f;
+  --section-width: 1320px;
+  width: 100%;
+}
+
+.intro {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 390px;
+  padding: 66px max(68px, calc((100% - var(--section-width)) / 2 + 68px)) 36px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #211d19;
+  background-position: center 56%;
+  background-size: cover;
+}
+
+.intro::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(12 9 7 / 68%), rgb(12 9 7 / 22%));
+  content: '';
+}
+
+.introTitle,
+.introStory {
+  position: relative;
+  z-index: 1;
+}
+
+.introTitle {
+  padding-top: 24px;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(46px, 5vw, 72px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+  word-break: keep-all;
+}
+
+.introTitle p {
+  margin: 24px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.introStory {
+  position: absolute;
+  right: clamp(24px, 5.4vw, 86px);
+  bottom: 33px;
+  left: clamp(24px, 5.4vw, 86px);
+  max-width: 1100px;
+  margin: 0;
+  color: rgb(255 255 255 / 88%);
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.75;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+}
+
+.introStory strong,
+.introStory b {
+  color: #fff;
+  font-weight: 700;
+}
+
+.brands {
+  width: min(100%, 1800px);
+  margin: 0 auto;
+  padding: clamp(58px, 6vw, 90px) clamp(16px, 1.6vw, 28px) clamp(94px, 10vw, 156px);
+  scroll-margin-top: 90px;
+}
+
+.screenReader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.brandList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.25vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brandList > li {
+  min-width: 0;
+  scroll-margin-top: 90px;
+}
+
+.brandCard {
+  display: block;
+  min-width: 0;
+  color: #24211f;
+}
+
+.brandVisual {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.brandVisual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 12%), rgb(0 0 0 / 4%) 42%, rgb(0 0 0 / 52%));
+  content: '';
+  pointer-events: none;
+}
+
+.brandVisual > img:first-child {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.brandLogo {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(76%, 270px);
+  height: 42%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transform: translate(-50%, -50%);
+}
+
+.brandLogo[data-brand='dogout'] {
+  width: 78%;
+  height: 32%;
+}
+
+.brandLogo[data-brand='sushijun'] {
+  left: 63%;
+  width: 86%;
+  height: 86%;
+}
+
+.brandLogo[data-brand='ekiudon'] {
+  width: 90%;
+  height: 48%;
+}
+
+.brandLogo[data-brand='seogyo'] {
+  width: 90%;
+  height: 68%;
+  filter: grayscale(1) contrast(4) invert(1);
+  mix-blend-mode: screen;
+}
+
+.brandArrow {
+  position: absolute;
+  z-index: 3;
+  top: clamp(14px, 1.5vw, 24px);
+  right: clamp(14px, 1.5vw, 24px);
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.brandTitle {
+  margin: 0;
+  padding: 13px 0 0;
+  font-size: clamp(12px, 1vw, 17px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+
+.brandTitle strong {
+  font-weight: 700;
+}
+
+.brandCard:hover .brandVisual > img:first-child {
+  transform: scale(1.025);
+}
+
+.brandCard:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.contact {
+  padding: clamp(60px, 7vw, 100px) max(68px, calc((100% - var(--section-width)) / 2 + 68px));
+  color: #fff;
+  background: #0b0b0b;
+}
+
+.contact > span {
+  color: #929292;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.contact > div {
+  display: flex;
+  margin-top: 25px;
+  gap: 40px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.contact h2 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(30px, 4.4vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -0.06em;
+  word-break: keep-all;
+}
+
+.contact a {
+  display: inline-flex;
+  min-width: 160px;
+  padding: 12px 0;
+  gap: 40px;
+  border-bottom: 1px solid #fff;
+  justify-content: space-between;
+}
+
+.contact a:hover {
+  color: #ff334b;
+}
+
+@media (max-width: 900px) {
+  .intro {
+    min-height: 420px;
+    padding-top: 48px;
+  }
+
+  .introStory {
+    font-size: 13px;
+  }
+
+  .brands {
+    padding: 44px 12px 80px;
+  }
+
+  .brandList {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .brandVisual {
+    aspect-ratio: auto;
+  }
+
+  .brandVisual > img:first-child {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .brandLogo[data-brand='sushijun'] {
+    left: 61%;
+    width: 96%;
+    height: 96%;
+  }
+
+  .brandLogo[data-brand='ekiudon'] {
+    width: 94%;
+    height: 54%;
+  }
+
+  .brandTitle {
+    padding-top: 11px;
+    font-size: 16px;
+  }
+
+  .contact > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro {
+    display: flex;
+    min-height: 0;
+    padding: 54px 18px 48px;
+    background-position: 58% center;
+    flex-direction: column;
+    gap: 76px;
+  }
+
+  .intro::after {
+    background: linear-gradient(180deg, rgb(12 9 7 / 60%), rgb(12 9 7 / 72%));
+  }
+
+  .introTitle {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .intro h1 {
+    font-size: clamp(40px, 13vw, 56px);
+  }
+
+  .introStory {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    max-width: none;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}

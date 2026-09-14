@@ -1,0 +1,116 @@
+.page {
+  min-width: 0;
+}
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(220px, 314px) minmax(0, 1fr);
+  gap: 20px;
+  width: min(1180px, calc(100% - 68px));
+  min-height: 1236px;
+  margin: auto;
+  padding: 55px 0 150px;
+}
+.wrap > aside {
+  position: sticky;
+  top: 118px;
+  align-self: start;
+  display: flex;
+  margin-top: 580px;
+  padding-left: 15px;
+  border-left: 1px solid #aaa;
+  flex-direction: column;
+  color: #aaa;
+  font:
+    40px/0.98 Arial,
+    sans-serif;
+  letter-spacing: -2px;
+}
+.wrap > aside a:first-child {
+  color: #111;
+}
+.wrap > div {
+  width: 100%;
+  min-width: 0;
+}
+.wrap section > h2 {
+  margin: 0 0 35px;
+  font:
+    700 20px Arial,
+    sans-serif;
+}
+.emailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #111;
+  border-left: 1px solid #111;
+}
+.emailGrid article {
+  display: flex;
+  align-items: center;
+  min-height: 204px;
+  padding: 29px;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+}
+.emailGrid article > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.emailGrid article span {
+  font-size: 31px;
+}
+.emailGrid article a {
+  font-size: 20px;
+}
+.homepage {
+  margin-top: 126px;
+}
+@media (min-width: 901px) and (max-width: 1199px) {
+  .wrap {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+  .emailGrid article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+  .wrap {
+    display: block;
+    width: auto;
+    min-height: 0;
+    padding: 16px 20px 40px;
+  }
+  .wrap > aside {
+    position: static;
+    display: flex;
+    margin: 0 0 28px;
+    padding: 0;
+    border: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+  .wrap > div {
+    width: auto;
+  }
+  .emailGrid {
+    grid-template-columns: 1fr;
+  }
+  .emailGrid article {
+    min-height: 130px;
+    padding: 20px 16px;
+  }
+  .emailGrid article span {
+    font-size: 22px;
+  }
+  .emailGrid article a {
+    font-size: 14px;
+  }
+  .homepage {
+    margin-top: 36px;
+  }
+}

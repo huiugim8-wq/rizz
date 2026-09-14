@@ -1,0 +1,17 @@
+name: rizz-homepage-dev
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: rizz_dev
+      POSTGRES_PASSWORD: rizz_local_only
+      POSTGRES_DB: rizz_homepage
+    ports: ['127.0.0.1:55437:5432']
+    volumes: ['rizz-db:/var/lib/postgresql/data']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U rizz_dev -d rizz_homepage']
+      interval: 5s
+      timeout: 3s
+      retries: 15
+volumes:
+  rizz-db:

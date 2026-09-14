@@ -1,0 +1,478 @@
+.fnbPage {
+  color: #111;
+  background: #fff;
+}
+
+.fnbHero {
+  position: relative;
+  height: 476px;
+  padding: 0;
+  color: #fff;
+  background: radial-gradient(circle at 15% 80%, #3d080d, #101010 55%);
+}
+
+.fnbHero h1 {
+  position: absolute;
+  top: 66px;
+  right: clamp(40px, 6.71875vw, 86px);
+  width: min(809px, calc(100% - 80px));
+  margin: 0;
+  font:
+    800 65.77px/1.2 Arial,
+    sans-serif;
+  letter-spacing: -0.04em;
+  text-align: right;
+}
+
+.fnbHero > div {
+  position: absolute;
+  top: 161px;
+  right: clamp(40px, 6.71875vw, 86px);
+  width: min(809px, calc(100% - 80px));
+  text-align: right;
+}
+
+.fnbHero h2 {
+  margin: 0 0 5px;
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.fnbHero p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.fnbPage .sideRail {
+  margin-top: 100px;
+}
+
+.fnbBrand {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 587px);
+  width: min(809px, calc(100% - 40px));
+  min-height: 350px;
+  margin: 0 86px 0 auto;
+  padding: 101px 0 0;
+  gap: 22px;
+}
+
+.fnbMark {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.fnbBrand > div {
+  padding-top: 15px;
+}
+
+.fnbBrand h2 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+}
+
+.fnbBrand p {
+  margin: 12px 0 0;
+  color: #6e6e6e;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.fnbMenu {
+  width: min(809px, calc(100% - 40px));
+  margin: 0 86px 0 auto;
+  padding: 55px 0 0;
+}
+
+.fnbMenu > h2 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.fnbMenu > .fnbFoodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.fnbMenu article {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.fnbMenu article::after {
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(transparent, rgb(0 0 0 / 75%));
+  content: '';
+}
+
+.fnbMenu article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+
+.fnbMenu article:hover img {
+  transform: scale(1.035);
+}
+
+.fnbMenu article span {
+  position: absolute;
+  z-index: 2;
+  bottom: 12px;
+  left: 14px;
+  color: #fff;
+  font-size: clamp(21px, 2.8vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.fnbMenu h3 {
+  margin: 126px 10px 0;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.fnbMenu > a {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.fnbSpaceGallery {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: 100%;
+  margin-top: 80px;
+  gap: 10px !important;
+}
+
+.fnbSpaceGallery > img {
+  width: 100%;
+  aspect-ratio: 400 / 243;
+  object-fit: cover;
+}
+
+.fnbSpaceGallery > img:first-child {
+  grid-column: 1 / 3;
+  aspect-ratio: 809 / 324;
+}
+
+.storeInfo {
+  width: min(809px, calc(100% - 40px));
+  margin: 0 86px 100px auto;
+}
+
+.storeInfo div {
+  display: grid;
+  grid-template-columns: 146px 1fr;
+  padding: 10px 20px;
+  border-top: 1px solid #222;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.storeInfo div:last-child {
+  border-bottom: 1px solid #222;
+}
+
+.fnbPage main > .storeInfo:not(.inner) {
+  padding: 6px 0 96px;
+}
+
+.restaurantPage {
+  width: min(809px, calc(100% - 40px));
+  margin: 0 86px 0 auto;
+  padding: 92px 0 130px;
+}
+
+.restaurantLogo {
+  display: block;
+  object-fit: contain;
+}
+
+.sushiLogo {
+  width: 217px;
+  height: 239px;
+}
+
+.udonLogo {
+  width: 356px;
+  height: 99px;
+}
+
+.dogoutLogo {
+  width: 356px;
+  height: 112px;
+}
+
+.restaurantPage > h1 {
+  margin: 80px 0 30px;
+  font-size: 35px;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.restaurantPage > p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.restaurantPage > h3 {
+  margin: 55px 0 23px;
+  font-size: 18px;
+}
+
+.restaurantGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 66px;
+  gap: 11px;
+}
+
+.restaurantGrid img {
+  width: 100%;
+  height: 217px;
+  object-fit: cover;
+}
+
+.restaurantGrid.square img {
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.restaurantPage > h2 {
+  margin: 120px 0 16px 3px;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.restaurantDetails {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.restaurantDetails img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.sushiPage .restaurantDetails img:first-child {
+  aspect-ratio: 809 / 480;
+}
+
+.sushiPage .restaurantDetails img:last-child {
+  aspect-ratio: 809 / 283;
+}
+
+.udonPage .restaurantDetails img {
+  aspect-ratio: 809 / 324;
+}
+
+.storeInfo.inner {
+  width: 100%;
+  margin: 0;
+  padding-top: 25px;
+}
+
+.reserve {
+  display: block;
+  width: 283px;
+  margin: 104px auto 0;
+  padding: 14px;
+  border: 1px solid #111;
+  border-radius: 50px;
+  text-align: center;
+}
+
+@media (min-width: 901px) {
+  .fnbPage:has(.fnbMenu) .fnbHero {
+    height: 364px;
+  }
+}
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .fnbBrand,
+  .fnbMenu,
+  .restaurantPage,
+  .storeInfo {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fnbHero {
+    height: auto;
+    min-height: 300px;
+    padding: 48px 20px;
+  }
+
+  .fnbHero h1,
+  .fnbHero > div {
+    position: static;
+    width: auto;
+    text-align: left;
+  }
+
+  .fnbHero h1 {
+    font-size: clamp(38px, 9vw, 52px);
+  }
+
+  .fnbHero > div {
+    margin-top: 30px;
+  }
+
+  .fnbHero h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .fnbHero p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .fnbPage .sideRail {
+    margin-top: 40px;
+  }
+
+  .fnbBrand {
+    display: flex;
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 50px 20px;
+    gap: 28px;
+    flex-direction: column;
+  }
+
+  .fnbMark {
+    width: 170px;
+    height: 170px;
+  }
+
+  .fnbBrand > div {
+    padding-top: 0;
+  }
+
+  .fnbBrand h2 {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .fnbBrand p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .fnbMenu {
+    width: auto;
+    margin: 0 20px;
+    padding: 30px 0 40px;
+  }
+
+  .fnbMenu > h2 {
+    font-size: 20px;
+  }
+
+  .fnbMenu > .fnbFoodGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .fnbMenu article span {
+    font-size: clamp(17px, 5vw, 24px);
+  }
+
+  .fnbMenu h3 {
+    margin: 50px 0 10px;
+    font-size: 22px;
+  }
+
+  .fnbMenu > a {
+    margin-left: 0;
+  }
+
+  .fnbSpaceGallery {
+    margin-top: 28px;
+    gap: 4px !important;
+  }
+
+  .fnbPage main > .storeInfo:not(.inner) {
+    width: auto;
+    margin: 0 20px 40px;
+    padding: 0;
+  }
+
+  .restaurantPage {
+    width: auto;
+    margin: 0;
+    padding: 52px 20px 70px;
+  }
+
+  .restaurantPage > h1 {
+    margin-top: 60px;
+    font-size: 27px;
+  }
+
+  .restaurantGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .restaurantGrid img,
+  .restaurantGrid.square img {
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .storeInfo.inner {
+    width: 100%;
+    margin: 0;
+  }
+
+  .storeInfo div,
+  .restaurantPage > .storeInfo.inner div {
+    grid-template-columns: 105px 1fr;
+    padding: 12px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .sushiLogo {
+    width: 150px;
+    height: auto;
+  }
+
+  .udonLogo {
+    width: 270px;
+    height: auto;
+  }
+
+  .dogoutLogo {
+    width: min(300px, 100%);
+    height: auto;
+  }
+
+  .restaurantDetails img,
+  .sushiPage .restaurantDetails img:first-child,
+  .sushiPage .restaurantDetails img:last-child,
+  .udonPage .restaurantDetails img {
+    height: auto;
+  }
+
+  .reserve {
+    width: 180px;
+    margin-top: 60px;
+    padding: 13px;
+  }
+}

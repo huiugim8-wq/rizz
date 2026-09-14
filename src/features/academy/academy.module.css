@@ -1,0 +1,304 @@
+/* ACADEMY */
+.academyPage {
+  min-width: 0;
+}
+.academyHero {
+  position: relative;
+  height: 324px;
+  color: #fff;
+  background: #111;
+}
+.academyHero > div {
+  position: absolute;
+  left: calc(max(0px, (100vw - 1280px) / 2) + 369px);
+  top: 44px;
+  width: 809px;
+}
+.academyHero h1 {
+  margin: 0;
+  text-align: right;
+  font:
+    900 64px/0.9 Arial Black,
+    Arial,
+    sans-serif;
+  letter-spacing: -4px;
+}
+.academyLead {
+  margin: 17px 0 0;
+  text-align: right;
+  font-size: 16px;
+  line-height: 24px;
+}
+.academyCopy {
+  display: flex;
+  margin: 13px 0 0;
+  text-align: right;
+  font-size: 16px;
+  line-height: 24px;
+  flex-direction: column;
+}
+.academyCopy strong {
+  font-weight: 700;
+}
+.academyCopy span {
+  font-weight: 400;
+}
+.academyTeacher {
+  height: 688px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 81px 80px 0;
+}
+.academyTeacher > h2 {
+  display: flex;
+  align-items: center;
+  margin: 0 0 39px;
+  font-size: 25.296px;
+  line-height: 40.47px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.academyTeacher > h2 span {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  margin-right: 17px;
+  border-radius: 50%;
+  color: #fff;
+  background: #ec1b1b;
+  font-size: 18px;
+  line-height: 1;
+}
+.lecturer {
+  display: grid;
+  grid-template-columns: 400px 663px;
+  gap: 36px;
+}
+.lecturer img {
+  width: 400px;
+  height: 460px;
+  object-fit: cover;
+  object-position: 50% 44%;
+}
+.lecturer > div {
+  display: grid;
+  grid-template-columns: 91px 556px;
+  column-gap: 16px;
+  align-content: start;
+  padding-top: 20px;
+}
+.lecturer > div > p {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 8px 0 0;
+  font-size: 25.296px;
+  line-height: 40.47px;
+  white-space: nowrap;
+}
+.lecturer h3 {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: 32.379px;
+  line-height: 51.81px;
+}
+.lecturer ul {
+  grid-column: 1/3;
+  width: 556px;
+  margin: 28px 0 0 2px;
+  padding: 0;
+  list-style: none;
+}
+.lecturer li {
+  margin: 0;
+  color: #6e6e6e;
+  font-size: 22.261px;
+  line-height: 35.62px;
+}
+.coming {
+  position: relative;
+  height: 546px;
+  overflow: hidden;
+  background: #fff;
+}
+.comingCards {
+  position: absolute;
+  left: calc(max(0px, (100vw - 1280px) / 2) - 109px);
+  top: 101px;
+  display: flex;
+  gap: 21px;
+  height: 345px;
+}
+.comingCards article {
+  flex: 0 0 283px;
+  height: 345px;
+  background: url('https://static.wixstatic.com/media/dc99e3_60b47c9dc70a4643a58cebd9a2d993e8~mv2.jpg/v1/fill/w_283,h_345,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/gray%20gradient.jpg')
+    center/cover no-repeat;
+}
+.comingCopy {
+  position: absolute;
+  left: calc(max(0px, (100vw - 1280px) / 2) + 235px);
+  top: 201px;
+  width: 809px;
+  text-align: center;
+}
+.comingCopy h2 {
+  margin: 0;
+  color: #c2c2c2;
+  font-size: 22.261px;
+  line-height: 28.94px;
+}
+.comingCopy p {
+  margin: 22px 0 0;
+  color: #6e6e6e;
+  text-align: center;
+  font-size: 32.379px;
+  font-weight: 700;
+  line-height: 42.09px;
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .academyHero > div {
+    left: auto;
+    right: 40px;
+    width: min(809px, calc(100% - 160px));
+  }
+
+  .academyTeacher {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .lecturer {
+    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .lecturer img {
+    width: 100%;
+  }
+
+  .lecturer > div {
+    grid-template-columns: minmax(70px, 91px) minmax(0, 1fr);
+  }
+
+  .lecturer > div > p {
+    font-size: clamp(18px, 2.1vw, 25.296px);
+    white-space: normal;
+  }
+
+  .lecturer ul {
+    width: auto;
+  }
+
+  .lecturer li {
+    font-size: clamp(16px, 1.8vw, 22.261px);
+  }
+
+  .comingCopy {
+    left: 50%;
+    width: min(809px, calc(100% - 96px));
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .academyHero {
+    height: auto;
+    min-height: 0;
+    padding: 36px 20px;
+  }
+  .academyHero > div {
+    position: static;
+    width: auto;
+  }
+  .academyHero h1 {
+    font-size: clamp(32px, 8vw, 40px);
+  }
+  .academyLead,
+  .academyCopy {
+    font-size: 14px;
+  }
+  .academyCopy {
+    margin-top: 20px;
+    line-height: 1.65;
+  }
+  .academyCopy span br {
+    display: none;
+  }
+  .academyTeacher {
+    height: auto;
+    padding: 36px 20px;
+  }
+  .academyTeacher > h2 {
+    align-items: flex-start;
+    margin-bottom: 32px;
+    font-size: 27px;
+    white-space: normal;
+    line-height: 1.35;
+  }
+  .academyTeacher > h2 span {
+    flex: 0 0 auto;
+    margin-top: 4px;
+  }
+  .lecturer {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+  }
+  .lecturer img {
+    width: 100%;
+    height: auto;
+  }
+  .lecturer > div {
+    display: flex;
+    padding-top: 0;
+    flex-direction: column;
+  }
+  .lecturer h3 {
+    order: 1;
+    line-height: 1.3;
+  }
+  .lecturer > div > p {
+    order: 2;
+    margin: 8px 0 22px;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .lecturer ul {
+    order: 3;
+    width: auto;
+    margin: 0;
+  }
+  .lecturer li {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .coming {
+    height: 340px;
+  }
+  .comingCards {
+    left: -110px;
+    top: 78px;
+    grid-template-columns: repeat(5, 180px);
+    overflow: hidden;
+  }
+  .comingCopy {
+    inset: 0;
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .comingCopy h2 {
+    font-size: 18px;
+  }
+  .comingCopy p {
+    margin-top: 16px;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+}

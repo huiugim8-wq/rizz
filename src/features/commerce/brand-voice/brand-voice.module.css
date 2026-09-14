@@ -1,0 +1,167 @@
+/* Brand interviews: compact introduction and in-flow section navigation. */
+.brandVoiceHeading {
+  --commerce-rail-offset: 6px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.brandVoice .voiceIntro {
+  min-height: 0;
+  padding: 0;
+  min-width: 0;
+}
+.brandVoice .voiceIntro > h1 {
+  font-family: Rizz, Arial, sans-serif;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+.brandVoice .voiceIntro > p {
+  margin: 24px 0 28px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+.brandVoiceLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.brandVoice .brandVoiceLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 0 1 auto;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  line-height: 1.4;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.brandVoiceLinks a:hover {
+  background: #f5f5f5;
+  border-color: #111;
+}
+.brandVoiceLinks a:focus-visible {
+  outline: 2px solid #193dff;
+  outline-offset: 3px;
+}
+.brandVoiceLinks span {
+  color: #888;
+}
+.brandVoice .voiceStory {
+  min-height: 0;
+  scroll-margin-top: 72px;
+}
+.voicePage.brandVoice > main > section.voiceStory {
+  zoom: 1;
+}
+.brandVoice .voiceStory > img {
+  height: clamp(460px, 48vw, 680px);
+  object-fit: cover;
+  object-position: center top;
+}
+.brandVoice .voiceStory > div {
+  padding: clamp(28px, 4vw, 60px);
+}
+.brandVoice .voiceStory h2 {
+  font-size: clamp(26px, 2.6vw, 37px);
+  overflow-wrap: anywhere;
+}
+.brandVoice .voiceStats {
+  margin-top: 30px;
+}
+@media (max-width: 1100px) {
+  .brandVoice .voiceStats b {
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .brandVoiceHeading {
+    padding: 0;
+  }
+  .brandVoice .voiceIntro {
+    padding: 28px 20px 36px;
+  }
+  .brandVoice .voiceIntro > h1 {
+    font-size: clamp(36px, 7vw, 56px);
+  }
+  .brandVoice .voiceIntro > p {
+    margin: 18px 0 24px;
+    font-size: 14px;
+  }
+  .brandVoice .brandVoiceLinks a {
+    flex: 1 1 calc(50% - 10px);
+    gap: 8px;
+    padding: 12px;
+    font-size: 12px;
+  }
+  .brandVoice .voiceStory {
+    scroll-margin-top: 72px;
+  }
+  .brandVoice .voiceStory > img {
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+  .brandVoice .voiceStory > div {
+    padding: 32px 20px 40px;
+  }
+  .brandVoice .voiceStory h2 {
+    margin: 18px 0 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brandVoiceLinks a {
+    transition: none;
+  }
+}
+
+/* Replacement portraits: preserve faces and the source photo's proportions. */
+.brandVoice #brand-voice-2 > img {
+  object-position: center 25%;
+}
+.brandVoice #brand-voice-5 > img {
+  object-position: 56% center;
+}
+@media (max-width: 900px) {
+  .brandVoice #brand-voice-2 > img {
+    aspect-ratio: 1;
+    object-position: center;
+  }
+  .brandVoice #brand-voice-5 > img {
+    aspect-ratio: 4/3;
+    object-position: center;
+  }
+}
+
+/* Breakpoint rules colocated with this feature. */
+@media (max-width: 900px) {
+  .brandVoice .voiceIntro {
+    min-height: 0;
+    padding: 65px 16px 80px;
+  }
+  .brandVoice .voiceIntro img {
+    height: 280px;
+  }
+  .brandVoice .voiceStory > img {
+    height: auto;
+    aspect-ratio: 1.15;
+    object-fit: cover;
+  }
+}
+@media (max-width: 900px) {
+  .brandVoiceHeading {
+    padding: 0;
+  }
+  .brandVoiceHeading :global(.side-rail) {
+    margin: 0;
+  }
+  .brandVoice .voiceStory {
+    scroll-margin-top: 56px;
+  }
+  .brandVoice .voiceStory > div {
+    padding: 28px 20px;
+  }
+}

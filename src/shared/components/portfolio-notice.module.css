@@ -1,0 +1,73 @@
+.backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 56%);
+  backdrop-filter: blur(5px);
+}
+
+.notice {
+  width: min(520px, 100%);
+  padding: 36px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  background: #0c0d10;
+  color: #fff;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 35%);
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+  color: #ff2147;
+  font:
+    700 12px/1 Arial,
+    sans-serif;
+  letter-spacing: 0.16em;
+}
+
+.notice h2 {
+  margin: 0;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.notice > p:not(.eyebrow) {
+  margin: 20px 0 30px;
+  color: #c9ccd3;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.notice button {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #0c0d10;
+  font:
+    700 14px/1 Arial,
+    sans-serif;
+  cursor: pointer;
+}
+
+.notice button:focus-visible {
+  outline: 3px solid #ff2147;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .backdrop {
+    padding: 18px;
+  }
+
+  .notice {
+    padding: 28px 22px 22px;
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+  }
+}

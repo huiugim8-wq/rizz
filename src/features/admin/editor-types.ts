@@ -1,0 +1,31 @@
+export type CreatorChannel = { platform: string; url: string };
+export type EditorRecord = {
+  id?: string;
+  version?: number;
+  title?: string;
+  publishedAt?: string;
+  image?: string;
+  imageAlt?: string;
+  mediaId?: string | null;
+  externalUrl?: string | null;
+  isArchived?: boolean;
+  isFeatured?: boolean;
+  status?: string;
+  name?: string;
+  displayName?: string;
+  category?: string;
+  followers?: string;
+  focalX?: number;
+  focalY?: number;
+  followerCount?: number | null;
+  measuredAt?: string | null;
+  channels?: CreatorChannel[];
+};
+export type EditorData = EditorRecord & {
+  publishedAt: string;
+  image: string;
+  mediaId: string | null;
+  focalX: number;
+  focalY: number;
+};
+export type EditorUpdate = (key: keyof EditorData, value: unknown) => void;

@@ -1,0 +1,151 @@
+.hero {
+  position: relative;
+  height: calc(100svh + 440px);
+  color: #fff;
+  background: #fff;
+}
+
+.heroSticky {
+  position: sticky;
+  top: calc(var(--home-header-height) * (1 - var(--hero-expansion, 0)));
+  display: grid;
+  height: calc(100svh - var(--home-header-height) * (1 - var(--hero-expansion, 0)));
+  overflow: hidden;
+  place-items: center;
+  background: #fff;
+  isolation: isolate;
+}
+
+.heroCanvas {
+  position: relative;
+  width: 100vw;
+  height: calc(100% - var(--hero-media-top, 295px));
+  align-self: end;
+  overflow: hidden;
+  background: #080808 center / cover no-repeat;
+  will-change: height;
+}
+
+.heroCanvas::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto;
+  height: calc(var(--home-header-height) + 64px);
+  background: linear-gradient(#0008, transparent);
+  opacity: var(--hero-expansion, 0);
+  pointer-events: none;
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #080808;
+  pointer-events: none;
+}
+
+.heroTitle {
+  position: absolute;
+  z-index: 5;
+  top: clamp(36px, 4.7vw, 90px);
+  left: 4.5vw;
+  width: 91vw;
+  margin: 0;
+  color: #050505;
+  font:
+    900 clamp(42px, 13.2vw, 253px) / 1 Rizz,
+    Arial,
+    sans-serif;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  will-change: opacity, transform;
+}
+
+.scrollPrompt {
+  position: absolute;
+  z-index: 4;
+  right: clamp(20px, 3vw, 56px);
+  bottom: clamp(22px, 3vw, 50px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.scrollPrompt span {
+  font:
+    700 10px/1 Arial,
+    sans-serif;
+  letter-spacing: 0.14em;
+}
+
+.scrollPrompt i {
+  width: 38px;
+  height: 1px;
+  background: currentColor;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+  }
+  .heroSticky {
+    position: relative;
+    top: auto;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    isolation: auto;
+    overflow: visible;
+  }
+  .heroTitle {
+    position: relative;
+    order: -1;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 11.6vw;
+    line-height: 1;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .heroCanvas {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-size: contain;
+  }
+  .heroCanvas::after,
+  .scrollPrompt {
+    display: none;
+  }
+  .heroVideo {
+    object-fit: contain;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroTitle {
+    transition: none;
+  }
+}
+
+.videoReplay {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  background: #111c;
+}

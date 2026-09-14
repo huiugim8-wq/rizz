@@ -1,0 +1,27 @@
+.root {
+  position: relative;
+  height: 182px;
+  padding: 65px 34px 0;
+  background: #fff;
+}
+.root h1 {
+  margin: 0;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #111;
+  font:
+    900 77px/0.9 Arial Black,
+    Arial,
+    sans-serif;
+  letter-spacing: -5px;
+}
+@media (max-width: 900px) {
+  .root {
+    height: auto;
+    padding: 32px 20px 24px;
+  }
+  .root h1 {
+    padding-bottom: 16px;
+    font-size: 40px;
+    letter-spacing: -3px;
+  }
+}

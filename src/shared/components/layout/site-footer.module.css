@@ -1,0 +1,32 @@
+.footer {
+  height: 248px;
+  padding: 46px 0 0 6.25vw;
+  color: #fff;
+  background: #000;
+  font:
+    14px/18px Arial,
+    Rizz,
+    sans-serif;
+}
+.footer p {
+  margin: 0;
+}
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.copyright {
+  margin-top: 36px !important;
+}
+@media (max-width: 900px) {
+  .footer {
+    height: auto;
+    min-height: 0;
+    padding: 28px 20px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .copyright {
+    margin-top: 20px !important;
+  }
+}

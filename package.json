@@ -3,37 +3,61 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22.13.0"
+    "node": ">=24 <25"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
-    "start": "vinext start",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
+    "dev": "next dev --hostname localhost",
+    "build": "npm run check:content && prisma generate && next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint app src scripts tests prisma.config.ts next.config.ts",
+    "typecheck": "tsc --noEmit",
+    "check:content": "node scripts/quality/check-content.mjs",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run check:content && npm run check:structure",
+    "check:structure": "node scripts/quality/check-structure.mjs",
+    "format": "prettier --write app src scripts docs tests ops README.md *.ts *.mjs *.json *.yaml",
+    "format:check": "prettier --check app src scripts docs tests ops README.md *.ts *.mjs *.json *.yaml",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:import": "tsx --env-file-if-exists=.env.local scripts/admin/import-content.ts",
+    "test": "vitest run",
+    "package:release": "node scripts/deploy/package-standalone.mjs"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "@radix-ui/react-dialog": "1.1.23",
+    "better-auth": "1.7.4",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "dotenv": "17.4.2",
+    "next": "16.3.4",
+    "pg": "8.23.0",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "server-only": "0.0.1",
+    "sharp": "0.35.4",
+    "tailwind-merge": "3.6.0",
+    "zod": "4.6.2"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
-    "@cloudflare/workers-types": "4.20260515.1",
-    "@openai/sites-vite-plugin": "^0.1.0 || ^0.2.0",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
+    "@types/pg": "8.23.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
-    "@vitejs/plugin-rsc": "0.5.26",
     "eslint": "9.39.4",
-    "eslint-config-next": "16.2.6",
-    "react-server-dom-webpack": "19.2.6",
+    "eslint-config-next": "16.3.4",
+    "prettier": "3.6.2",
+    "prisma": "7.10.0",
     "tailwindcss": "4.2.1",
+    "tsx": "4.23.13",
     "typescript": "5.9.3",
-    "vinext": "1.0.0-beta.3",
-    "vite": "8.0.13",
-    "wrangler": "4.92.0"
+    "vite": "8.3.0",
+    "vitest": "4.1.11"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "mysql2": "3.24.4",
+    "deepmerge-ts": "8.0.2"
+  }
 }
